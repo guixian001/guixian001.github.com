@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tool on HelloMonkey</title>
+    <link>http://localhost:1313/categories/tool/</link>
+    <description>Recent content in tool on HelloMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 Aug 2021 21:53:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iTerm2 中使用 ClashX proxy</title>
+      <link>http://localhost:1313/post/tools/iterm2-clashx/</link>
+      <pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/tools/iterm2-clashx/</guid>
+      <description>iTerm2 配置 http 代理 终端下的很多应用会通过 http_proxy、https_proxy 环境变量的影响，比如 curl/brew/wget。如果设置了这</description>
+    </item>
+    
+  </channel>
+</rss>
