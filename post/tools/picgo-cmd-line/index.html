@@ -49,7 +49,7 @@
 <meta itemprop="name" content="PicGo-Core (Command line) macOS 配置七牛云图床">
 <meta itemprop="description" content="PicGo-Core 是一个开源图片上传 node 模块. 安装 PicGo-Core (Command line) 如果有安装 node 或者 yarn 可以直接使用以下命令安装： 1 2 3 4 npm install picgo -g # or yarn global add picgo 配置 在配置七牛云上传之前，如果"><meta itemprop="datePublished" content="2021-08-27T00:06:22+08:00" />
 <meta itemprop="dateModified" content="2021-08-27T00:06:22+08:00" />
-<meta itemprop="wordCount" content="726">
+<meta itemprop="wordCount" content="722">
 <meta itemprop="keywords" content="picgo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PicGo-Core (Command line) macOS 配置七牛云图床"/>
 <meta name="twitter:description" content="PicGo-Core 是一个开源图片上传 node 模块. 安装 PicGo-Core (Command line) 如果有安装 node 或者 yarn 可以直接使用以下命令安装： 1 2 3 4 npm install picgo -g # or yarn global add picgo 配置 在配置七牛云上传之前，如果"/>
@@ -188,8 +188,8 @@ yarn global add picgo
 </li>
 <li>
 <p>新建空间。</p>
-<p><img src="http://static.chenguixian.com/image-20210827095213738.png" alt="image-20210827095213738" style="zoom:67%;" /></p>
-<p><img src="http://static.chenguixian.com/image-20210827095623155.png" alt="image-20210827095623155" style="zoom:67%;" /></p>
+<p><img src="https://gitee.com/guixian/static-files/raw/master/image/2021/08/image-20210827095213738-a92fcf.png" alt="image-20210827095213738" style="zoom:67%;" /></p>
+<p><img src="https://gitee.com/guixian/static-files/raw/master/image/2021/08/image-20210827095623155-075a0c.png" alt="image-20210827095623155" style="zoom:67%;" /></p>
 </li>
 <li>
 <p>创建成功之后会分配 CDN 测试域名，但是存在有效期，建议绑定自定义 CDN 加速域名。</p>
@@ -223,12 +223,9 @@ yarn global add picgo
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="sb">```</span>
-➜  ~ picgo <span class="nb">set</span> uploader
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">➜  ~ picgo <span class="nb">set</span> uploader
 ? Choose a<span class="o">(</span>n<span class="o">)</span> uploader qiniu
 ? accessKey: <span class="c1"># accesskey</span>
 ? secretKey: <span class="c1"># secretkey</span>
@@ -238,16 +235,15 @@ yarn global add picgo
 ? options:
 ? path:
 <span class="o">[</span>PicGo SUCCESS<span class="o">]</span>: Configure config successfully!
-<span class="sb">```</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>生成的配置文件位于<code>~/.picgo/config.json</code></p>
-<p><img src="http://static.chenguixian.com/image-20210827094427771.png" alt="image-20210827094427771" style="zoom:67%;" /></p>
+<p><img src="https://gitee.com/guixian/static-files/raw/master/image/2021/08/image-20210827094427771-08f8b6.png" alt="image-20210827094427771" style="zoom:67%;" /></p>
 <h2 id="测试">测试</h2>
-<p><img src="http://static.chenguixian.com/image-20210827002413267.png" alt="image-20210827002413267"></p>
+<p><img src="https://gitee.com/guixian/static-files/raw/master/image/2021/08/image-20210827002413267-1fb1a9.png" alt="image-20210827002413267"></p>
 <h2 id="在-typora-配置">在 Typora 配置</h2>
 <p>在 Typora 的图像选项配置 <code>Custom Command</code>，命令如下<code>/Users/chenguixian/.nvm/versions/node/v16.8.0/bin/node /opt/homebrew/bin/picgo u</code>(根据自己本机实际情况填写<code>nodePath picgoPath u</code>)</p>
-<p><img src="http://static.chenguixian.com/image-20210827094517465.png" alt="image-20210827094517465" style="zoom: 67%;" /></p>
+<p><img src="https://gitee.com/guixian/static-files/raw/master/image/2021/08/image-20210827094517465-8e0fe2.png" alt="image-20210827094517465" style="zoom: 67%;" /></p>
 <p>点击验证，显示上传成功。</p>
 <p>参考文档：</p>
 <p><a href="https://picgo.github.io/PicGo-Core-Doc/">https://picgo.github.io/PicGo-Core-Doc/</a></p>
