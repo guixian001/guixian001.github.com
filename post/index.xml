@@ -2,35 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on HelloMonkey</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://blog.chenguixian.com/post/</link>
     <description>Recent content in Posts on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Aug 2021 21:53:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PicGo-Core (Command line) macOS 配置七牛云图床</title>
+      <link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link>
+      <pubDate>Fri, 27 Aug 2021 00:06:22 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</guid>
+      <description>PicGo-Core 是一个开源图片上传 node 模块. 安装 PicGo-Core (Command line) 如果有安装 node 或者 yarn 可以直接使用以下命令安装： 1 2 3 4 npm install picgo -g # or yarn global add picgo 配置 在配置七牛云上传之前，如果</description>
+    </item>
+    
     <item>
       <title>iTerm2 中使用 ClashX proxy</title>
-      <link>http://localhost:1313/post/tools/iterm2-clashx/</link>
+      <link>https://blog.chenguixian.com/post/tools/iterm2-clashx/</link>
       <pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/tools/iterm2-clashx/</guid>
+      <guid>https://blog.chenguixian.com/post/tools/iterm2-clashx/</guid>
       <description>iTerm2 配置 http 代理 终端下的很多应用会通过 http_proxy、https_proxy 环境变量的影响，比如 curl/brew/wget。如果设置了这</description>
     </item>
     
     <item>
       <title>iTerm2快捷键小记</title>
-      <link>http://localhost:1313/post/tools/iterm2-cheatsheet/</link>
+      <link>https://blog.chenguixian.com/post/tools/iterm2-cheatsheet/</link>
       <pubDate>Wed, 25 Aug 2021 00:13:53 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/tools/iterm2-cheatsheet/</guid>
+      <guid>https://blog.chenguixian.com/post/tools/iterm2-cheatsheet/</guid>
       <description>iTerm2 快捷键</description>
     </item>
     
     <item>
       <title>什么是 ARTS 打卡计划？</title>
-      <link>http://localhost:1313/post/arts/</link>
+      <link>https://blog.chenguixian.com/post/arts/</link>
       <pubDate>Wed, 25 Aug 2021 00:07:51 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/arts/</guid>
+      <guid>https://blog.chenguixian.com/post/arts/</guid>
       <description>Algorithm 每周至少做一个 Leetcode 的算法题。主要是为了编程训练和学习。如果不训练你看再多的算法书，你依然不会做算法题。关于做 Leetcode 的优势，你可以看一下我在 coolshell 上的</description>
     </item>
     

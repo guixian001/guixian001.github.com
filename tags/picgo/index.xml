@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tool on HelloMonkey</title>
-    <link>https://blog.chenguixian.com/categories/tool/</link>
-    <description>Recent content in tool on HelloMonkey</description>
+    <title>picgo on HelloMonkey</title>
+    <link>https://blog.chenguixian.com/tags/picgo/</link>
+    <description>Recent content in picgo on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/picgo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PicGo-Core (Command line) macOS 配置七牛云图床</title>
       <link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</guid>
       <description>PicGo-Core 是一个开源图片上传 node 模块. 安装 PicGo-Core (Command line) 如果有安装 node 或者 yarn 可以直接使用以下命令安装： 1 2 3 4 npm install picgo -g # or yarn global add picgo 配置 在配置七牛云上传之前，如果</description>
-    </item>
-    
-    <item>
-      <title>iTerm2 中使用 ClashX proxy</title>
-      <link>https://blog.chenguixian.com/post/tools/iterm2-clashx/</link>
-      <pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/tools/iterm2-clashx/</guid>
-      <description>iTerm2 配置 http 代理 终端下的很多应用会通过 http_proxy、https_proxy 环境变量的影响，比如 curl/brew/wget。如果设置了这</description>
     </item>
     
   </channel>
