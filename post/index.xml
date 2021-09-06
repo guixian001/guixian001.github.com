@@ -17,15 +17,6 @@
     </item>
     
     <item>
-      <title>Nginx location 和 proxy_pass </title>
-      <link>https://blog.chenguixian.com/post/op/nginx-proxy_pass/</link>
-      <pubDate>Fri, 03 Sep 2021 19:39:31 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/op/nginx-proxy_pass/</guid>
-      <description>Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明 语法 1 2 3 4 Syntax: location [ = | ~ | ~* | ^~ ] uri { ... } location</description>
-    </item>
-    
-    <item>
       <title>使用 hugo 搭建 blog</title>
       <link>https://blog.chenguixian.com/post/hugo-blog/</link>
       <pubDate>Thu, 02 Sep 2021 22:43:32 +0800</pubDate>
