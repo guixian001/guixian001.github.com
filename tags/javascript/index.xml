@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on HelloMonkey</title>
+    <link>https://blog.chenguixian.com/tags/javascript/</link>
+    <description>Recent content in javascript on HelloMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 14 Sep 2021 20:16:33 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Just Javascript 笔记</title>
+      <link>https://blog.chenguixian.com/post/js/just-javascript/</link>
+      <pubDate>Tue, 14 Sep 2021 20:16:33 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/js/just-javascript/</guid>
+      <description>前言 &amp;amp;&amp;amp; 心智模型 Mental Model 心智模型 心智模型/心智模式的理论是基于一个试图对某事做出合理解释的个人会发展可行的方法的假设，在有限的领域知识和有限的信息</description>
+    </item>
+    
+  </channel>
+</rss>
