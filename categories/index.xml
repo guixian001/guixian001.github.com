@@ -6,7 +6,16 @@
     <description>Recent content in Categories on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Sep 2021 20:16:33 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javascript</title>
+      <link>https://blog.chenguixian.com/categories/javascript/</link>
+      <pubDate>Tue, 14 Sep 2021 20:16:33 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tool</title>
       <link>https://blog.chenguixian.com/categories/tool/</link>
