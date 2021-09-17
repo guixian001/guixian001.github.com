@@ -218,7 +218,7 @@ Host *
 <p>Host 后面可以是一个或者多个需要匹配的内容（多个使用空格分隔）
 可以采用下面这些特殊标识符：</p>
 <ul>
-<li><code>\*</code> 匹配 0 或者任意个字符。比如 <code>Host *</code> 匹配所有的 Hosts，<code>192.168.0.*</code> 匹配 <code>192.168.0.0/24</code> 这个 subnet 下的 IP.</li>
+<li><code>*</code> 匹配 0 或者任意个字符。比如 <code>Host *</code> 匹配所有的 Hosts，<code>192.168.0.*</code> 匹配 <code>192.168.0.0/24</code> 这个 subnet 下的 IP.</li>
 <li><code>?</code> 匹配一个字符。如 <code>10.10.0.?</code> 匹配 <code>10.10.0.[0-9]</code></li>
 <li><code>!</code> 取反，即不匹配。比如 <code>Host 10.10.0.* !10.10.0.5</code> 匹配 <code>10.10.0.0/24</code> subnet 但是 <code>10.10.0.5</code> 除外.</li>
 </ul>
