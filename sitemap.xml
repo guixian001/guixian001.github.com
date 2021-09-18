@@ -2,15 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.chenguixian.com/post/go/hotest-repos-in-september-2021/</loc>
+    <lastmod>2021-09-18T16:28:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/categories/</loc>
+    <lastmod>2021-09-18T16:28:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/categories/golang/</loc>
+    <lastmod>2021-09-18T16:28:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2021-09-15T15:54:09+08:00</lastmod>
+    <lastmod>2021-09-18T16:28:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
-    <lastmod>2021-09-15T15:54:09+08:00</lastmod>
+    <lastmod>2021-09-18T16:28:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -32,13 +53,6 @@
   <url>
     <loc>https://blog.chenguixian.com/tags/</loc>
     <lastmod>2021-09-15T15:54:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/categories/</loc>
-    <lastmod>2021-09-14T20:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -67,13 +81,6 @@
   <url>
     <loc>https://blog.chenguixian.com/post/op/nginx-location-proxy_pass/</loc>
     <lastmod>2021-09-03T19:39:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/post/hugo-blog/</loc>
-    <lastmod>2021-09-02T22:43:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

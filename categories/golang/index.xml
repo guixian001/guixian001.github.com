@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on HelloMonkey</title>
+    <link>https://blog.chenguixian.com/categories/golang/</link>
+    <description>Recent content in golang on HelloMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Sep 2021 16:28:04 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021 9月 github 热门 golang 项目</title>
+      <link>https://blog.chenguixian.com/post/go/hotest-repos-in-september-2021/</link>
+      <pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/go/hotest-repos-in-september-2021/</guid>
+      <description>gokart url https://github.com/praetorian-inc/gokart 简介 A static analysis tool for securing Go code star 数量 1720 filebrowser url https://github.com/filebrowser/filebrowser 简介 📂 Web File Browser star 数量 12833 podman url https://github.com/containers/podman 简介 Podman: A tool for managing OCI containers and pods. star 数量 10260 cli url https://github.com/cli/cli 简介 GitHub’s official command line tool star 数量 25405 netpoll</description>
+    </item>
+    
+  </channel>
+</rss>
