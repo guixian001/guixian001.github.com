@@ -6,13 +6,31 @@
     <description>Recent content on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Sep 2021 16:28:04 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 16:48:09 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2021 9月 github 热门 golang 项目</title>
-      <link>https://blog.chenguixian.com/post/go/hotest-repos-in-september-2021/</link>
+      <title>GitHub 2021 年 9 月热门 Javascript 项目</title>
+      <link>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</link>
+      <pubDate>Sat, 18 Sep 2021 16:48:09 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</guid>
+      <description>/TheAlgorithms/Javascript url https://github.com/TheAlgorithms/Javascript 简介 A repository for All algorithms implemented in Javascript (for educational purposes only) star 数量 14152 /pedroslopez/whatsapp-web.js url https://github.com/pedroslopez/whatsapp-web.js 简介 A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app star 数量 3379 /chrisleekr/binance-trading-bot url https://github.com/chrisleekr/binance-trading-bot 简介 Automated Binance trading bot - Buy low/Sell high with stop loss limit/Trade multiple cryptocurrencies with Grid Trading star 数量 2961</description>
+    </item>
+    
+    <item>
+      <title>GitHub 2021 年 9 月热门 Python 项目</title>
+      <link>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</link>
+      <pubDate>Sat, 18 Sep 2021 16:43:38 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</guid>
+      <description>yt-dlp url https://github.com/yt-dlp/yt-dlp 简介 A youtube-dl fork with additional features and fixes star 数量 6359 MockingBird url https://github.com/babysor/MockingBird 简介 🚀AI拟声: 5秒内克隆您的声音并生成任意语音内容 Clone a voice in 5 seconds to generate arbitrary speech in real-time star 数量 4285 Real-ESRGAN url https://github.com/xinntao/Real-ESRGAN 简介 Real-ESRGAN aims at</description>
+    </item>
+    
+    <item>
+      <title>GitHub 2021 年 9 月热门 Golang 项目</title>
+      <link>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</link>
       <pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate>
       
-      <guid>https://blog.chenguixian.com/post/go/hotest-repos-in-september-2021/</guid>
+      <guid>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</guid>
       <description>gokart url https://github.com/praetorian-inc/gokart 简介 A static analysis tool for securing Go code star 数量 1720 filebrowser url https://github.com/filebrowser/filebrowser 简介 📂 Web File Browser star 数量 12833 podman url https://github.com/containers/podman 简介 Podman: A tool for managing OCI containers and pods. star 数量 10260 cli url https://github.com/cli/cli 简介 GitHub’s official command line tool star 数量 25405 netpoll</description>
     </item>
     

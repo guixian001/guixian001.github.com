@@ -6,13 +6,31 @@
     <description>Recent content in Categories on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Sep 2021 16:28:04 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 16:48:09 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>golang</title>
-      <link>https://blog.chenguixian.com/categories/golang/</link>
+      <title>github javascript</title>
+      <link>https://blog.chenguixian.com/categories/github-javascript/</link>
+      <pubDate>Sat, 18 Sep 2021 16:48:09 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/categories/github-javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github python</title>
+      <link>https://blog.chenguixian.com/categories/github-python/</link>
+      <pubDate>Sat, 18 Sep 2021 16:43:38 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/categories/github-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github golang</title>
+      <link>https://blog.chenguixian.com/categories/github-golang/</link>
       <pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate>
       
-      <guid>https://blog.chenguixian.com/categories/golang/</guid>
+      <guid>https://blog.chenguixian.com/categories/github-golang/</guid>
       <description></description>
     </item>
     

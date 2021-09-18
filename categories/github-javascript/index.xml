@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github javascript on HelloMonkey</title>
+    <link>https://blog.chenguixian.com/categories/github-javascript/</link>
+    <description>Recent content in github javascript on HelloMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 18 Sep 2021 16:48:09 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/github-javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub 2021 年 9 月热门 Javascript 项目</title>
+      <link>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</link>
+      <pubDate>Sat, 18 Sep 2021 16:48:09 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</guid>
+      <description>/TheAlgorithms/Javascript url https://github.com/TheAlgorithms/Javascript 简介 A repository for All algorithms implemented in Javascript (for educational purposes only) star 数量 14152 /pedroslopez/whatsapp-web.js url https://github.com/pedroslopez/whatsapp-web.js 简介 A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app star 数量 3379 /chrisleekr/binance-trading-bot url https://github.com/chrisleekr/binance-trading-bot 简介 Automated Binance trading bot - Buy low/Sell high with stop loss limit/Trade multiple cryptocurrencies with Grid Trading star 数量 2961</description>
+    </item>
+    
+  </channel>
+</rss>
