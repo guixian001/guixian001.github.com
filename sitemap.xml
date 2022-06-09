@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.chenguixian.com/categories/</loc>
+    <lastmod>2022-06-09T10:40:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/</loc>
+    <lastmod>2022-06-09T10:40:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/</loc>
+    <lastmod>2022-06-09T10:40:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/categories/tool/</loc>
+    <lastmod>2022-06-09T10:40:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/tools/todo-flomo/</loc>
+    <lastmod>2022-06-09T10:40:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.chenguixian.com/post/go/go-basic/</loc>
     <lastmod>2021-10-06T23:25:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,22 +44,57 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2021-10-06T23:25:24+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/post/js/sub-string-check/</loc>
+    <lastmod>2021-09-29T17:10:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/post/</loc>
-    <lastmod>2021-10-06T23:25:24+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/post/tools/sentry/</loc>
+    <lastmod>2021-09-28T23:21:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/categories/</loc>
-    <lastmod>2021-09-18T16:48:09+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/post/python/django-apscheduler/</loc>
+    <lastmod>2021-09-23T18:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/python/django-common-command/</loc>
+    <lastmod>2021-09-22T14:52:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/op/ssh-tips/</loc>
+    <lastmod>2021-09-22T10:59:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/python/python-common-data-structure-algo/</loc>
+    <lastmod>2021-09-22T10:42:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/tools/chrome-debugger-tips/</loc>
+    <lastmod>2021-09-22T10:40:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/tools/vscode-tips/</loc>
+    <lastmod>2021-09-22T10:39:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -74,6 +144,13 @@
   <url>
     <loc>https://blog.chenguixian.com/post/js/clean-code-js/</loc>
     <lastmod>2021-09-18T10:36:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/js/sort-version-in-js/</loc>
+    <lastmod>2021-09-18T10:34:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -143,13 +220,6 @@
   
   <url>
     <loc>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</loc>
-    <lastmod>2021-08-27T00:06:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/categories/tool/</loc>
     <lastmod>2021-08-27T00:06:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

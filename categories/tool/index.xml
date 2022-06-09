@@ -6,7 +6,16 @@
     <description>Recent content in tool on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 10:40:23 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 TODO List 结合轻笔记进行知识积累</title>
+      <link>https://blog.chenguixian.com/post/tools/todo-flomo/</link>
+      <pubDate>Thu, 09 Jun 2022 10:40:23 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/tools/todo-flomo/</guid>
+      <description>TODO List 与笔记 使用 TODO List 类的工具可以较好的管理我们的计划事项，但是也会存在一个问题。当欧美原先做过类似的某一项工作，记不起来当时做了什么，有什么积</description>
+    </item>
+    
     <item>
       <title>PicGo-Core (Command line) macOS 配置七牛云图床</title>
       <link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link>
