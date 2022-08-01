@@ -6,7 +6,16 @@
     <description>Recent content on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jun 2022 10:40:23 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 21:53:34 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac 工具记录</title>
+      <link>https://blog.chenguixian.com/post/tools/mac-tools/</link>
+      <pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/tools/mac-tools/</guid>
+      <description>Mac 工具记录 Mac 使用技巧 图标 mac ⌘ command() ⌥ option/alt ⌃ control/ctrl ⇧ Shift ⇪ Caps Lock fn fn ⌫ Backspace ↵ Enter ↹ Tab 快捷键 command（⌘） 快捷键 描述 ⌘空格键 显示“聚焦”搜</description>
+    </item>
+    
     <item>
       <title>使用 TODO List 结合轻笔记进行知识积累</title>
       <link>https://blog.chenguixian.com/post/tools/todo-flomo/</link>
@@ -23,78 +32,6 @@
       
       <guid>https://blog.chenguixian.com/post/go/go-basic/</guid>
       <description>简单的 Go 入门教程 参考文档 https://jiajunhuang.com/tutorial/golang/index.md</description>
-    </item>
-    
-    <item>
-      <title>Sub String Check</title>
-      <link>https://blog.chenguixian.com/post/js/sub-string-check/</link>
-      <pubDate>Wed, 29 Sep 2021 17:10:17 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/js/sub-string-check/</guid>
-      <description>参考文档 JavaScript怎么判断字符串中是否包含指定字符？</description>
-    </item>
-    
-    <item>
-      <title>Sentry</title>
-      <link>https://blog.chenguixian.com/post/tools/sentry/</link>
-      <pubDate>Tue, 28 Sep 2021 23:21:50 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/tools/sentry/</guid>
-      <description>参考资料 Sentry 监控 - Alerts 告警</description>
-    </item>
-    
-    <item>
-      <title>Django Apscheduler</title>
-      <link>https://blog.chenguixian.com/post/python/django-apscheduler/</link>
-      <pubDate>Thu, 23 Sep 2021 18:08:22 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/python/django-apscheduler/</guid>
-      <description>参考文档 https://github.com/jcass77/django-apscheduler</description>
-    </item>
-    
-    <item>
-      <title>Django Common Command</title>
-      <link>https://blog.chenguixian.com/post/python/django-common-command/</link>
-      <pubDate>Wed, 22 Sep 2021 14:52:44 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/python/django-common-command/</guid>
-      <description>参考文档 https://mp.weixin.qq.com/s/TsmvF54WQoq-4NTrvh2DIQ</description>
-    </item>
-    
-    <item>
-      <title>Ssh Tips</title>
-      <link>https://blog.chenguixian.com/post/op/ssh-tips/</link>
-      <pubDate>Wed, 22 Sep 2021 10:59:24 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/op/ssh-tips/</guid>
-      <description>参考文档 https://bugwz.com/2019/10/09/ssh-proxycommand https://deepzz.com/post/how-to-setup-ssh-config.html</description>
-    </item>
-    
-    <item>
-      <title>Python Common Data Structure Algo</title>
-      <link>https://blog.chenguixian.com/post/python/python-common-data-structure-algo/</link>
-      <pubDate>Wed, 22 Sep 2021 10:42:58 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/python/python-common-data-structure-algo/</guid>
-      <description>参考资料 Python Web后端面试常考数据结构与算法(珍藏版)</description>
-    </item>
-    
-    <item>
-      <title>Chrome Debugger Tips</title>
-      <link>https://blog.chenguixian.com/post/tools/chrome-debugger-tips/</link>
-      <pubDate>Wed, 22 Sep 2021 10:40:23 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/tools/chrome-debugger-tips/</guid>
-      <description>参考资料 你不知道的 Chrome DevTools 玩法</description>
-    </item>
-    
-    <item>
-      <title>Vscode Tips</title>
-      <link>https://blog.chenguixian.com/post/tools/vscode-tips/</link>
-      <pubDate>Wed, 22 Sep 2021 10:39:27 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/tools/vscode-tips/</guid>
-      <description>参考资料 让你 vscode 写代码效率更高的技巧</description>
     </item>
     
     <item>
@@ -131,15 +68,6 @@
       
       <guid>https://blog.chenguixian.com/post/js/clean-code-js/</guid>
       <description>来自 GitHub 的 clear code js，本文做收藏使用。 目录 简介 变量 函数 对象和数据结构 类 SOLID 测试 并发 错误处理 格式化 注释 Translation 简介 将源自 Robert C. Martin 的 Clean Code 的软件工程原则适配到 JavaScript</description>
-    </item>
-    
-    <item>
-      <title>Sort Version in Js</title>
-      <link>https://blog.chenguixian.com/post/js/sort-version-in-js/</link>
-      <pubDate>Sat, 18 Sep 2021 10:34:50 +0800</pubDate>
-      
-      <guid>https://blog.chenguixian.com/post/js/sort-version-in-js/</guid>
-      <description>参考资料 https://stackoverflow.com/questions/40201533/sort-version-dotted-number-strings-in-javascript</description>
     </item>
     
     <item>

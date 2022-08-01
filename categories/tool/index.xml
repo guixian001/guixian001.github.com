@@ -6,7 +6,16 @@
     <description>Recent content in tool on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jun 2022 10:40:23 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 21:53:34 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac 工具记录</title>
+      <link>https://blog.chenguixian.com/post/tools/mac-tools/</link>
+      <pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/tools/mac-tools/</guid>
+      <description>Mac 工具记录 Mac 使用技巧 图标 mac ⌘ command() ⌥ option/alt ⌃ control/ctrl ⇧ Shift ⇪ Caps Lock fn fn ⌫ Backspace ↵ Enter ↹ Tab 快捷键 command（⌘） 快捷键 描述 ⌘空格键 显示“聚焦”搜</description>
+    </item>
+    
     <item>
       <title>使用 TODO List 结合轻笔记进行知识积累</title>
       <link>https://blog.chenguixian.com/post/tools/todo-flomo/</link>
