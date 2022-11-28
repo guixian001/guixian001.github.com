@@ -3,14 +3,49 @@
   
   <url>
     <loc>https://blog.chenguixian.com/categories/</loc>
-    <lastmod>2022-07-21T21:53:34+08:00</lastmod>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2022-07-21T21:53:34+08:00</lastmod>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/</loc>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/tags/python/</loc>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/python/python-craftman-exception/</loc>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/categories/python%E5%B7%A5%E5%8C%A0/</loc>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/tags/</loc>
+    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -24,20 +59,6 @@
   
   <url>
     <loc>https://blog.chenguixian.com/post/tools/mac-tools/</loc>
-    <lastmod>2022-07-21T21:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/post/</loc>
-    <lastmod>2022-07-21T21:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/</loc>
     <lastmod>2022-07-21T21:53:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

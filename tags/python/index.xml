@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on HelloMonkey</title>
+    <link>https://blog.chenguixian.com/tags/python/</link>
+    <description>Recent content in Python on HelloMonkey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Nov 2022 18:08:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 工匠读书笔记 5：异常和错误处理</title>
+      <link>https://blog.chenguixian.com/post/python/python-craftman-exception/</link>
+      <pubDate>Fri, 18 Nov 2022 18:08:22 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/python/python-craftman-exception/</guid>
+      <description>[toc] 基础知识 优先使用异常捕获 一个简单函数 写一个简单的函数，它接收一个整数参数，返回对它加1后的结果。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21</description>
+    </item>
+    
+  </channel>
+</rss>
