@@ -2,15 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.chenguixian.com/post/working-tips-in-new-year/</loc>
+    <lastmod>2023-02-01T16:19:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2023-01-18T16:03:25+08:00</lastmod>
+    <lastmod>2023-02-01T16:19:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
-    <lastmod>2023-01-18T16:03:25+08:00</lastmod>
+    <lastmod>2023-02-01T16:19:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
