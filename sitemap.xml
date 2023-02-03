@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.chenguixian.com/post/working-tips-in-new-year/</loc>
-    <lastmod>2023-02-01T16:19:59+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/</loc>
+    <lastmod>2023-02-03T17:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2023-02-01T16:19:59+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/post/kk-life-tips/</loc>
+    <lastmod>2023-02-03T17:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
+    <lastmod>2023-02-03T17:24:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/working-tips-in-new-year/</loc>
     <lastmod>2023-02-01T16:19:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
