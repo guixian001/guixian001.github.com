@@ -6,7 +6,16 @@
     <description>Recent content in Python on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Nov 2022 18:08:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Apr 2023 19:10:47 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python设计模式</title>
+      <link>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 24 Apr 2023 19:10:47 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description>设计模式从大的分类上可以分为 创建型设计模式、结构型设计模式、行为模式。 Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类</description>
+    </item>
+    
     <item>
       <title>Python 工匠读书笔记 5：异常和错误处理</title>
       <link>https://blog.chenguixian.com/post/python/python-craftman-exception/</link>

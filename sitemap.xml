@@ -3,14 +3,35 @@
   
   <url>
     <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2023-03-20T20:29:40+08:00</lastmod>
+    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
-    <lastmod>2023-03-20T20:29:40+08:00</lastmod>
+    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/tags/python/</loc>
+    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/tags/</loc>
+    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -58,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/tags/python/</loc>
-    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/python/python-craftman-exception/</loc>
     <lastmod>2022-11-18T18:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,13 +87,6 @@
   
   <url>
     <loc>https://blog.chenguixian.com/categories/python%E5%B7%A5%E5%8C%A0/</loc>
-    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/</loc>
     <lastmod>2022-11-18T18:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
