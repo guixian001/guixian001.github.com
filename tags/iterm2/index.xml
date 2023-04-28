@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iTerm2 on HelloMonkey</title>
+    <title>iTerm2 on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/tags/iterm2/</link>
-    <description>Recent content in iTerm2 on HelloMonkey</description>
+    <description>Recent content in iTerm2 on Guixian 的日常记录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 25 Aug 2021 21:53:34 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />

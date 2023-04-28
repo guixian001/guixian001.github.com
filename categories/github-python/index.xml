@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github python on HelloMonkey</title>
+    <title>github python on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/categories/github-python/</link>
-    <description>Recent content in github python on HelloMonkey</description>
+    <description>Recent content in github python on Guixian 的日常记录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 18 Sep 2021 16:43:38 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/github-python/index.xml" rel="self" type="application/rss+xml" />
