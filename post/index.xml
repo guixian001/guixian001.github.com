@@ -6,7 +6,16 @@
     <description>Recent content in Posts on HelloMonkey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 24 Apr 2023 19:10:47 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Apr 2023 11:57:58 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 小贤周刊</title>
+      <link>https://blog.chenguixian.com/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
+      <pubDate>Fri, 28 Apr 2023 11:57:58 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
+      <description>技术相关 Python Concurrency 先留个坑，后续记录输出一个笔记文档。 The Hitchhiker’s Guide to Python! https://docs.python-guide.org/ https://pythonguidecn.readthedocs.io/zh/latest/ 一个 Python 语言入门的文档，接受 Python 的一些基本知识以及相关的框架</description>
+    </item>
+    
     <item>
       <title>Python设计模式</title>
       <link>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
