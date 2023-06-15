@@ -2,21 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.chenguixian.com/categories/</loc>
-    <lastmod>2023-05-14T11:57:58+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/</loc>
+    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2023-05-14T11:57:58+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/post/op/mysql-slowlog/</loc>
+    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
+    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/tags/</loc>
+    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/tags/%E5%BC%95%E7%94%A8/</loc>
+    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/categories/</loc>
     <lastmod>2023-05-14T11:57:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,13 +80,6 @@
   
   <url>
     <loc>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/</loc>
     <lastmod>2023-04-24T19:10:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
