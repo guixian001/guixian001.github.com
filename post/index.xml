@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Guixian 的日常记录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 15 Jun 2023 21:31:26 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2023 20:30:12 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacOS 使用 ssh-agent 实现跳板登录</title>
+      <link>https://blog.chenguixian.com/post/op/ssh-agent-forwarding/</link>
+      <pubDate>Thu, 06 Jul 2023 20:30:12 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/op/ssh-agent-forwarding/</guid>
+      <description>在实际工作中，我们经常需要通过跳板主机来访问目标主机。这时候，如果我们使用 SSH 进行远程连接，就需要在本地计算机上使用 ssh-agent 来实现跳板登录。下面，本</description>
+    </item>
+    
     <item>
       <title>MySQL 频频出现慢日志，你该怎么办？</title>
       <link>https://blog.chenguixian.com/post/op/mysql-slowlog/</link>

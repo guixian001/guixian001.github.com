@@ -3,20 +3,27 @@
   
   <url>
     <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
+    <lastmod>2023-07-06T20:30:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/post/op/mysql-slowlog/</loc>
-    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
+    <loc>https://blog.chenguixian.com/post/op/ssh-agent-forwarding/</loc>
+    <lastmod>2023-07-06T20:30:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
+    <lastmod>2023-07-06T20:30:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/post/op/mysql-slowlog/</loc>
     <lastmod>2023-06-15T21:31:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
