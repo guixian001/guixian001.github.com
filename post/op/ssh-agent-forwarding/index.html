@@ -49,7 +49,7 @@
 <meta itemprop="name" content="MacOS 使用 ssh-agent 实现跳板登录">
 <meta itemprop="description" content="在实际工作中，我们经常需要通过跳板主机来访问目标主机。这时候，如果我们使用 SSH 进行远程连接，就需要在本地计算机上使用 ssh-agent 来实现跳板登录。下面，本"><meta itemprop="datePublished" content="2023-07-06T20:30:12+08:00" />
 <meta itemprop="dateModified" content="2023-07-06T20:30:12+08:00" />
-<meta itemprop="wordCount" content="683">
+<meta itemprop="wordCount" content="692">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MacOS 使用 ssh-agent 实现跳板登录"/>
 <meta name="twitter:description" content="在实际工作中，我们经常需要通过跳板主机来访问目标主机。这时候，如果我们使用 SSH 进行远程连接，就需要在本地计算机上使用 ssh-agent 来实现跳板登录。下面，本"/>
@@ -214,7 +214,7 @@
 </div><h2 id="ssh-登录原理">SSH 登录原理</h2>
 <p>SSH 登录原理是基于公钥加密技术。在使用 SSH 登录时，用户会生成一对密钥，一把是公钥，一把是私钥。公钥可以被其他人获取到，但私钥是保密的。当一个用户想要登录到另一台计算机时，他会将自己的公钥发送给目标计算机。
 当用户尝试连接到目标服务器时，服务器会向用户发送一段随机数据，称为“challenge”。用户使用私钥对challenge进行签名，然后将签名发送回服务器。如果服务器能够使用用户的公钥验证签名，那么用户就被授权访问该服务器。</p>
-<p>SSH-Agent Forwarding，允许用户在跳板机上使用自己的本地SSH密钥对另一个服务器进行身份验证，而无需将私钥复制到跳板机上。当用户连接到跳板机时，该机器会将用户的SSH-Agent代理连接到目标服务器上。当用户连接到目标服务器时，目标服务器会向用户的SSH-Agent代理发送“challenge”，然后SSH-agent代理将使用本地私钥对挑战进行签名，并将签名发送回目标服务器进行验证。如果验证成功，用户就可以在目标服务器上进行操作。</p>
+<p>SSH-Agent Forwarding，允许用户在跳板机上使用自己的本地SSH密钥对另一个服务器进行身份验证，而无需将私钥复制到跳板机上。当用户连接到跳板机时，该机器会将用户的SSH-Agent代理连接到目标服务器上。当用户连接到目标服务器时，目标服务器会向用户的SSH-Agent代理发送“challenge”，然后SSH-agent代理将使用本地私钥对“challenge”进行签名，并将签名发送回目标服务器进行验证。如果验证成功，用户就可以在目标服务器上进行操作。</p>
 
     </div>
 
