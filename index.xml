@@ -6,7 +6,16 @@
     <description>Recent content on Guixian 的日常记录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Jul 2023 21:31:26 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 19:14:49 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何从 0 开始配置 Mac</title>
+      <link>https://blog.chenguixian.com/post/tools/mac-cofig/</link>
+      <pubDate>Fri, 21 Jul 2023 19:14:49 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/tools/mac-cofig/</guid>
+      <description>安装 App 安装应用可以有如下途径 HomeBrew 安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 homebrew-cask — Homebrew Formulae 里找有没有，Cli 工具可以在 homebrew-core — Homebrew Formulae 找有没有。 安装 homebrew 1 /bin/bash -c &amp;#34;$(curl -fsSL</description>
+    </item>
+    
     <item>
       <title>Debian 的发行版</title>
       <link>https://blog.chenguixian.com/post/op/debian-version/</link>
