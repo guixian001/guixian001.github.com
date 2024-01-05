@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>小贤周刊第 4 期 - Guixian 的日常记录</title>
+  <title>小贤周刊第 6 期 - Guixian 的日常记录</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="技术相关 Cool New Features in Python 3.11 Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="Chen Guixian" /><meta name="description" content="技术相关 Python 之路 一位培训讲师关于 Python 的讲义。值得一看。 https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941 https://www.cnblogs.com/Eva-J/p/7277026.html epoll https://zhuanlan.zhihu.com/p/63179839 Redis 也支持全文搜索？这也太强了 简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
-<link rel="canonical" href="https://blog.chenguixian.com/post/weekly/4-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" />
+<link rel="canonical" href="https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="小贤周刊第 4 期" />
-<meta property="og:description" content="技术相关 Cool New Features in Python 3.11 Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、" />
+<meta property="og:title" content="小贤周刊第 6 期" />
+<meta property="og:description" content="技术相关 Python 之路 一位培训讲师关于 Python 的讲义。值得一看。 https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941 https://www.cnblogs.com/Eva-J/p/7277026.html epoll https://zhuanlan.zhihu.com/p/63179839 Redis 也支持全文搜索？这也太强了 简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.chenguixian.com/post/weekly/4-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-05-14T11:57:58+08:00" />
-<meta property="article:modified_time" content="2023-05-14T11:57:58+08:00" />
+<meta property="og:url" content="https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-29T11:57:58+08:00" />
+<meta property="article:modified_time" content="2023-05-21T11:57:58+08:00" />
 
-<meta itemprop="name" content="小贤周刊第 4 期">
-<meta itemprop="description" content="技术相关 Cool New Features in Python 3.11 Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、"><meta itemprop="datePublished" content="2023-05-14T11:57:58+08:00" />
-<meta itemprop="dateModified" content="2023-05-14T11:57:58+08:00" />
-<meta itemprop="wordCount" content="399">
+<meta itemprop="name" content="小贤周刊第 6 期">
+<meta itemprop="description" content="技术相关 Python 之路 一位培训讲师关于 Python 的讲义。值得一看。 https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941 https://www.cnblogs.com/Eva-J/p/7277026.html epoll https://zhuanlan.zhihu.com/p/63179839 Redis 也支持全文搜索？这也太强了 简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用"><meta itemprop="datePublished" content="2023-12-29T11:57:58+08:00" />
+<meta itemprop="dateModified" content="2023-05-21T11:57:58+08:00" />
+<meta itemprop="wordCount" content="355">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="小贤周刊第 4 期"/>
-<meta name="twitter:description" content="技术相关 Cool New Features in Python 3.11 Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、"/>
+<meta name="twitter:title" content="小贤周刊第 6 期"/>
+<meta name="twitter:description" content="技术相关 Python 之路 一位培训讲师关于 Python 的讲义。值得一看。 https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941 https://www.cnblogs.com/Eva-J/p/7277026.html epoll https://zhuanlan.zhihu.com/p/63179839 Redis 也支持全文搜索？这也太强了 简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,10 +125,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">小贤周刊第 4 期</h1>
+      <h1 class="post-title">小贤周刊第 6 期</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-05-14 </span>
+        <span class="post-time"> 2023-12-29 </span>
         <div class="post-category">
             <a href="/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/"> 小贤周刊 </a>
             </div>
@@ -145,19 +145,27 @@
       <ul>
         <li><a href="#技术相关">技术相关</a>
           <ul>
-            <li><a href="#cool-new-features-in-python-311">Cool New Features in Python 3.11</a></li>
+            <li><a href="#python-之路">Python 之路</a></li>
+            <li><a href="#epoll">epoll</a></li>
+            <li><a href="#redis-也支持全文搜索这也太强了">Redis 也支持全文搜索？这也太强了</a></li>
+            <li><a href="#一文浅谈codereview中的一些思考">一文浅谈CodeReview中的一些思考</a></li>
           </ul>
         </li>
         <li><a href="#工具">工具</a>
           <ul>
-            <li><a href="#批量-ssh">批量 ssh</a></li>
+            <li><a href="#新趣集">新趣集</a></li>
+            <li><a href="#代码便利贴">代码便利贴</a></li>
+          </ul>
+        </li>
+        <li><a href="#图书">图书</a>
+          <ul>
+            <li><a href="#mysql-是怎样运行的从根儿上理解-mysql">MySQL 是怎样运行的：从根儿上理解 MySQL</a></li>
           </ul>
         </li>
         <li><a href="#随便看看">随便看看</a>
           <ul>
-            <li><a href="#黑洞资源笔记">黑洞资源笔记</a></li>
-            <li><a href="#bytebytego">bytebytego</a></li>
-            <li><a href="#java-全栈知识体系">Java 全栈知识体系</a></li>
+            <li><a href="#使用-milvus-搭建-chatbot">使用 Milvus 搭建 chatbot</a></li>
+            <li><a href="#人工智能文章聚合站点">人工智能文章聚合站点</a></li>
           </ul>
         </li>
         <li><a href="#随便记记">随便记记</a></li>
@@ -169,29 +177,37 @@
 </div>
     <div class="post-content">
       <h2 id="技术相关">技术相关</h2>
-<h3 id="cool-new-features-in-python-311">Cool New Features in Python 3.11</h3>
-<p>Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、在执行效率上的改进（Faster CPython project）、更好的异步任务语法（在Python 3.11中，可以使用任务组来运行和监视异步任务）、类型注解上的改进（如 Self）、TOML 的解析、异常组。</p>
-<p><a href="https://realpython.com/courses/new-features-python-311/">Cool New Features in Python 3.11</a></p>
-<p><a href="https://realpython.com/python311-new-features">Python 3.11 New Features</a></p>
+<h3 id="python-之路">Python 之路</h3>
+<p>一位培训讲师关于 Python 的讲义。值得一看。
+<a href="https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941">https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941</a>
+<a href="https://www.cnblogs.com/Eva-J/p/7277026.html">https://www.cnblogs.com/Eva-J/p/7277026.html</a></p>
+<h3 id="epoll">epoll</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/63179839">https://zhuanlan.zhihu.com/p/63179839</a></p>
+<h3 id="redis-也支持全文搜索这也太强了">Redis 也支持全文搜索？这也太强了</h3>
+<p>简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用中文分词插件可以用 RediSearch 替代，但是拼音转中文插件在 RediSearch 中还没有功能替代，只能通过个人手段处理。
+<a href="https://mp.weixin.qq.com/s/FgcvoRGkVMw62aelMH7x1g">https://mp.weixin.qq.com/s/FgcvoRGkVMw62aelMH7x1g</a></p>
+<h3 id="一文浅谈codereview中的一些思考">一文浅谈CodeReview中的一些思考</h3>
+<p>CodeReview 中需要考虑到的一些角度，另外提到的作为 Code Reviewer、被 Code Review 的人的一些心态应该如何。
+<a href="https://mp.weixin.qq.com/s/dOtyMjJbE46qZv-DA0fbJw">https://mp.weixin.qq.com/s/dOtyMjJbE46qZv-DA0fbJw</a></p>
 <h2 id="工具">工具</h2>
-<h3 id="批量-ssh">批量 ssh</h3>
-<h4 id="csshx">csshX</h4>
-<p>有一篇简单介绍的博文</p>
-<p><a href="https://wsgzao.github.io/post/csshx/">使用csshX同步管理多个SSH会话</a></p>
-<h4 id="i2cssh">i2cssh</h4>
-<p>使用 iterm2 的可以使用这个。需要打开 iterm2 的配置，Enable Python API。</p>
-<p><code>i2cssh -b  ip1 ip2 ip3</code></p>
-<p><a href="https://github.com/wouterdebie/i2cssh">https://github.com/wouterdebie/i2cssh</a></p>
+<h3 id="新趣集">新趣集</h3>
+<p>一个介绍好玩的应有的站点
+<a href="https://xinquji.com/">https://xinquji.com/</a></p>
+<h3 id="代码便利贴">代码便利贴</h3>
+<p>一个可以贴文档，发送给别人的平台，可以设置访问密码，时效，阅后即焚。
+<a href="https://paste.org.cn/">https://paste.org.cn/</a></p>
+<h2 id="图书">图书</h2>
+<h3 id="mysql-是怎样运行的从根儿上理解-mysql">MySQL 是怎样运行的：从根儿上理解 MySQL</h3>
+<p>使用比较通俗的语言讲解 MySQL 的方方面面
+<a href="https://relph1119.github.io/mysql-learning-notes/">https://relph1119.github.io/mysql-learning-notes/</a></p>
 <h2 id="随便看看">随便看看</h2>
-<h3 id="黑洞资源笔记">黑洞资源笔记</h3>
-<p><a href="https://t.me/s/tieliu/">https://t.me/s/tieliu/</a></p>
-<h3 id="bytebytego">bytebytego</h3>
-<p>一个讲解系统设计的相关网站</p>
-<h3 id="java-全栈知识体系">Java 全栈知识体系</h3>
-<p><a href="https://www.pdai.tech/">https://www.pdai.tech/</a></p>
+<h3 id="使用-milvus-搭建-chatbot">使用 Milvus 搭建 chatbot</h3>
+<p><a href="https://github.com/milvus-io/bootcamp/blob/master/bootcamp/RAG/readthedocs_zilliz_langchain.ipynb">https://github.com/milvus-io/bootcamp/blob/master/bootcamp/RAG/readthedocs_zilliz_langchain.ipynb</a></p>
+<h3 id="人工智能文章聚合站点">人工智能文章聚合站点</h3>
+<p><a href="https://hub.baai.ac.cn/">https://hub.baai.ac.cn/</a></p>
 <h2 id="随便记记">随便记记</h2>
 <ul>
-<li>如果一位具有相当聪明才智的人跟我意见不同，那么对方的主张必定有我尚未体会的奥妙，值得加以了解。与人合作最重要的是，重视不同个体的不同心理、情绪与智能，以及个人眼中所见到的不同世界。与所见略同的人沟 通，益处不大，要有分歧才有收获。</li>
+<li>不论是为了食物而奔跑，或不被他人当做食物而奔跑。你往往无法知道自己正处在哪一种情况，但无论如何，都要保持奔跑。</li>
 </ul>
 
     </div>
@@ -204,7 +220,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-05-14
+        2023-05-21
         
     </span>
   </p>
@@ -214,13 +230,9 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/weekly/5-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">小贤周刊第 5 期</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/weekly/3-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/">
-            <span class="next-text nav-default">小贤周刊第 3 期</span>
+        
+        <a class="next" href="/post/misc/share-article1/">
+            <span class="next-text nav-default">好文分享：我的前端职业进阶之路</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

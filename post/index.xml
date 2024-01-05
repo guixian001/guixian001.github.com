@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Guixian 的日常记录</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 30 Aug 2023 10:12:24 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 11:57:58 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小贤周刊第 6 期</title>
+      <link>https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
+      <pubDate>Fri, 29 Dec 2023 11:57:58 +0800</pubDate>
+      
+      <guid>https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
+      <description>技术相关 Python 之路 一位培训讲师关于 Python 的讲义。值得一看。 https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941 https://www.cnblogs.com/Eva-J/p/7277026.html epoll https://zhuanlan.zhihu.com/p/63179839 Redis 也支持全文搜索？这也太强了 简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用</description>
+    </item>
+    
     <item>
       <title>好文分享：我的前端职业进阶之路</title>
       <link>https://blog.chenguixian.com/post/misc/share-article1/</link>
