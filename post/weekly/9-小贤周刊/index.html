@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>小贤周刊第 8 期 - Guixian 的日常记录</title>
+  <title>小贤周刊第 9 期 - Guixian 的日常记录</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="技术相关 Kubernetes 学习路径 https://github.com/caicloud/kube-ladder 云原生Java架构师的第一课K8s&#43;Docker&#43;KubeSphere&#43;DevOps https://www.bilibili.com/video/BV13Q4y1C7hS REST API 的关键概念有哪些？ REST，全" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="Chen Guixian" /><meta name="description" content="技术相关 Kubernetes的Limits和Requests Kubernetes的Limits和Requests介绍 https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/ Postman压测和" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
-<link rel="canonical" href="https://blog.chenguixian.com/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" />
+<link rel="canonical" href="https://blog.chenguixian.com/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="小贤周刊第 8 期" />
-<meta property="og:description" content="技术相关 Kubernetes 学习路径 https://github.com/caicloud/kube-ladder 云原生Java架构师的第一课K8s&#43;Docker&#43;KubeSphere&#43;DevOps https://www.bilibili.com/video/BV13Q4y1C7hS REST API 的关键概念有哪些？ REST，全" />
+<meta property="og:title" content="小贤周刊第 9 期" />
+<meta property="og:description" content="技术相关 Kubernetes的Limits和Requests Kubernetes的Limits和Requests介绍 https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/ Postman压测和" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.chenguixian.com/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-01-12T11:57:58+08:00" />
-<meta property="article:modified_time" content="2024-01-12T11:57:58+08:00" />
+<meta property="og:url" content="https://blog.chenguixian.com/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-19T11:57:58+08:00" />
+<meta property="article:modified_time" content="2024-01-19T11:57:58+08:00" />
 
-<meta itemprop="name" content="小贤周刊第 8 期">
-<meta itemprop="description" content="技术相关 Kubernetes 学习路径 https://github.com/caicloud/kube-ladder 云原生Java架构师的第一课K8s&#43;Docker&#43;KubeSphere&#43;DevOps https://www.bilibili.com/video/BV13Q4y1C7hS REST API 的关键概念有哪些？ REST，全"><meta itemprop="datePublished" content="2024-01-12T11:57:58+08:00" />
-<meta itemprop="dateModified" content="2024-01-12T11:57:58+08:00" />
-<meta itemprop="wordCount" content="548">
+<meta itemprop="name" content="小贤周刊第 9 期">
+<meta itemprop="description" content="技术相关 Kubernetes的Limits和Requests Kubernetes的Limits和Requests介绍 https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/ Postman压测和"><meta itemprop="datePublished" content="2024-01-19T11:57:58+08:00" />
+<meta itemprop="dateModified" content="2024-01-19T11:57:58+08:00" />
+<meta itemprop="wordCount" content="157">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="小贤周刊第 8 期"/>
-<meta name="twitter:description" content="技术相关 Kubernetes 学习路径 https://github.com/caicloud/kube-ladder 云原生Java架构师的第一课K8s&#43;Docker&#43;KubeSphere&#43;DevOps https://www.bilibili.com/video/BV13Q4y1C7hS REST API 的关键概念有哪些？ REST，全"/>
+<meta name="twitter:title" content="小贤周刊第 9 期"/>
+<meta name="twitter:description" content="技术相关 Kubernetes的Limits和Requests Kubernetes的Limits和Requests介绍 https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/ Postman压测和"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -125,10 +125,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">小贤周刊第 8 期</h1>
+      <h1 class="post-title">小贤周刊第 9 期</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2024-01-12 </span>
+        <span class="post-time"> 2024-01-19 </span>
         <div class="post-category">
             <a href="/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/"> 小贤周刊 </a>
             </div>
@@ -145,19 +145,15 @@
       <ul>
         <li><a href="#技术相关">技术相关</a>
           <ul>
-            <li><a href="#kubernetes-学习路径">Kubernetes 学习路径</a></li>
-            <li><a href="#云原生java架构师的第一课k8sdockerkubespheredevops">云原生Java架构师的第一课K8s+Docker+KubeSphere+DevOps</a></li>
-            <li><a href="#rest-api-的关键概念有哪些">REST API 的关键概念有哪些？</a></li>
+            <li><a href="#kubernetes的limits和requests">Kubernetes的Limits和Requests</a></li>
+            <li><a href="#postman压测和jmeter压测的区别">Postman压测和JMeter压测的区别</a></li>
+            <li><a href="#kubernetes-tutorial-for-beginners">Kubernetes Tutorial for Beginners</a></li>
+            <li><a href="#hello-算法">Hello 算法</a></li>
           </ul>
         </li>
-        <li><a href="#图书">图书</a>
+        <li><a href="#随便看看">随便看看</a>
           <ul>
-            <li><a href="#左耳听风">左耳听风</a></li>
-          </ul>
-        </li>
-        <li><a href="#随便记记">随便记记</a>
-          <ul>
-            <li><a href="#如何学习一个开源项目">如何学习一个开源项目？</a></li>
+            <li><a href="#技术博客-shark-chili">技术博客 shark-chili</a></li>
           </ul>
         </li>
       </ul>
@@ -168,36 +164,23 @@
 </div>
     <div class="post-content">
       <h2 id="技术相关">技术相关</h2>
-<h3 id="kubernetes-学习路径">Kubernetes 学习路径</h3>
-<p><a href="https://github.com/caicloud/kube-ladder">https://github.com/caicloud/kube-ladder</a></p>
-<h3 id="云原生java架构师的第一课k8sdockerkubespheredevops">云原生Java架构师的第一课K8s+Docker+KubeSphere+DevOps</h3>
-<p><a href="https://www.bilibili.com/video/BV13Q4y1C7hS">https://www.bilibili.com/video/BV13Q4y1C7hS</a></p>
-<h3 id="rest-api-的关键概念有哪些">REST API 的关键概念有哪些？</h3>
-<p>REST，全称 Representational State Transfer (表现层状态转移)。它是一种软件架构风格，而不是标准，所以只提供了一组设计原则和约束条件。</p>
-<p>RESTful API 就是满足 REST 风格的 API。这里 RESTful是形容词。</p>
-<p><strong>REST 的六项原则</strong>是由 Roy Fielding 博士定义的，它们构成了 RESTful API 的基础。</p>
-<p><a href="https://mp.weixin.qq.com/s/lRLhXrVN2_-2wVLD4yJ8og">https://mp.weixin.qq.com/s/lRLhXrVN2_-2wVLD4yJ8og</a></p>
-<h2 id="图书">图书</h2>
-<h3 id="左耳听风">左耳听风</h3>
-<p>极客时间的专栏出版实体书。</p>
-<p>知名技术人陈皓生前文章精粹,既囊括程序员从起步到进阶直至迈向卓越的优选路径及实现方法，也覆盖工程师从开启职业生涯到走向管理岗位直至创办公司的能力突破与细节修炼，更完整描绘了作者其人的独特经历、个性主张、人生趣味与技术理念。</p>
-<h2 id="随便记记">随便记记</h2>
-<h3 id="如何学习一个开源项目">如何学习一个开源项目？</h3>
-<h4 id="第一阶段入门到熟悉此阶段自己是学生">第一阶段：入门到熟悉，此阶段自己是学生</h4>
-<ol>
-<li>先看官方文档，找到快速入门，来熟悉第1个例子，跑通流程</li>
-<li>然后针对自己感兴趣的章节，根据官方文档去用一用</li>
-</ol>
-<h4 id="第二阶段从熟悉到掌握此阶段自己是开发者">第二阶段：从熟悉到掌握，此阶段自己是开发者</h4>
-<ol>
-<li>阅读和理解其设计思想、理念、核心原理，自我梳理和总结相关流程</li>
-<li>同时根据文档、测试用例，了解相关核心功能，总结实践</li>
-</ol>
-<h4 id="第三阶段从掌握到更高级的此阶段自己是老师">第三阶段：从掌握到更高级的，此阶段自己是老师</h4>
-<ol>
-<li>阅读源码，输出核心设计思想、理念、源码设计流程，分析出值得学习的点</li>
-<li>基于源码做二开、或者基于源码做从0-1的手写，然后做创新</li>
-</ol>
+<h3 id="kubernetes的limits和requests">Kubernetes的Limits和Requests</h3>
+<p>Kubernetes的Limits和Requests介绍</p>
+<ul>
+<li><a href="https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests">https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests</a></li>
+<li><a href="https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/">https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/</a></li>
+</ul>
+<h3 id="postman压测和jmeter压测的区别">Postman压测和JMeter压测的区别</h3>
+<p><strong>JMeter</strong>/Postman/Apifox 的压测简单对比</p>
+<p><a href="https://apifox.com/apiskills/postman-jmeter-stresstest/?utm_source=google_dsa&amp;utm_medium=g&amp;utm_campaign=20543997484&amp;utm_content=156047449829&amp;utm_term=&amp;gad_source=1&amp;gclid=CjwKCAiAhJWsBhAaEiwAmrNyq6sPJs019sQDd3yNcR_sMq7B9VVnoXPWDvEJJgVKsZHAVaCDRjtjlxoCZ6MQAvD_BwE">Postman压测和JMeter压测的区别</a></p>
+<h3 id="kubernetes-tutorial-for-beginners">Kubernetes Tutorial for Beginners</h3>
+<p><a href="https://www.youtube.com/watch?v=X48VuDVv0do&amp;ab_channel=TechWorldwithNana">Kubernetes Tutorial for Beginners</a></p>
+<h3 id="hello-算法">Hello 算法</h3>
+<p>一本开源、免费、对新手友好的数据结构与算法入门教程</p>
+<p><a href="https://www.hello-algo.com/">https://www.hello-algo.com/</a></p>
+<h2 id="随便看看">随便看看</h2>
+<h3 id="技术博客-shark-chili">技术博客 shark-chili</h3>
+<p><a href="https://www.sharkchili.com/">https://www.sharkchili.com/</a></p>
 
     </div>
 
@@ -209,7 +192,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2024-01-12
+        2024-01-19
         
     </span>
   </p>
@@ -219,13 +202,9 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">小贤周刊第 9 期</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/">
-            <span class="next-text nav-default">小贤周刊第 7 期</span>
+        
+        <a class="next" href="/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/">
+            <span class="next-text nav-default">小贤周刊第 8 期</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
