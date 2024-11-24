@@ -16,14 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章 https://draveness.me/whys-the-design/ 如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="" /><meta name="description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章
+https://draveness.me/whys-the-design/
+如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表面的事件，到事件背后的规律，再到这个问题的结构模式，再到价值观，层层递进。在画完自己的业务系统因果回路图之后，再结合这个心智模型，思考自己的思考在哪个层次，是否可以有机会再下钻到更深的层次。
+" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.87.0 with theme even" />
+<meta name="generator" content="Hugo 0.134.3 with theme even" />
 
 
 <link rel="canonical" href="https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" />
@@ -39,20 +42,30 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="小贤周刊第 7 期" />
-<meta property="og:description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章 https://draveness.me/whys-the-design/ 如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-01-05T11:57:58+08:00" />
-<meta property="article:modified_time" content="2024-01-05T11:57:58+08:00" />
+<meta property="og:url" content="https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/">
+  <meta property="og:site_name" content="Guixian 的日常记录">
+  <meta property="og:title" content="小贤周刊第 7 期">
+  <meta property="og:description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章
+https://draveness.me/whys-the-design/
+如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表面的事件，到事件背后的规律，再到这个问题的结构模式，再到价值观，层层递进。在画完自己的业务系统因果回路图之后，再结合这个心智模型，思考自己的思考在哪个层次，是否可以有机会再下钻到更深的层次。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-01-05T11:57:58+08:00">
+    <meta property="article:modified_time" content="2024-01-05T11:57:58+08:00">
 
-<meta itemprop="name" content="小贤周刊第 7 期">
-<meta itemprop="description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章 https://draveness.me/whys-the-design/ 如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表"><meta itemprop="datePublished" content="2024-01-05T11:57:58+08:00" />
-<meta itemprop="dateModified" content="2024-01-05T11:57:58+08:00" />
-<meta itemprop="wordCount" content="680">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="小贤周刊第 7 期"/>
-<meta name="twitter:description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章 https://draveness.me/whys-the-design/ 如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表"/>
+  <meta itemprop="name" content="小贤周刊第 7 期">
+  <meta itemprop="description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章
+https://draveness.me/whys-the-design/
+如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表面的事件，到事件背后的规律，再到这个问题的结构模式，再到价值观，层层递进。在画完自己的业务系统因果回路图之后，再结合这个心智模型，思考自己的思考在哪个层次，是否可以有机会再下钻到更深的层次。">
+  <meta itemprop="datePublished" content="2024-01-05T11:57:58+08:00">
+  <meta itemprop="dateModified" content="2024-01-05T11:57:58+08:00">
+  <meta itemprop="wordCount" content="680">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="小贤周刊第 7 期">
+  <meta name="twitter:description" content="技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章
+https://draveness.me/whys-the-design/
+如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表面的事件，到事件背后的规律，再到这个问题的结构模式，再到价值观，层层递进。在画完自己的业务系统因果回路图之后，再结合这个心智模型，思考自己的思考在哪个层次，是否可以有机会再下钻到更深的层次。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -210,25 +223,25 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1. 美团技术团队
-2. 腾讯技术工程
-3. 哗哩哗哩技术团队
-4. vivo互联网技术
-5. 京东技术
-6. 阿里技术
-7. 阿里巴巴中间件
-8. Qunar技术沙龙
-9. eBay技术荟
-10. ThoughtWorks洞见
-11. 爱奇艺技术产品团队
-12. 小米信息部技术团队
-13. 360核心安全技术博客
-14. 伴鱼技术团队
-15. IBM Developer
-16. 有赞技术团队
-17. 滴滴技术团队
-18. 得物技术团队
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 美团技术团队
+</span></span><span class="line"><span class="cl">2. 腾讯技术工程
+</span></span><span class="line"><span class="cl">3. 哗哩哗哩技术团队
+</span></span><span class="line"><span class="cl">4. vivo互联网技术
+</span></span><span class="line"><span class="cl">5. 京东技术
+</span></span><span class="line"><span class="cl">6. 阿里技术
+</span></span><span class="line"><span class="cl">7. 阿里巴巴中间件
+</span></span><span class="line"><span class="cl">8. Qunar技术沙龙
+</span></span><span class="line"><span class="cl">9. eBay技术荟
+</span></span><span class="line"><span class="cl">10. ThoughtWorks洞见
+</span></span><span class="line"><span class="cl">11. 爱奇艺技术产品团队
+</span></span><span class="line"><span class="cl">12. 小米信息部技术团队
+</span></span><span class="line"><span class="cl">13. 360核心安全技术博客
+</span></span><span class="line"><span class="cl">14. 伴鱼技术团队
+</span></span><span class="line"><span class="cl">15. IBM Developer
+</span></span><span class="line"><span class="cl">16. 有赞技术团队
+</span></span><span class="line"><span class="cl">17. 滴滴技术团队
+</span></span><span class="line"><span class="cl">18. 得物技术团队
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="随便记记">随便记记</h2>
 <p>抛弃等靠要还意味着工作尽量不要给自己设边界，尽量在工作中展现自己，进而拿到更多机会，当然如果是在功劳和分配严重不均等，甚至做得多背锅越多的地方，这点就pass吧。</p>
@@ -239,7 +252,7 @@
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">Chen Guixian</span>
+    <span class="item-content"></span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -279,7 +292,7 @@
 
     <footer id="footer" class="footer">
       <div class="social-links">
-  <a href="https://blog.chenguixian.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -297,7 +310,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -314,19 +327,8 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-208225217-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

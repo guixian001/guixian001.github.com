@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.87.0 with theme even" />
+<meta name="generator" content="Hugo 0.134.3 with theme even" />
 
 
 <link rel="canonical" href="https://blog.chenguixian.com/" />
@@ -41,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Guixian 的日常记录" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.chenguixian.com/" />
+<meta property="og:url" content="https://blog.chenguixian.com/">
+  <meta property="og:site_name" content="Guixian 的日常记录">
+  <meta property="og:title" content="Guixian 的日常记录">
+  <meta property="og:description" content="Hugo theme even example site.">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
 
-<meta itemprop="name" content="Guixian 的日常记录">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Guixian 的日常记录"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+  <meta itemprop="name" content="Guixian 的日常记录">
+  <meta itemprop="description" content="Hugo theme even example site.">
+  <meta itemprop="datePublished" content="2024-01-19T11:57:58+08:00">
+  <meta itemprop="dateModified" content="2024-11-24T22:43:32+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Guixian 的日常记录">
+  <meta name="twitter:description" content="Hugo theme even example site.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,7 +138,151 @@
   
   <div class="post-content">
     <div class="post-summary">
-      [toc] 基础知识 优先使用异常捕获 一个简单函数 写一个简单的函数，它接收一个整数参数，返回对它加1后的结果。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+      <p>[toc]</p>
+<h2 id="基础知识">基础知识</h2>
+<h3 id="优先使用异常捕获">优先使用异常捕获</h3>
+<h4 id="一个简单函数">一个简单函数</h4>
+<p>写一个简单的函数，它接收一个整数参数，返回对它加1后的结果。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">incr_by_one</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;对输入整数加1，返回新的值
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param value: 整型，或者可以转成整型的字符串
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return: 整型结果
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to perform incr for value: &#34;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#34;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">incr_by_one</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;对输入整数加1，返回新的值
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param value: 整型，或者可以转成整型的字符串
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return: 整型结果
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to perform incr for value: &#34;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#34;, error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="两种编程风格">两种编程风格</h4>
+<ul>
+<li>LBLY（look befor you leap） 三思而后行</li>
+<li>EAFP（easier to ask for forgiveness than permission） 获取原谅比许可简单</li>
+</ul>
+<h4 id="小结">小结</h4>
+<ol>
+<li>Python 社区偏于使用基于异常捕获的 EAFP 风格</li>
+<li>代码更为精简，不需要开发者用分支完全覆盖各种可能出错的情况，只需要捕获可能发生的异常即可</li>
+<li>EAFP 的代码通常性能更好 如果是 &lsquo;73&rsquo; LBLY 每次调用都需要进行额外的 isinstance 和 isdigit 的判断。EAFP 每次调用直接进行转换，返回结果</li>
+<li>Python 的抛出和捕获异常比较轻量</li>
+</ol>
+<h3 id="try-语句常用知识">try 语句常用知识</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">safe_int</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;尝试把输入转换为整数&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 当某类异常被抛出时，将会执行对应 except 下的语句</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;type error: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s1"> is invalid&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 你可以在一个 try 语句块下写多个 except</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value error: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1"> is invalid&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># finally 里的语句，无论如何都会被执行，哪怕已经执行了return</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;function completed&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="把更精确的-except-放在前面">把更精确的 except 放在前面</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">incr_by_key</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span> <span class="err">➊</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unknown error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> does not exists&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">incr_by_key</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> does not exists&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unknown error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="使用-else-分支">使用 else 分支</h4>
+<p>在使用 try 捕获异常的时候，有时需要再仅一切正常的时候做某件事</p>
     </div>
     <div class="read-more">
       <a href="/post/python/python-craftman-exception/" class="read-more-link">阅读更多</a>
@@ -154,7 +303,256 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Mac 工具记录 Mac 使用技巧 图标 mac ⌘ command() ⌥ option/alt ⌃ control/ctrl ⇧ Shift ⇪ Caps Lock fn fn ⌫ Backspace ↵ Enter ↹ Tab 快捷键 command（⌘） 快捷键 描述 ⌘空格键 显示“聚焦”搜
+      <h2 id="mac-工具记录">Mac 工具记录</h2>
+<h3 id="mac-使用技巧">Mac 使用技巧</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">图标</th>
+          <th style="text-align: left">mac</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">⌘</td>
+          <td style="text-align: left">command()</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥</td>
+          <td style="text-align: left">option/alt</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃</td>
+          <td style="text-align: left">control/ctrl</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⇧</td>
+          <td style="text-align: left">Shift</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⇪</td>
+          <td style="text-align: left">Caps Lock</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">fn</td>
+          <td style="text-align: left">fn</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌫</td>
+          <td style="text-align: left">Backspace</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">↵</td>
+          <td style="text-align: left">Enter</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">↹</td>
+          <td style="text-align: left">Tab</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="快捷键">快捷键</h4>
+<h5 id="command">command（⌘）</h5>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">快捷键</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">⌘空格键</td>
+          <td style="text-align: left">显示“聚焦”搜索</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘C</td>
+          <td style="text-align: left">拷贝</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘V</td>
+          <td style="text-align: left">粘贴</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘A</td>
+          <td style="text-align: left">全选</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘X</td>
+          <td style="text-align: left">剪切文本</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘Z</td>
+          <td style="text-align: left">撤销</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘W</td>
+          <td style="text-align: left">关闭窗口</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘Q</td>
+          <td style="text-align: left">退出程序</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘↹</td>
+          <td style="text-align: left">程序切换器</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘F</td>
+          <td style="text-align: left">查找</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘D</td>
+          <td style="text-align: left">复制(生成一个副本)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘N</td>
+          <td style="text-align: left">新建访达窗口</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘H</td>
+          <td style="text-align: left">隐藏当前程序</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌘⌫</td>
+          <td style="text-align: left">删除到废纸篓</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="optioncommand">option+command（⌥⌘）</h5>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">快捷键</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">⌥⌘空格键</td>
+          <td style="text-align: left">显示“访达”搜索窗口</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘D</td>
+          <td style="text-align: left">打开或关闭程序坞</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘⌫</td>
+          <td style="text-align: left">彻底删除选中文件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘V</td>
+          <td style="text-align: left">剪切(先按拷贝快捷键)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘ ESC</td>
+          <td style="text-align: left">强制退出程序</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘8</td>
+          <td style="text-align: left">打开或关闭缩放</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘/</td>
+          <td style="text-align: left">打开或关闭平滑图像</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘-</td>
+          <td style="text-align: left">缩小</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⌘=</td>
+          <td style="text-align: left">放大</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="shiftcommand">shift+command（⇧⌘）</h5>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">快捷键</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">⇧⌘Z</td>
+          <td style="text-align: left">反撤销</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⇧⌘3</td>
+          <td style="text-align: left">将屏幕图片存储为文件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⇧⌘4</td>
+          <td style="text-align: left">将所选区域的图片存储为文件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⇧⌘5</td>
+          <td style="text-align: left">显示截图工具条</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃⇧⌘3</td>
+          <td style="text-align: left">将屏幕图片拷贝到剪贴板</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃⇧⌘4</td>
+          <td style="text-align: left">将所选区域的图片拷贝到剪贴板</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="其他">其他</h5>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">快捷键</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">空格键</td>
+          <td style="text-align: left">预览<br />在访达中对文件按下后，可以预览文件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">↵</td>
+          <td style="text-align: left">重命名文件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">F11</td>
+          <td style="text-align: left">显示桌面</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃←</td>
+          <td style="text-align: left">向左移动桌面</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃→</td>
+          <td style="text-align: left">向右移动桌面</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">fnQ</td>
+          <td style="text-align: left">快速备忘录(没看到效果)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌥⇧⌘V</td>
+          <td style="text-align: left">清除格式化粘贴</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃⌘F</td>
+          <td style="text-align: left">全屏幕/小屏幕切换</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">⌃空格键</td>
+          <td style="text-align: left">输入法切换</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="技巧">技巧</h4>
+<h5 id="常用">常用</h5>
+<ul>
+<li>
+<p>按住 <code>⌥</code> 点击上右菜单栏的控制中心图标可以快速进入或退出勿扰模式</p>
     </div>
     <div class="read-more">
       <a href="/post/tools/mac-tools/" class="read-more-link">阅读更多</a>
@@ -175,7 +573,8 @@
   
   <div class="post-content">
     <div class="post-summary">
-      TODO List 与笔记 使用 TODO List 类的工具可以较好的管理我们的计划事项，但是也会存在一个问题。当欧美原先做过类似的某一项工作，记不起来当时做了什么，有什么积
+      <h2 id="todo-list-与笔记">TODO List 与笔记</h2>
+<p>使用 TODO List 类的工具可以较好的管理我们的计划事项，但是也会存在一个问题。当欧美原先做过类似的某一项工作，记不起来当时做了什么，有什么积累。在工具上也只有标题和完成状态，对于其他实践经验，有可能都记不起来了。</p>
     </div>
     <div class="read-more">
       <a href="/post/tools/todo-flomo/" class="read-more-link">阅读更多</a>
@@ -194,7 +593,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      简单的 Go 入门教程 参考文档 https://jiajunhuang.com/tutorial/golang/index.md
+      <p>简单的 Go 入门教程</p>
+<p><img src="https://i.loli.net/2021/10/08/baIWtqV4RCoKw8k.png"></p>
+<h2 id="参考文档">参考文档</h2>
+<p><a href="https://jiajunhuang.com/tutorial/golang/index.md">https://jiajunhuang.com/tutorial/golang/index.md</a></p>
     </div>
     <div class="read-more">
       <a href="/post/go/go-basic/" class="read-more-link">阅读更多</a>
@@ -215,7 +617,231 @@
   
   <div class="post-content">
     <div class="post-summary">
-      /TheAlgorithms/Javascript url https://github.com/TheAlgorithms/Javascript 简介 A repository for All algorithms implemented in Javascript (for educational purposes only) star 数量 14152 /pedroslopez/whatsapp-web.js url https://github.com/pedroslopez/whatsapp-web.js 简介 A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app star 数量 3379 /chrisleekr/binance-trading-bot url https://github.com/chrisleekr/binance-trading-bot 简介 Automated Binance trading bot - Buy low/Sell high with stop loss limit/Trade multiple cryptocurrencies with Grid Trading star 数量 2961
+      <h2 id="thealgorithmsjavascript">/TheAlgorithms/Javascript</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/TheAlgorithms/Javascript">https://github.com/TheAlgorithms/Javascript</a></li>
+<li>简介
+A repository for All algorithms implemented in Javascript (for educational purposes only)</li>
+<li>star 数量
+14152</li>
+</ul>
+<h2 id="pedroslopezwhatsapp-webjs">/pedroslopez/whatsapp-web.js</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/pedroslopez/whatsapp-web.js">https://github.com/pedroslopez/whatsapp-web.js</a></li>
+<li>简介
+A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app</li>
+<li>star 数量
+3379</li>
+</ul>
+<h2 id="chrisleekrbinance-trading-bot">/chrisleekr/binance-trading-bot</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/chrisleekr/binance-trading-bot">https://github.com/chrisleekr/binance-trading-bot</a></li>
+<li>简介
+Automated Binance trading bot - Buy low/Sell high with stop loss limit/Trade multiple cryptocurrencies with Grid Trading</li>
+<li>star 数量
+2961</li>
+</ul>
+<h2 id="googlezx">/google/zx</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/google/zx">https://github.com/google/zx</a></li>
+<li>简介
+A tool for writing better scripts</li>
+<li>star 数量
+22855</li>
+</ul>
+<h2 id="anuraghazragithub-readme-stats">/anuraghazra/github-readme-stats</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/anuraghazra/github-readme-stats">https://github.com/anuraghazra/github-readme-stats</a></li>
+<li>简介
+⚡ Dynamically generated stats for your github readmes</li>
+<li>star 数量
+30661</li>
+</ul>
+<h2 id="openzeppelinopenzeppelin-contracts">/OpenZeppelin/openzeppelin-contracts</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/OpenZeppelin/openzeppelin-contracts">https://github.com/OpenZeppelin/openzeppelin-contracts</a></li>
+<li>简介
+OpenZeppelin Contracts is a library for secure smart contract development.</li>
+<li>star 数量
+12315</li>
+</ul>
+<h2 id="jgraphdrawio-desktop">/jgraph/drawio-desktop</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/jgraph/drawio-desktop">https://github.com/jgraph/drawio-desktop</a></li>
+<li>简介
+Official electron build of diagrams.net</li>
+<li>star 数量
+21703</li>
+</ul>
+<h2 id="lingdong-fishdraw">/LingDong-/fishdraw</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/LingDong-/fishdraw">https://github.com/LingDong-/fishdraw</a></li>
+<li>简介
+procedurally generated fish drawings</li>
+<li>star 数量
+1694</li>
+</ul>
+<h2 id="louislamuptime-kuma">/louislam/uptime-kuma</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/louislam/uptime-kuma">https://github.com/louislam/uptime-kuma</a></li>
+<li>简介
+A fancy self-hosted monitoring tool</li>
+<li>star 数量
+3343</li>
+</ul>
+<h2 id="yangshuntech-interview-handbook">/yangshun/tech-interview-handbook</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/yangshun/tech-interview-handbook">https://github.com/yangshun/tech-interview-handbook</a></li>
+<li>简介
+💯 Curated interview preparation materials for busy engineers</li>
+<li>star 数量
+58591</li>
+</ul>
+<h2 id="projectopenseaopensea-creatures">/ProjectOpenSea/opensea-creatures</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/ProjectOpenSea/opensea-creatures">https://github.com/ProjectOpenSea/opensea-creatures</a></li>
+<li>简介
+Example non-fungible collectible, to demonstrate OpenSea integration</li>
+<li>star 数量
+490</li>
+</ul>
+<h2 id="haehnchencrypto-trading-bot">/Haehnchen/crypto-trading-bot</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/Haehnchen/crypto-trading-bot">https://github.com/Haehnchen/crypto-trading-bot</a></li>
+<li>简介
+Cryptocurrency trading bot in javascript for Bitfinex, Bitmex, Binance, FTX, Bybit &hellip; (public edition)</li>
+<li>star 数量
+1794</li>
+</ul>
+<h2 id="ffmpegwasmffmpegwasm">/ffmpegwasm/ffmpeg.wasm</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/ffmpegwasm/ffmpeg.wasm">https://github.com/ffmpegwasm/ffmpeg.wasm</a></li>
+<li>简介
+FFmpeg for browser and node, powered by WebAssembly</li>
+<li>star 数量
+6056</li>
+</ul>
+<h2 id="narkozhacker-scripts">/NARKOZ/hacker-scripts</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/NARKOZ/hacker-scripts">https://github.com/NARKOZ/hacker-scripts</a></li>
+<li>简介
+Based on a true story</li>
+<li>star 数量
+42059</li>
+</ul>
+<h2 id="sudhanplayzdiscord-musicbot">/SudhanPlayz/Discord-MusicBot</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/SudhanPlayz/Discord-MusicBot">https://github.com/SudhanPlayz/Discord-MusicBot</a></li>
+<li>简介
+An advanced discord music bot, supports Spotify, Soundcloud, YouTube with Shuffling, Volume Control and Web Dashboard with Slash Commands support!</li>
+<li>star 数量
+829</li>
+</ul>
+<h2 id="ascodersweekly">/ascoders/weekly</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/ascoders/weekly">https://github.com/ascoders/weekly</a></li>
+<li>简介
+前端精读周刊。帮你理解最前沿、实用的技术。</li>
+<li>star 数量
+14483</li>
+</ul>
+<h2 id="asabeneh30-days-of-react">/Asabeneh/30-Days-Of-React</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/Asabeneh/30-Days-Of-React">https://github.com/Asabeneh/30-Days-Of-React</a></li>
+<li>简介
+30 Days of React challenge is a step by step guide to learn React in 30 days. It requires HTML, CSS, and JavaScript knowledge. You should be comfortable with JavaScript before you start to React. If you are not comfortable with JavaScript check out 30DaysOfJavaScript. This is a continuation of 30 Days Of JS. This challenge may take more than 100…</li>
+<li>star 数量
+8236</li>
+</ul>
+<h2 id="jely2002youtube-dl-gui">/jely2002/youtube-dl-gui</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/jely2002/youtube-dl-gui">https://github.com/jely2002/youtube-dl-gui</a></li>
+<li>简介
+A cross-platform GUI for youtube-dl made in Electron and node.js</li>
+<li>star 数量
+2245</li>
+</ul>
+<h2 id="khanhasspicetify-cli">/khanhas/spicetify-cli</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/khanhas/spicetify-cli">https://github.com/khanhas/spicetify-cli</a></li>
+<li>简介
+Commandline tool to customize Spotify client. Supports Windows, MacOS and Linux.</li>
+<li>star 数量
+8269</li>
+</ul>
+<h2 id="lecoupaawesome-cheatsheets">/LeCoupa/awesome-cheatsheets</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/LeCoupa/awesome-cheatsheets">https://github.com/LeCoupa/awesome-cheatsheets</a></li>
+<li>简介
+👩‍💻👨‍💻 Awesome cheatsheets for popular programming languages, frameworks and development tools. They include everything you should know in one single file.</li>
+<li>star 数量
+22520</li>
+</ul>
+<h2 id="asabeneh30-days-of-javascript">/Asabeneh/30-Days-Of-JavaScript</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/Asabeneh/30-Days-Of-JavaScript">https://github.com/Asabeneh/30-Days-Of-JavaScript</a></li>
+<li>简介
+30 days of JavaScript programming challenge is a step-by-step guide to learn JavaScript programming language in 30 days. This challenge may take more than 100 days, please just follow your own pace.</li>
+<li>star 数量
+9736</li>
+</ul>
+<h2 id="mgechevgoogle-interview-preparation-problems">/mgechev/google-interview-preparation-problems</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/mgechev/google-interview-preparation-problems">https://github.com/mgechev/google-interview-preparation-problems</a></li>
+<li>简介
+leetcode problems I solved to prepare for my Google interview.</li>
+<li>star 数量
+1711</li>
+</ul>
+<h2 id="larvalabscryptopunks">/larvalabs/cryptopunks</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/larvalabs/cryptopunks">https://github.com/larvalabs/cryptopunks</a></li>
+<li>简介
+Collectible 8-bit characters on the Ethereum blockchain.</li>
+<li>star 数量
+862</li>
+</ul>
+<h2 id="shufflewzcfaker2">/shufflewzc/faker2</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/shufflewzc/faker2">https://github.com/shufflewzc/faker2</a></li>
+<li>简介
+不知名大佬备份</li>
+<li>star 数量
+1621</li>
+</ul>
+<h2 id="atralicecursoprephenry">/atralice/Curso.Prep.Henry</h2>
+<ul>
+<li>url<br>
+<a href="https://github.com/atralice/Curso.Prep.Henry">https://github.com/atralice/Curso.Prep.Henry</a></li>
+<li>简介
+Curso de Preparación para Ingresar a Henry.</li>
+<li>star 数量
+467</li>
+</ul>
     </div>
     <div class="read-more">
       <a href="/post/js/hotest-js-repos-ins-september-2021/" class="read-more-link">阅读更多</a>
@@ -243,7 +869,8 @@
 
     <footer id="footer" class="footer">
       <div class="social-links">
-  <a href="https://blog.chenguixian.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+    
 </div>
 
 <div class="copyright">
@@ -261,7 +888,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -278,19 +905,8 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-208225217-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

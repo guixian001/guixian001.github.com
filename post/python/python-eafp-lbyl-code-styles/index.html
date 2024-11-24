@@ -16,14 +16,16 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="本文介绍两种编程风格 EAFP and LBYL。 EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="" /><meta name="description" content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。
+" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.87.0 with theme even" />
+<meta name="generator" content="Hugo 0.134.3 with theme even" />
 
 
 <link rel="canonical" href="https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/" />
@@ -39,20 +41,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Python EAFP LBYL 编程风格" />
-<meta property="og:description" content="本文介绍两种编程风格 EAFP and LBYL。 EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-18T16:03:25+08:00" />
-<meta property="article:modified_time" content="2023-01-18T16:03:25+08:00" />
+<meta property="og:url" content="https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/">
+  <meta property="og:site_name" content="Guixian 的日常记录">
+  <meta property="og:title" content="Python EAFP LBYL 编程风格">
+  <meta property="og:description" content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-01-18T16:03:25+08:00">
+    <meta property="article:modified_time" content="2023-01-18T16:03:25+08:00">
 
-<meta itemprop="name" content="Python EAFP LBYL 编程风格">
-<meta itemprop="description" content="本文介绍两种编程风格 EAFP and LBYL。 EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操"><meta itemprop="datePublished" content="2023-01-18T16:03:25+08:00" />
-<meta itemprop="dateModified" content="2023-01-18T16:03:25+08:00" />
-<meta itemprop="wordCount" content="1241">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python EAFP LBYL 编程风格"/>
-<meta name="twitter:description" content="本文介绍两种编程风格 EAFP and LBYL。 EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操"/>
+  <meta itemprop="name" content="Python EAFP LBYL 编程风格">
+  <meta itemprop="description" content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。">
+  <meta itemprop="datePublished" content="2023-01-18T16:03:25+08:00">
+  <meta itemprop="dateModified" content="2023-01-18T16:03:25+08:00">
+  <meta itemprop="wordCount" content="1240">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Python EAFP LBYL 编程风格">
+  <meta name="twitter:description" content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -170,13 +179,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type a positive integer (defaults to 1):&#34;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type a positive integer (defaults to 1):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>LBYL：Look Before You Leap，三思而后行。首先检查是否可以成功地进行某项操作，然后再进行操作。</p>
 <div class="highlight"><div class="chroma">
@@ -189,13 +198,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type a positive integer (defaults to 1):&#34;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type a positive integer (defaults to 1):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="使用-eafp-替代-lbyl">使用 EAFP 替代 LBYL</h2>
 <p>使用 EAFP 风格来编写代码有如下几点优势。</p>
@@ -212,14 +221,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;a&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What key do you want to access?&#34;</span><span class="p">)</span>
-<span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Cannot find key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;a&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What key do you want to access?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Cannot find key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这段逻辑两次访问了字典：第一次检查 key 是否存在，然后第二次获取该 key 的值。这就好比我们你打开一个盒子，看看里面是否有东西，然后关上它。然后，如果盒子不是空的，再打开它，取出里面的东西。</p>
 <p>EAFP 的风格代码如下：</p>
@@ -234,14 +243,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;a&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What key do you want to access?&#34;</span><span class="p">)</span>
-<span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Cannot find key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;a&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What key do you want to access?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Cannot find key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>另外 Python 官方提供了一个 dict.get 其实是与 EAFP 的思想一致的。当获取某一个 key 的值时，如果 key 不存在则使用一个默认值。</p>
 <h3 id="eafp-的执行效率更高">EAFP 的执行效率更高</h3>
@@ -265,28 +274,26 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; import timeit
-&gt;&gt;&gt; eafp = &#34;&#34;&#34;s = &#34;345&#34;
-... try:
-...     n = int(s)
-... except ValueError:
-...     n = 0&#34;&#34;&#34;
-&gt;&gt;&gt; timeit.timeit(eafp)
-0.1687019999999393
-
-
-&gt;&gt;&gt; lbyl = &#34;&#34;&#34;s = &#34;345&#34;
-... if s.isnumeric():
-...     n = int(s)
-... else:
-...     n = 0&#34;&#34;&#34;
-&gt;&gt;&gt; timeit.timeit(lbyl)
-0.30682630000001154
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; import timeit
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; eafp = &#34;&#34;&#34;s = &#34;345&#34;
+</span></span><span class="line"><span class="cl">... try:
+</span></span><span class="line"><span class="cl">...     n = int(s)
+</span></span><span class="line"><span class="cl">... except ValueError:
+</span></span><span class="line"><span class="cl">...     n = 0&#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; timeit.timeit(eafp)
+</span></span><span class="line"><span class="cl">0.1687019999999393
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; lbyl = &#34;&#34;&#34;s = &#34;345&#34;
+</span></span><span class="line"><span class="cl">... if s.isnumeric():
+</span></span><span class="line"><span class="cl">...     n = int(s)
+</span></span><span class="line"><span class="cl">... else:
+</span></span><span class="line"><span class="cl">...     n = 0&#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; timeit.timeit(lbyl)
+</span></span><span class="line"><span class="cl">0.30682630000001154
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>备注：这里本地测试，eafp 的方式稍稍快一些。</p>
 <div class="highlight"><div class="chroma">
@@ -297,11 +304,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; timeit.timeit(lbyl)
-0.13487599999999134
-&gt;&gt;&gt; timeit.timeit(eafp)
-0.10865979199999742
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; timeit.timeit(lbyl)
+</span></span><span class="line"><span class="cl">0.13487599999999134
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; timeit.timeit(eafp)
+</span></span><span class="line"><span class="cl">0.10865979199999742
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="lbyl-仍然可能失败">LBYL 仍然可能失败</h3>
 <p>在 LBYL 中，当你进行检查后，情况可能会发生变化，后续操作操作运行可能仍然会出错。</p>
@@ -319,17 +326,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pathlib</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What file should I read?&#34;</span><span class="p">)</span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="c1"># Do something with the contents.</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Woops, the file does not exist!&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pathlib</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What file should I read?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">filepath</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Do something with the contents.</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Woops, the file does not exist!&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果我们的系统比较复杂，比如有多个用户在使用或者有其他的一些脚本同时在进行一些逻辑，这里的代码检查完文件是否存在之后，在进行打开操作时，文件仍然可能已经不存在了。</p>
 <div class="highlight"><div class="chroma">
@@ -346,17 +353,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What file should I read?&#34;</span><span class="p">)</span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Woops, the file does not exist!&#34;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># Do something with the contents.</span>
-    <span class="k">pass</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;What file should I read?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">filepath</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Woops, the file does not exist!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Do something with the contents.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果使用 EAFP 方法，代码要么读取文件，要么不读取，两种情况都包括在内。</p>
 <h3 id="捕获多种类型的异常">捕获多种类型的异常</h3>
@@ -387,29 +394,29 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_inverse</span><span class="p">(</span><span class="n">num_str</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type an integer:&#34;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">get_inverse</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;I asked for an integer!&#34;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;0 has no inverse!&#34;</span><span class="p">)</span>
-    
-    
-<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type an integer:&#34;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">!=</span> <span class="s2">&#34;0&#34;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">get_inverse</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="k">elif</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;I asked for an integer!&#34;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;0 has no inverse!&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_inverse</span><span class="p">(</span><span class="n">num_str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type an integer:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">get_inverse</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;I asked for an integer!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;0 has no inverse!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Type an integer:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34; &gt;&gt; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">!=</span> <span class="s2">&#34;0&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">get_inverse</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;I asked for an integer!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;0 has no inverse!&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>EAFP 中，我们考虑用户可能输入的不是数字或者输入了 0。在 LBYL 中使用了 isnumeric 两次，isnumeric 并不适用于负数。而且如果用户输入了比如 &quot;  3&quot;、&ldquo;000&rdquo;，这个数字可以被 int 转换。但是 isnumeric 会返回 false。</p>
 <h2 id="结论">结论</h2>
@@ -423,7 +430,7 @@ EAFP 并不是在每一种情况下都是绝对最好的方法，但 EAFP 风格
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">Chen Guixian</span>
+    <span class="item-content"></span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -463,7 +470,7 @@ EAFP 并不是在每一种情况下都是绝对最好的方法，但 EAFP 风格
 
     <footer id="footer" class="footer">
       <div class="social-links">
-  <a href="https://blog.chenguixian.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -481,7 +488,7 @@ EAFP 并不是在每一种情况下都是绝对最好的方法，但 EAFP 风格
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -498,19 +505,8 @@ EAFP 并不是在每一种情况下都是绝对最好的方法，但 EAFP 风格
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-208225217-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

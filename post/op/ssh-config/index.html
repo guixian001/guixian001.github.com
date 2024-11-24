@@ -16,14 +16,15 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="" /><meta name="description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。当然我们也可以采用 alias 来简化某些场景下的使用。 本文主要是介绍在 ssh 配置文件中对不同服务器单独设置一些参数（比如端口、用户名）。
+" /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.87.0 with theme even" />
+<meta name="generator" content="Hugo 0.134.3 with theme even" />
 
 
 <link rel="canonical" href="https://blog.chenguixian.com/post/op/ssh-config/" />
@@ -39,20 +40,24 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="SSH 配置文件简单指南" />
-<meta property="og:description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.chenguixian.com/post/op/ssh-config/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-15T15:54:09+08:00" />
-<meta property="article:modified_time" content="2021-09-15T15:54:09+08:00" />
+<meta property="og:url" content="https://blog.chenguixian.com/post/op/ssh-config/">
+  <meta property="og:site_name" content="Guixian 的日常记录">
+  <meta property="og:title" content="SSH 配置文件简单指南">
+  <meta property="og:description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。当然我们也可以采用 alias 来简化某些场景下的使用。 本文主要是介绍在 ssh 配置文件中对不同服务器单独设置一些参数（比如端口、用户名）。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-09-15T15:54:09+08:00">
+    <meta property="article:modified_time" content="2021-09-15T15:54:09+08:00">
 
-<meta itemprop="name" content="SSH 配置文件简单指南">
-<meta itemprop="description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。"><meta itemprop="datePublished" content="2021-09-15T15:54:09+08:00" />
-<meta itemprop="dateModified" content="2021-09-15T15:54:09+08:00" />
-<meta itemprop="wordCount" content="1464">
-<meta itemprop="keywords" content="ssh," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="SSH 配置文件简单指南"/>
-<meta name="twitter:description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。"/>
+  <meta itemprop="name" content="SSH 配置文件简单指南">
+  <meta itemprop="description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。当然我们也可以采用 alias 来简化某些场景下的使用。 本文主要是介绍在 ssh 配置文件中对不同服务器单独设置一些参数（比如端口、用户名）。">
+  <meta itemprop="datePublished" content="2021-09-15T15:54:09+08:00">
+  <meta itemprop="dateModified" content="2021-09-15T15:54:09+08:00">
+  <meta itemprop="wordCount" content="1464">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SSH 配置文件简单指南">
+  <meta name="twitter:description" content="前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。当然我们也可以采用 alias 来简化某些场景下的使用。 本文主要是介绍在 ssh 配置文件中对不同服务器单独设置一些参数（比如端口、用户名）。">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -167,8 +172,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p ~/.ssh <span class="o">&amp;&amp;</span> chmod <span class="m">700</span> ~/.ssh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p ~/.ssh <span class="o">&amp;&amp;</span> chmod <span class="m">700</span> ~/.ssh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>默认情况下，<code>config</code> 配置可能不存在，所以同样可以自己手动创建一下：</p>
 <div class="highlight"><div class="chroma">
@@ -176,8 +181,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">touch ~/.ssh/config
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">touch ~/.ssh/config
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>该文件必须要是被用户可读可写的，但是不能被其他用户访问：</p>
 <div class="highlight"><div class="chroma">
@@ -185,8 +190,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">600</span> ~/.ssh/config
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">600</span> ~/.ssh/config
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="ssh-config-文件结构">SSH Config 文件结构</h2>
 <div class="highlight"><div class="chroma">
@@ -202,16 +207,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Host hostname1
-    SSH_OPTION value
-    SSH_OPTION value
-
-Host hostname2
-    SSH_OPTION value
-
-Host *
-    SSH_OPTION value
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host hostname1
+</span></span><span class="line"><span class="cl">    SSH_OPTION value
+</span></span><span class="line"><span class="cl">    SSH_OPTION value
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host hostname2
+</span></span><span class="line"><span class="cl">    SSH_OPTION value
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host *
+</span></span><span class="line"><span class="cl">    SSH_OPTION value
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>config</code> 的结构如上所示，是一块一块的。每一块使用 <code>Host</code> 指令开始，下面是针对其的一些特殊的设置。</p>
 <p>缩进其实不是必须的，但是有缩进非常有助于查看。</p>
@@ -232,8 +237,8 @@ ssh 配置通用会被其他应用使用，比如 scp/sftp/rsync。</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh john@dev.example.com -p <span class="m">2322</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh john@dev.example.com -p <span class="m">2322</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>那怎么简化我们的连接过程呢，可以在 config 文件里面写下如下配置：</p>
 <div class="highlight"><div class="chroma">
@@ -244,11 +249,11 @@ ssh 配置通用会被其他应用使用，比如 scp/sftp/rsync。</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Host dev
-    HostName dev.example.com
-    User john
-    Port 2322
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host dev
+</span></span><span class="line"><span class="cl">    HostName dev.example.com
+</span></span><span class="line"><span class="cl">    User john
+</span></span><span class="line"><span class="cl">    Port 2322
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样我们就可以通过输入 <code>ssh dev</code> 连接我们的主机了。</p>
 <div class="highlight"><div class="chroma">
@@ -256,8 +261,8 @@ ssh 配置通用会被其他应用使用，比如 scp/sftp/rsync。</p>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh dev
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh dev
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="ssh-配置组合">SSH 配置组合</h2>
 <p>下面介绍一个关于 Host 匹配和配置优先级更加详细的示例。</p>
@@ -286,28 +291,28 @@ ssh 配置通用会被其他应用使用，比如 scp/sftp/rsync。</p>
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Host targaryen
-    HostName 192.168.1.10
-    User daenerys
-    Port 7654
-    IdentityFile ~/.ssh/targaryen.key
-
-Host tyrell
-    HostName 192.168.10.20
-
-Host martell
-    HostName 192.168.10.50
-
-Host *ell
-    user oberyn
-
-Host * !martell
-    LogLevel INFO
-
-Host *
-    User root
-    Compression yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host targaryen
+</span></span><span class="line"><span class="cl">    HostName 192.168.1.10
+</span></span><span class="line"><span class="cl">    User daenerys
+</span></span><span class="line"><span class="cl">    Port 7654
+</span></span><span class="line"><span class="cl">    IdentityFile ~/.ssh/targaryen.key
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host tyrell
+</span></span><span class="line"><span class="cl">    HostName 192.168.10.20
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host martell
+</span></span><span class="line"><span class="cl">    HostName 192.168.10.50
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host *ell
+</span></span><span class="line"><span class="cl">    user oberyn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host * !martell
+</span></span><span class="line"><span class="cl">    LogLevel INFO
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host *
+</span></span><span class="line"><span class="cl">    User root
+</span></span><span class="line"><span class="cl">    Compression yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>当我们使用 <code>ssh targaryen</code> 进行连接时。ssh 客户端从文件读取配置，使用第一个配置组的配置 <code>Host targaryen</code>。然后继续向下匹配。下一个匹配的配置组是 <code>Host * !martell</code> (所有的 hosts 但是 martell 除外)，因此该配置组内的配置项通用会被使用。最后一个配置组 <code>Host *</code> 通用被匹配上，但是这里面只有 <code>Compression</code> 配置参数会被使用上。因为 <code>User</code> 这个参数在第一个配置组 <code>Host targaryen</code> 里面已经定义了（注意优先级）。
@@ -323,13 +328,13 @@ Host *
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">HostName 192.168.1.10
-User daenerys
-Port 7654
-IdentityFile ~/.ssh/targaryen.key
-LogLevel INFO
-Compression yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HostName 192.168.1.10
+</span></span><span class="line"><span class="cl">User daenerys
+</span></span><span class="line"><span class="cl">Port 7654
+</span></span><span class="line"><span class="cl">IdentityFile ~/.ssh/targaryen.key
+</span></span><span class="line"><span class="cl">LogLevel INFO
+</span></span><span class="line"><span class="cl">Compression yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>当使用 <code>ssh tyrell</code> 连接时，匹配到的配置组有：<code>Host tyrell</code>/<code>Host *ell</code>/<code>Host * !martell</code> 和 <code>Host *</code>。实际进行连接的配置如下：</li>
@@ -342,11 +347,11 @@ Compression yes
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">HostName 192.168.10.20
-User oberyn
-LogLevel INFO
-Compression yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HostName 192.168.10.20
+</span></span><span class="line"><span class="cl">User oberyn
+</span></span><span class="line"><span class="cl">LogLevel INFO
+</span></span><span class="line"><span class="cl">Compression yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>当使用 <code>ssh martell</code>, 匹配到的是: <code>Host martell</code>, <code>Host *ell</code> 和 <code>Host *</code>。 实际进行连接的配置如下：:</li>
@@ -358,10 +363,10 @@ Compression yes
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">HostName 192.168.10.50
-User oberyn
-Compression yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HostName 192.168.10.50
+</span></span><span class="line"><span class="cl">User oberyn
+</span></span><span class="line"><span class="cl">Compression yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>对于其他所有的连接，ssh 客户端会使用到  <code>Host * !martell</code> 和 <code>Host *</code> 配置组里面定义的配置。</li>
@@ -382,11 +387,11 @@ Compression yes
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Host dev
-    HostName dev.example.com
-    User john
-    Port 2322
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host dev
+</span></span><span class="line"><span class="cl">    HostName dev.example.com
+</span></span><span class="line"><span class="cl">    User john
+</span></span><span class="line"><span class="cl">    Port 2322
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但是我们想在连接的时候使用 root 用户，那我们就可以加上 <code>-o</code> 进行指定：</p>
 <div class="highlight"><div class="chroma">
@@ -394,8 +399,8 @@ Compression yes
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh -o <span class="s2">&#34;User=root&#34;</span> dev
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -o <span class="s2">&#34;User=root&#34;</span> dev
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>另外也可以使用 <code>-F (configfile)</code> 来单独指定一个配置文件。
 如果在连接时想忽略任何配置文件里面定义的配置可以使用如下命令：</p>
@@ -404,8 +409,8 @@ Compression yes
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh -F /dev/null user@example.com
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -F /dev/null user@example.com
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="总结">总结</h2>
 <p>本文展示了 ssh 配置文件相关的一些简单使用场景。</p>
@@ -417,7 +422,7 @@ Compression yes
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">Chen Guixian</span>
+    <span class="item-content"></span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -459,7 +464,7 @@ Compression yes
 
     <footer id="footer" class="footer">
       <div class="social-links">
-  <a href="https://blog.chenguixian.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  
 </div>
 
 <div class="copyright">
@@ -477,7 +482,7 @@ Compression yes
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -494,19 +499,8 @@ Compression yes
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-208225217-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

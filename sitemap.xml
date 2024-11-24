@@ -2,29 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.chenguixian.com/categories/</loc>
-    <lastmod>2024-01-19T11:57:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/</loc>
-    <lastmod>2024-01-19T11:57:58+08:00</lastmod>
+    <lastmod>2024-11-24T22:43:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.chenguixian.com/post/</loc>
-    <lastmod>2024-01-19T11:57:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</loc>
-    <lastmod>2024-01-19T11:57:58+08:00</lastmod>
+    <lastmod>2024-11-24T22:43:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -72,21 +58,7 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/tags/debian/</loc>
-    <lastmod>2023-07-12T21:31:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/op/debian-version/</loc>
-    <lastmod>2023-07-12T21:31:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/</loc>
     <lastmod>2023-07-12T21:31:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -101,13 +73,6 @@
   
   <url>
     <loc>https://blog.chenguixian.com/post/op/mysql-slowlog/</loc>
-    <lastmod>2023-06-15T21:31:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/%E5%BC%95%E7%94%A8/</loc>
     <lastmod>2023-06-15T21:31:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -137,13 +102,6 @@
   <url>
     <loc>https://blog.chenguixian.com/post/weekly/2-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</loc>
     <lastmod>2023-05-06T11:57:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/python/</loc>
-    <lastmod>2023-04-24T19:10:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -205,28 +163,7 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/categories/python%E5%B7%A5%E5%8C%A0/</loc>
-    <lastmod>2022-11-18T18:08:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/mac/</loc>
-    <lastmod>2022-07-21T21:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/tools/mac-tools/</loc>
-    <lastmod>2022-07-21T21:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/categories/tool/</loc>
     <lastmod>2022-07-21T21:53:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -254,21 +191,7 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/categories/github-javascript/</loc>
-    <lastmod>2021-09-18T16:48:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</loc>
-    <lastmod>2021-09-18T16:43:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/categories/github-python/</loc>
     <lastmod>2021-09-18T16:43:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -282,13 +205,6 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/categories/github-golang/</loc>
-    <lastmod>2021-09-18T16:28:04+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/js/clean-code-js/</loc>
     <lastmod>2021-09-18T10:36:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -296,29 +212,8 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/tags/ssh/</loc>
-    <lastmod>2021-09-15T15:54:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/op/ssh-config/</loc>
     <lastmod>2021-09-15T15:54:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/javascript/</loc>
-    <lastmod>2021-09-14T20:16:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/categories/javascript/</loc>
-    <lastmod>2021-09-14T20:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -339,14 +234,7 @@
   
   <url>
     <loc>https://blog.chenguixian.com/post/hugo-blog/</loc>
-    <lastmod>2022-11-28T22:43:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/picgo/</loc>
-    <lastmod>2021-08-27T00:06:22+08:00</lastmod>
+    <lastmod>2024-11-24T22:43:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -359,21 +247,7 @@
   </url>
   
   <url>
-    <loc>https://blog.chenguixian.com/tags/iterm2/</loc>
-    <lastmod>2021-08-25T21:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.chenguixian.com/post/tools/iterm2-clashx/</loc>
-    <lastmod>2021-08-25T21:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.chenguixian.com/tags/proxy/</loc>
     <lastmod>2021-08-25T21:53:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -389,6 +263,12 @@
   <url>
     <loc>https://blog.chenguixian.com/post/arts/</loc>
     <lastmod>2021-08-25T00:07:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.chenguixian.com/chen-guixian/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

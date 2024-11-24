@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.87.0 with theme even" />
+<meta name="generator" content="Hugo 0.134.3 with theme even" />
 
 
 <link rel="canonical" href="https://blog.chenguixian.com/" />
@@ -41,15 +41,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Guixian 的日常记录" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.chenguixian.com/" />
+<meta property="og:url" content="https://blog.chenguixian.com/">
+  <meta property="og:site_name" content="Guixian 的日常记录">
+  <meta property="og:title" content="Guixian 的日常记录">
+  <meta property="og:description" content="Hugo theme even example site.">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="website">
 
-<meta itemprop="name" content="Guixian 的日常记录">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Guixian 的日常记录"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+  <meta itemprop="name" content="Guixian 的日常记录">
+  <meta itemprop="description" content="Hugo theme even example site.">
+  <meta itemprop="datePublished" content="2024-01-19T11:57:58+08:00">
+  <meta itemprop="dateModified" content="2024-11-24T22:43:32+08:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Guixian 的日常记录">
+  <meta name="twitter:description" content="Hugo theme even example site.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,7 +136,24 @@
   
   <div class="post-content">
     <div class="post-summary">
-      安装 App 安装应用可以有如下途径 HomeBrew 安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 homebrew-cask — Homebrew Formulae 里找有没有，Cli 工具可以在 homebrew-core — Homebrew Formulae 找有没有。 安装 homebrew 1 /bin/bash -c &#34;$(curl -fsSL
+      <h2 id="安装-app">安装 App</h2>
+<p>安装应用可以有如下途径</p>
+<h3 id="homebrew">HomeBrew</h3>
+<p>安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 <a href="https://formulae.brew.sh/cask/">homebrew-cask — Homebrew Formulae</a> 里找有没有，Cli 工具可以在 <a href="https://formulae.brew.sh/formula/">homebrew-core — Homebrew Formulae</a> 找有没有。</p>
+<ol>
+<li>
+<p>安装 homebrew</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装软件包：在终端中输入 <code>brew install &lt;package&gt;</code> 命令安装需要的软件包。例如，要安装 wget，可以输入 <code>brew install wget</code>，如果要安装的软件包已经安装过了，则会提示已经安装。</p>
     </div>
     <div class="read-more">
       <a href="/post/tools/mac-cofig/" class="read-more-link">阅读更多</a>
@@ -150,7 +172,49 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Debian 的版本 Debian各个发行版及其代号： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 Debian 1.1 - Buzz Debian 1.2 - Rex Debian 1.3 - Bo Debian 2.0 - Hamm Debian 2.1 - Slink Debian 2.2 - Potato Debian 3.0 - Woody Debian 3.1 - Sarge Debian
+      <h2 id="debian-的版本">Debian 的版本</h2>
+<p>Debian各个发行版及其代号：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Debian 1.1 - Buzz
+</span></span><span class="line"><span class="cl">Debian 1.2 - Rex
+</span></span><span class="line"><span class="cl">Debian 1.3 - Bo
+</span></span><span class="line"><span class="cl">Debian 2.0 - Hamm
+</span></span><span class="line"><span class="cl">Debian 2.1 - Slink
+</span></span><span class="line"><span class="cl">Debian 2.2 - Potato
+</span></span><span class="line"><span class="cl">Debian 3.0 - Woody
+</span></span><span class="line"><span class="cl">Debian 3.1 - Sarge
+</span></span><span class="line"><span class="cl">Debian 4.0 - Etch
+</span></span><span class="line"><span class="cl">Debian 5.0 - Lenny
+</span></span><span class="line"><span class="cl">Debian 6.0 - Squeeze
+</span></span><span class="line"><span class="cl">Debian 7.0 - Wheezy
+</span></span><span class="line"><span class="cl">Debian 8.0 - Jessie
+</span></span><span class="line"><span class="cl">Debian 9.0 - Stretch
+</span></span><span class="line"><span class="cl">Debian 10 - Buster
+</span></span><span class="line"><span class="cl">Debian 11 - Bullseye
+</span></span><span class="line"><span class="cl">Debian 12 - Bookworm (尚未发布)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>每个版本都有一个代号，代号通常是以一个卡通人物的名字命名，例如Squeeze是以Toy Story中的角色命名的。这些代号通常是从Debian开发团队中选出来的，旨在使每个版本都有一个独特的标识符。</p>
     </div>
     <div class="read-more">
       <a href="/post/op/debian-version/" class="read-more-link">阅读更多</a>
@@ -169,7 +233,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      在实际工作中，我们经常需要通过跳板主机来访问目标主机。这时候，如果我们使用 SSH 进行远程连接，就需要在本地计算机上使用 ssh-agent 来实现跳板登录。下面，本
+      <p>在实际工作中，我们经常需要通过跳板主机来访问目标主机。这时候，如果我们使用 SSH 进行远程连接，就需要在本地计算机上使用 ssh-agent 来实现跳板登录。下面，本文将介绍如何使用 ssh-agent 实现跳板登录。</p>
     </div>
     <div class="read-more">
       <a href="/post/op/ssh-agent-forwarding/" class="read-more-link">阅读更多</a>
@@ -188,7 +252,8 @@
   
   <div class="post-content">
     <div class="post-summary">
-      在日常工作中，不少研发人员会因为 “慢日志” 头疼不已，“慢日志”造成的数据库性能问题（比如锁等待、并发访问资源消耗等）绝对占据数据库性能问题的
+      <blockquote>
+<p>在日常工作中，不少研发人员会因为 “慢日志” 头疼不已，“慢日志”造成的数据库性能问题（比如锁等待、并发访问资源消耗等）绝对占据数据库性能问题的 TOP 1，如果你用不合理的优化方法，比如添加不合理的索引、被动进行优化等，效率很低，所以除了要重视慢日志之外，更要有一个合理的优化方法，不让问题积少成多。</p>
     </div>
     <div class="read-more">
       <a href="/post/op/mysql-slowlog/" class="read-more-link">阅读更多</a>
@@ -209,7 +274,9 @@
   
   <div class="post-content">
     <div class="post-summary">
-      技术相关 MySQL 权限 MySQL 中存在4个控制权限的表，分别为user表，db表，tables_priv表，columns_priv表。MySQL的权限级别
+      <h2 id="技术相关">技术相关</h2>
+<h3 id="mysql-权限">MySQL 权限</h3>
+<p>MySQL 中存在4个控制权限的表，<code>分别为user表，db表，tables_priv表，columns_priv表</code>。MySQL的权限级别分为如下：</p>
     </div>
     <div class="read-more">
       <a href="/post/weekly/5-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/" class="read-more-link">阅读更多</a>
@@ -237,7 +304,8 @@
 
     <footer id="footer" class="footer">
       <div class="social-links">
-  <a href="https://blog.chenguixian.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+    
 </div>
 
 <div class="copyright">
@@ -255,7 +323,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 
@@ -272,19 +340,8 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-208225217-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
