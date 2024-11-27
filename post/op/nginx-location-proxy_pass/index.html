@@ -264,7 +264,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Nginx 会首先会检查多个location中是否有普通的uri匹配，如果有多个匹配，会先记住匹配度最高的那个。然后再检查正则匹配，这里正则匹配是有顺序的，从上到下依次匹配，一旦匹配成功，则结束检查，并就会使用这个location 块处理此请求。如果正则匹配全部失败，就会使用刚才记录普通uri匹配度最高的那个location块处理此请求。</p>
-<p><img alt="image-20210906204511696" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/image-20210906204511696-9acd84.png"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/image-20210906204511696-9acd84.png"></p>
 <h3 id="示例">示例</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

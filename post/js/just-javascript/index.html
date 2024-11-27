@@ -277,7 +277,7 @@
 <p>在「快」模式下，我们基于命名、注释、整体结构来猜想一段代码的用途。在「慢」模式下，我们一步步地追溯代码的运作方式。</p>
 <h2 id="javascript-宇宙">JavaScript 宇宙</h2>
 <h3 id="代码与值code-and-values">代码与值（Code and Values）</h3>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/Ua3fe9baa286e4b9fbf5c2e2c17c81f9ea-778364.jpg"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/Ua3fe9baa286e4b9fbf5c2e2c17c81f9ea-778364.jpg"></p>
 <h4 id="原始值primitive-values">原始值（Primitive Values）</h4>
 <p><strong>原始值（Primitive Values）</strong> 就是数字（number）或者字符串（string）等等。所有原始值都有一些共同点。<strong>我的代码无法影响他们</strong>（指原始值是 immutable）。在宇宙星球中坐着比喻为星星一样，无情二遥远，但是当我们需要时，它们总是会在那里。</p>
 <h4 id="对象和函数objects-and-functions">对象和函数（Objects and Functions）</h4>
@@ -297,7 +297,7 @@
 </div><p>显示它们的方式与原始值不同。某些浏览器会在他们之前显示一个箭头，或者在单击它们的时候展现地很特别。与原始值不同的是对象和函数就像是漂浮在我们代码附件的石块（原始值像是星星）。它们更加近 ，我们可以操纵它们。</p>
 <h3 id="表达式expressions">表达式（Expressions）</h3>
 <p>我们可以使用表达式来提问，JavaScript 将用值来回答，比如 <code>2+2</code> 将被用 4 来回答。（<strong>不知道这里提这个是什么含义？</strong>）</p>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U3f670615a3f3419795928c14cdedd5f0U-8d5fd8.gif"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/U3f670615a3f3419795928c14cdedd5f0U-8d5fd8.gif"></p>
 <h3 id="值的类型types-of-values">值的类型（Types of Values）</h3>
 <p>可以使用 <code>typeof</code>来检查一个值的类型。</p>
 <h4 id="原始值primitive-values-1">原始值（Primitive Values）</h4>
@@ -399,9 +399,9 @@
 <p>在我的宇宙中，一个变量是一根电线。它有两个端点，并且有一条方向：从我代码中的一个命名出发，最终指向我宇宙中的某个值。</p>
 </blockquote>
 <p>比如把变量 <code>pet</code>指向<code>Narwhal</code></p>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U5c2f25202f46488d946a5a77c295cd18I-b6adaa.png"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/U5c2f25202f46488d946a5a77c295cd18I-b6adaa.png"></p>
 <h4 id="给变量赋值assigning-a-value-to-a-variable">给变量赋值（Assigning a Value to a Variable）</h4>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U9da5a210fe564841b959c6579f5adbf1p-7611e4.png"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/U9da5a210fe564841b959c6579f5adbf1p-7611e4.png"></p>
 <blockquote>
 <p>我在这里所做的只是告诉 JavaScript 把左侧的「电线」（即变量 <code>pet</code>）指向右侧的值（即 <code>&quot;The Kraken&quot;</code>）。除非我之后再重新赋值，否则它将一直指向该值。</p>
 </blockquote>
@@ -507,7 +507,7 @@
 <p>为什么需要同时有 <code>null</code> 和 <code>undefined</code> 呢？因为这可以帮你把「（可能导致 <code>undefined</code> 的）编码错误」和「（可能被你表示为 <code>null</code>）的缺失数据」区分开。然而，这只是一个约定，JavaScript 并不会强制这种用法。</p>
 <h3 id="布尔值booleans">布尔值（Booleans）</h3>
 <p><strong>布尔值只有两个：<code>true</code> 和 <code>false</code></strong>。</p>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U819c36c356b14a1ba13849ef48d32132Q-bee1b0.jpg"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/U819c36c356b14a1ba13849ef48d32132Q-bee1b0.jpg"></p>
 <h3 id="数字numbers">数字（Numbers）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -535,7 +535,7 @@
 </div><p><code>0.1</code> 和 <code>0.2</code> 都是被「四舍五入」到最接近的可用数字。而四舍五入的错误会不断累积，因此将它们相加并不能得出 <code>0.3</code>。</p>
 <h4 id="浮动小数点floating-decimal-point">浮动小数点（Floating Decimal Point）</h4>
 <p>浮点数学运算的另一个有趣方面是，数字的精度是「浮动的」，它取决于数字的大小。我们离 <code>0</code> 越近，数字的精度就越大，数字之间「挨」得也越近：</p>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/Ueffe192d60f24a35a353b6e21370ef46b-471a9d.gif"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/Ueffe192d60f24a35a353b6e21370ef46b-471a9d.gif"></p>
 <p>当我们从 <code>0</code> 开始向任一方向移动时，我们便开始丢失精度。在某个时刻，即便是两个紧挨着的数字也会相差得比 <code>1</code> 还要远：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -659,7 +659,7 @@
 </span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">donkey</span> <span class="o">=</span> <span class="p">{};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U59e0b47af9e14371b759ba5f21afd510d-186fcd.jpg"></p>
+</div><p><img src="https://static.chenguixian.com/image/2024/11/U59e0b47af9e14371b759ba5f21afd510d-186fcd.jpg"></p>
 <h4 id="对象会消失吗do-objects-disappear">对象会消失吗？（Do Objects Disappear?）</h4>
 <p>JS 自带垃圾回收机制，当我们的代码中没有值相关的引用时，这些值可能会消失。</p>
 <h3 id="函数functions">函数（Functions）</h3>
@@ -683,7 +683,7 @@
 </div>
 </div><p>这段代码有几个函数。7 个。</p>
 <p><strong>每当我们执行一行包含函数声明的代码时，一个全新的函数值在我们的宇宙中出现了。</strong></p>
-<p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U23ffdb3989d54558a7dbb9ed33aec0e42-2c10f8.gif"></p>
+<p><img src="https://static.chenguixian.com/image/2024/11/U23ffdb3989d54558a7dbb9ed33aec0e42-2c10f8.gif"></p>
 <p>每当我们执行像 <code>let dwarf = {}</code> 的代码时，一个全新的对象是如何出现的。我们<em>创建</em>对象，我们也<em>创建</em>函数。</p>
 <h3 id="测试">测试</h3>
 <p>下面代码运行后的变量和值的示意图。<strong>图 B 正确</strong></p>
@@ -699,7 +699,7 @@
 </span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">gnocchi</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img alt="img" src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/U21189993d05b4d0fb7b609cdb6bd126f9-5eb29c.png"></p>
+</div><p><img src="https://static.chenguixian.com/image/2024/11/U21189993d05b4d0fb7b609cdb6bd126f9-5eb29c.png"></p>
 <h2 id="参考资料">参考资料</h2>
 <p><a href="https://songkeys.github.io/categories/JavaScript/">https://songkeys.github.io/categories/JavaScript/</a></p>
 
