@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="" /><meta name="description" content="Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明
+<meta name="author" content="Chen Guixian" /><meta name="description" content="Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明
 语法 1 2 3 4 Syntax:	location [ = | ~ | ~* | ^~ ] uri { ... } location @name { ... } Default:	— Context:	server, location 匹配命令 参数/修饰符 说明 空 location 后没有参数直接跟着 标准 URI，表示前缀匹配，代表跟请求中的 URI 从头开始匹配。 = 精确匹配，用于标准 URI 前，要求请求字符串与其精准匹配，成功则立即处理，Nginx 停止搜索其他匹配。 ~ 用于正则 URI 前，表示 URI 包含正则表达式， 区分大小写 ~* 用于正则 URI 前， 表示 URI 包含正则表达式， 不区分大小写 ^~ 用于标准 URI 前，最长非正则匹配，并要求一旦匹配到就会立即处理，不再去匹配其他的。 @ @ 定义一个命名的 location，@ 定义的locaiton名字一般用在内部定向，例如error_page, try_files命令中。它的功能类似于编程中的goto。 / 通用匹配, 如果没有其它匹配,任何请求都会匹配到 匹配顺序 To find location matching a given request, nginx first checks locations defined using the prefix strings (prefix locations). Among them, the location with the longest matching prefix is selected and remembered. Then regular expressions are checked, in the order of their appearance in the configuration file. The search of regular expressions terminates on the first match, and the corresponding configuration is used. If no match with a regular expression is found then the configuration of the prefix location remembered earlier is used.
 " /><meta name="keywords" content="nginx, location, proxy" />
 
@@ -536,7 +536,7 @@
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content"></span>
+    <span class="item-content">Chen Guixian</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -594,7 +594,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
   </span>
 </div>
 

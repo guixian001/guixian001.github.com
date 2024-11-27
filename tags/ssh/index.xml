@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssh on Guixian 的日常记录</title>
+    <title>Ssh on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/tags/ssh/</link>
-    <description>Recent content in ssh on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ssh on Guixian 的日常记录</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 15 Sep 2021 15:54:09 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Sep 2021 15:54:09 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSH 配置文件简单指南</title>
       <link>https://blog.chenguixian.com/post/op/ssh-config/</link>
       <pubDate>Wed, 15 Sep 2021 15:54:09 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/op/ssh-config/</guid>
-      <description>前言 如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。当然我们也可以采用 alias 来简化某些场景下的使用。&#xA;本文主要是介绍在 ssh 配置文件中对不同服务器单独设置一些参数（比如端口、用户名）。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

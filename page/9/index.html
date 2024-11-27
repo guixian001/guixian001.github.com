@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chen Guixian" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
+<meta name="author" content="" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="程序员的日常记录, 编码人生, 生活笔记" />
 
 
 
@@ -125,83 +125,6 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/op/nginx-location-proxy_pass/">Nginx location 和 proxy_pass </a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-03 </span>
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h2 id="location">Location</h2>
-<p>Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。<a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">loacation 官方说明</a></p>
-<h3 id="语法">语法</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Syntax:	location [ = | ~ | ~* | ^~ ] uri { ... }
-</span></span><span class="line"><span class="cl">location @name { ... }
-</span></span><span class="line"><span class="cl">Default:	—
-</span></span><span class="line"><span class="cl">Context:	server, location
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="匹配命令">匹配命令</h3>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">参数/修饰符</th>
-          <th style="text-align: left">说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">空</td>
-          <td style="text-align: left">location 后没有参数直接跟着 <strong>标准 URI</strong>，表示前缀匹配，代表跟请求中的 URI 从头开始匹配。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">=</td>
-          <td style="text-align: left">精确匹配，用于<strong>标准 URI</strong> 前，要求请求字符串与其精准匹配，成功则立即处理，Nginx 停止搜索其他匹配。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">~</td>
-          <td style="text-align: left">用于<strong>正则 URI</strong> 前，表示 URI 包含正则表达式， <strong>区分</strong>大小写</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">~*</td>
-          <td style="text-align: left">用于<strong>正则 URI</strong> 前， 表示 URI 包含正则表达式， <strong>不区分</strong>大小写</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">^~</td>
-          <td style="text-align: left">用于<strong>标准 URI</strong> 前，最长非正则匹配，并要求一旦匹配到就会立即处理，不再去匹配其他的。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">@</td>
-          <td style="text-align: left">@ 定义一个命名的 location，@ 定义的locaiton名字一般用在内部定向，例如error_page, try_files命令中。它的功能类似于编程中的goto。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">/</td>
-          <td style="text-align: left">通用匹配, 如果没有其它匹配,任何请求都会匹配到</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="匹配顺序">匹配顺序</h3>
-<blockquote>
-<p>To find location matching a given request, nginx first checks locations defined using the prefix strings (prefix locations). Among them, the location with the longest matching prefix is selected and remembered. Then regular expressions are checked, in the order of their appearance in the configuration file. The search of regular expressions terminates on the first match, and the corresponding configuration is used. If no match with a regular expression is found then the configuration of the prefix location remembered earlier is used.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/op/nginx-location-proxy_pass/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/hugo-blog/">使用 hugo 搭建 blog</a></h1>
@@ -466,17 +389,37 @@
   </div>
 </article>
 
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/arts/">什么是 ARTS 打卡计划？</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-08-25 </span>
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<p>每周至少做一个 Leetcode 的算法题。主要是为了编程训练和学习。如果不训练你看再多的算法书，你依然不会做算法题。</p>
+<h3 id="review">Review</h3>
+<p>阅读并点评至少一篇英文技术文章。主要是为了学习英文，如果你的英文不行，你基本上无缘技术高手。</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/arts/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     </section>
   
   <nav class="pagination">
-    <a class="prev" href="/page/6/">
+    <a class="prev" href="/page/8/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text">上一页</span>
       </a>
-    <a class="next" href="/page/8/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
+    
   </nav>
         </div>
         
@@ -505,7 +448,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span></span>
   </span>
 </div>
 

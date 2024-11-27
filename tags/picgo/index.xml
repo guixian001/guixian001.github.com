@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>picgo on Guixian 的日常记录</title>
+    <title>Picgo on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/tags/picgo/</link>
-    <description>Recent content in picgo on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Picgo on Guixian 的日常记录</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/picgo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/tags/picgo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PicGo-Core (Command line) macOS 配置七牛云图床</title>
       <link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link>
       <pubDate>Fri, 27 Aug 2021 00:06:22 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</guid>
-      <description>PicGo-Core 是一个开源图片上传 node 模块. 安装 PicGo-Core (Command line) 如果有安装 node 或者 yarn 可以直接使用以下命令安装： 1 2 3 4 npm install picgo -g # or yarn global add picgo 配置 在配置七牛云上传之前，如果</description>
+      <description>&lt;p&gt;PicGo-Core 是一个开源图片上传 node 模块.&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装-picgo-core-command-line&#34;&gt;安装 PicGo-Core (Command line)&lt;/h2&gt;&#xA;&lt;p&gt;如果有安装 node 或者 yarn 可以直接使用以下命令安装：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install picgo -g&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# or&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yarn global add picgo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;p&gt;在配置七牛云上传之前，如果还没申请过 qiniu 的对象存储，先去 qiniu 注册创建，并且获取到个人账号的 key。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

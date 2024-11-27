@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github golang on Guixian 的日常记录</title>
+    <title>Github Golang on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/categories/github-golang/</link>
-    <description>Recent content in github golang on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Github Golang on Guixian 的日常记录</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Sep 2021 16:28:04 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/github-golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 16:28:04 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/categories/github-golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub 2021 年 9 月热门 Golang 项目</title>
       <link>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</link>
       <pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</guid>
-      <description>gokart url https://github.com/praetorian-inc/gokart 简介 A static analysis tool for securing Go code star 数量 1720 filebrowser url https://github.com/filebrowser/filebrowser 简介 📂 Web File Browser star 数量 12833 podman url https://github.com/containers/podman 简介 Podman: A tool for managing OCI containers and pods. star 数量 10260 cli url https://github.com/cli/cli 简介 GitHub’s official command line tool star 数量 25405 netpoll</description>
+      <description>&lt;h2 id=&#34;gokart&#34;&gt;gokart&lt;/h2&gt;&#xA;&lt;h3 id=&#34;url&#34;&gt;url&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/praetorian-inc/gokart&#34;&gt;https://github.com/praetorian-inc/gokart&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;p&gt;A static analysis tool for securing Go code&lt;/p&gt;&#xA;&lt;h3 id=&#34;star-数量&#34;&gt;star 数量&lt;/h3&gt;&#xA;&lt;p&gt;1720&lt;/p&gt;&#xA;&lt;h2 id=&#34;filebrowser&#34;&gt;filebrowser&lt;/h2&gt;&#xA;&lt;h3 id=&#34;url-1&#34;&gt;url&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/filebrowser/filebrowser&#34;&gt;https://github.com/filebrowser/filebrowser&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介-1&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;p&gt;📂 Web File Browser&lt;/p&gt;&#xA;&lt;h3 id=&#34;star-数量-1&#34;&gt;star 数量&lt;/h3&gt;&#xA;&lt;p&gt;12833&lt;/p&gt;&#xA;&lt;h2 id=&#34;podman&#34;&gt;podman&lt;/h2&gt;&#xA;&lt;h3 id=&#34;url-2&#34;&gt;url&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/containers/podman&#34;&gt;https://github.com/containers/podman&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介-2&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;p&gt;Podman: A tool for managing OCI containers and pods.&lt;/p&gt;&#xA;&lt;h3 id=&#34;star-数量-2&#34;&gt;star 数量&lt;/h3&gt;&#xA;&lt;p&gt;10260&lt;/p&gt;&#xA;&lt;h2 id=&#34;cli&#34;&gt;cli&lt;/h2&gt;&#xA;&lt;h3 id=&#34;url-3&#34;&gt;url&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/cli/cli&#34;&gt;https://github.com/cli/cli&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介-3&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;p&gt;GitHub’s official command line tool&lt;/p&gt;&#xA;&lt;h3 id=&#34;star-数量-3&#34;&gt;star 数量&lt;/h3&gt;&#xA;&lt;p&gt;25405&lt;/p&gt;&#xA;&lt;h2 id=&#34;netpoll&#34;&gt;netpoll&lt;/h2&gt;&#xA;&lt;h3 id=&#34;url-4&#34;&gt;url&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/cloudwego/netpoll&#34;&gt;https://github.com/cloudwego/netpoll&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;简介-4&#34;&gt;简介&lt;/h3&gt;&#xA;&lt;p&gt;A high-performance non-blocking I/O networking framework, which focused on RPC scenarios, developed by ByteDance.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

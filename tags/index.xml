@@ -4,89 +4,72 @@
     <title>Tags on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/tags/</link>
     <description>Recent content in Tags on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Jul 2023 21:31:26 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2023 21:31:26 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debian</title>
       <link>https://blog.chenguixian.com/tags/debian/</link>
       <pubDate>Wed, 12 Jul 2023 21:31:26 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/debian/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>引用</title>
       <link>https://blog.chenguixian.com/tags/%E5%BC%95%E7%94%A8/</link>
       <pubDate>Thu, 15 Jun 2023 21:31:26 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/%E5%BC%95%E7%94%A8/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://blog.chenguixian.com/tags/python/</link>
       <pubDate>Mon, 24 Apr 2023 19:10:47 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mac</title>
+      <title>Mac</title>
       <link>https://blog.chenguixian.com/tags/mac/</link>
       <pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/mac/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ssh</title>
+      <title>Ssh</title>
       <link>https://blog.chenguixian.com/tags/ssh/</link>
       <pubDate>Wed, 15 Sep 2021 15:54:09 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>javascript</title>
+      <title>Javascript</title>
       <link>https://blog.chenguixian.com/tags/javascript/</link>
       <pubDate>Tue, 14 Sep 2021 20:16:33 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>picgo</title>
+      <title>Picgo</title>
       <link>https://blog.chenguixian.com/tags/picgo/</link>
       <pubDate>Fri, 27 Aug 2021 00:06:22 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/picgo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iTerm2</title>
+      <title>ITerm2</title>
       <link>https://blog.chenguixian.com/tags/iterm2/</link>
       <pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/iterm2/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>proxy</title>
+      <title>Proxy</title>
       <link>https://blog.chenguixian.com/tags/proxy/</link>
       <pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/tags/proxy/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -4,71 +4,58 @@
     <title>Categories on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/categories/</link>
     <description>Recent content in Categories on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 19 Jan 2024 11:57:58 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jan 2024 11:57:58 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小贤周刊</title>
       <link>https://blog.chenguixian.com/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Fri, 19 Jan 2024 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python工匠</title>
       <link>https://blog.chenguixian.com/categories/python%E5%B7%A5%E5%8C%A0/</link>
       <pubDate>Fri, 18 Nov 2022 18:08:22 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/python%E5%B7%A5%E5%8C%A0/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tool</title>
+      <title>Tool</title>
       <link>https://blog.chenguixian.com/categories/tool/</link>
       <pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/tool/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>github javascript</title>
+      <title>Github Javascript</title>
       <link>https://blog.chenguixian.com/categories/github-javascript/</link>
       <pubDate>Sat, 18 Sep 2021 16:48:09 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/github-javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>github python</title>
+      <title>Github Python</title>
       <link>https://blog.chenguixian.com/categories/github-python/</link>
       <pubDate>Sat, 18 Sep 2021 16:43:38 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/github-python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>github golang</title>
+      <title>Github Golang</title>
       <link>https://blog.chenguixian.com/categories/github-golang/</link>
       <pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/github-golang/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>javascript</title>
+      <title>Javascript</title>
       <link>https://blog.chenguixian.com/categories/javascript/</link>
       <pubDate>Tue, 14 Sep 2021 20:16:33 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/categories/javascript/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

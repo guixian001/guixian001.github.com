@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>proxy on Guixian 的日常记录</title>
+    <title>Proxy on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/tags/proxy/</link>
-    <description>Recent content in proxy on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Proxy on Guixian 的日常记录</description>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Aug 2021 21:53:34 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 21:53:34 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iTerm2 中使用 ClashX proxy</title>
       <link>https://blog.chenguixian.com/post/tools/iterm2-clashx/</link>
       <pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/tools/iterm2-clashx/</guid>
-      <description>iTerm2 配置 http 代理 终端下的很多应用会通过 http_proxy、https_proxy 环境变量的影响，比如 curl/brew/wget。如果设置了这</description>
+      <description>&lt;h2 id=&#34;iterm2-配置-http-代理&#34;&gt;iTerm2 配置 http 代理&lt;/h2&gt;&#xA;&lt;p&gt;终端下的很多应用会通过 &lt;code&gt;http_proxy&lt;/code&gt;、&lt;code&gt;https_proxy&lt;/code&gt; 环境变量的影响，比如 curl/brew/wget。如果设置了这些变量，应用会直接通过该变量设置的代理访问目的地址。&#xA;因此我们可以使用如下的命令配置代理。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

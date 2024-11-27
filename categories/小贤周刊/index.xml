@@ -4,89 +4,72 @@
     <title>小贤周刊 on Guixian 的日常记录</title>
     <link>https://blog.chenguixian.com/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
     <description>Recent content in 小贤周刊 on Guixian 的日常记录</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 19 Jan 2024 11:57:58 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jan 2024 11:57:58 +0800</lastBuildDate>
+    <atom:link href="https://blog.chenguixian.com/categories/%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小贤周刊第 9 期</title>
       <link>https://blog.chenguixian.com/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Fri, 19 Jan 2024 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 Kubernetes的Limits和Requests Kubernetes的Limits和Requests介绍 https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/ Postman压测和</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;kubernetes的limits和requests&#34;&gt;Kubernetes的Limits和Requests&lt;/h3&gt;&#xA;&lt;p&gt;Kubernetes的Limits和Requests介绍&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests&#34;&gt;https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/&#34;&gt;https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;postman压测和jmeter压测的区别&#34;&gt;Postman压测和JMeter压测的区别&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;JMeter&lt;/strong&gt;/Postman/Apifox 的压测简单对比&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://apifox.com/apiskills/postman-jmeter-stresstest/?utm_source=google_dsa&amp;utm_medium=g&amp;utm_campaign=20543997484&amp;utm_content=156047449829&amp;utm_term=&amp;gad_source=1&amp;gclid=CjwKCAiAhJWsBhAaEiwAmrNyq6sPJs019sQDd3yNcR_sMq7B9VVnoXPWDvEJJgVKsZHAVaCDRjtjlxoCZ6MQAvD_BwE&#34;&gt;Postman压测和JMeter压测的区别&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;kubernetes-tutorial-for-beginners&#34;&gt;Kubernetes Tutorial for Beginners&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=X48VuDVv0do&amp;ab_channel=TechWorldwithNana&#34;&gt;Kubernetes Tutorial for Beginners&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;hello-算法&#34;&gt;Hello 算法&lt;/h3&gt;&#xA;&lt;p&gt;一本开源、免费、对新手友好的数据结构与算法入门教程&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 8 期</title>
       <link>https://blog.chenguixian.com/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Fri, 12 Jan 2024 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 Kubernetes 学习路径 https://github.com/caicloud/kube-ladder 云原生Java架构师的第一课K8s+Docker+KubeSphere+DevOps https://www.bilibili.com/video/BV13Q4y1C7hS REST API 的关键概念有哪些？ REST，全</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;kubernetes-学习路径&#34;&gt;Kubernetes 学习路径&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/caicloud/kube-ladder&#34;&gt;https://github.com/caicloud/kube-ladder&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;云原生java架构师的第一课k8sdockerkubespheredevops&#34;&gt;云原生Java架构师的第一课K8s+Docker+KubeSphere+DevOps&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV13Q4y1C7hS&#34;&gt;https://www.bilibili.com/video/BV13Q4y1C7hS&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;rest-api-的关键概念有哪些&#34;&gt;REST API 的关键概念有哪些？&lt;/h3&gt;&#xA;&lt;p&gt;REST，全称 Representational State Transfer (表现层状态转移)。它是一种软件架构风格，而不是标准，所以只提供了一组设计原则和约束条件。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 7 期</title>
       <link>https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Fri, 05 Jan 2024 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 为什么这么设计系列文章 分析各个领域中为何如此设计的文章 https://draveness.me/whys-the-design/ 如何快速理解复杂业务，系统思考问题？ 对于复杂问题的思考其实是有层次的，从最表</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;为什么这么设计系列文章&#34;&gt;为什么这么设计系列文章&lt;/h3&gt;&#xA;&lt;p&gt;分析各个领域中为何如此设计的文章&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://draveness.me/whys-the-design/&#34;&gt;https://draveness.me/whys-the-design/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;如何快速理解复杂业务系统思考问题&#34;&gt;如何快速理解复杂业务，系统思考问题？&lt;/h3&gt;&#xA;&lt;p&gt;对于复杂问题的思考其实是有层次的，从最表面的事件，到事件背后的规律，再到这个问题的结构模式，再到价值观，层层递进。在画完自己的业务系统因果回路图之后，再结合这个心智模型，思考自己的思考在哪个层次，是否可以有机会再下钻到更深的层次。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 6 期</title>
       <link>https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Fri, 29 Dec 2023 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 Python 之路 一位培训讲师关于 Python 的讲义。值得一看。 https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941 https://www.cnblogs.com/Eva-J/p/7277026.html epoll https://zhuanlan.zhihu.com/p/63179839 Redis 也支持全文搜索？这也太强了 简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;python-之路&#34;&gt;Python 之路&lt;/h3&gt;&#xA;&lt;p&gt;一位培训讲师关于 Python 的讲义。值得一看。&#xA;&lt;a href=&#34;https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941&#34;&gt;https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.cnblogs.com/Eva-J/p/7277026.html&#34;&gt;https://www.cnblogs.com/Eva-J/p/7277026.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;epoll&#34;&gt;epoll&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/63179839&#34;&gt;https://zhuanlan.zhihu.com/p/63179839&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;redis-也支持全文搜索这也太强了&#34;&gt;Redis 也支持全文搜索？这也太强了&lt;/h3&gt;&#xA;&lt;p&gt;简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用中文分词插件可以用 RediSearch 替代，但是拼音转中文插件在 RediSearch 中还没有功能替代，只能通过个人手段处理。&#xA;&lt;a href=&#34;https://mp.weixin.qq.com/s/FgcvoRGkVMw62aelMH7x1g&#34;&gt;https://mp.weixin.qq.com/s/FgcvoRGkVMw62aelMH7x1g&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 5 期</title>
       <link>https://blog.chenguixian.com/post/weekly/5-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Sun, 21 May 2023 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/5-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 MySQL 权限 MySQL 中存在4个控制权限的表，分别为user表，db表，tables_priv表，columns_priv表。MySQL的权限级别</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mysql-权限&#34;&gt;MySQL 权限&lt;/h3&gt;&#xA;&lt;p&gt;MySQL 中存在4个控制权限的表，&lt;code&gt;分别为user表，db表，tables_priv表，columns_priv表&lt;/code&gt;。MySQL的权限级别分为如下：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 4 期</title>
       <link>https://blog.chenguixian.com/post/weekly/4-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Sun, 14 May 2023 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/4-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 Cool New Features in Python 3.11 Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;cool-new-features-in-python-311&#34;&gt;Cool New Features in Python 3.11&lt;/h3&gt;&#xA;&lt;p&gt;Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、在执行效率上的改进（Faster CPython project）、更好的异步任务语法（在Python 3.11中，可以使用任务组来运行和监视异步任务）、类型注解上的改进（如 Self）、TOML 的解析、异常组。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 3 期</title>
       <link>https://blog.chenguixian.com/post/weekly/3-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Sun, 07 May 2023 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/3-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 Nginx 反向代理中的 proxy_redirect https://cloud.tencent.com/developer/beta/article/1027558 Python Threading: The Complete Guide https://superfastpython.com/threading-in-python/ 深入浅出现代Web编程 https://fullstackopen.com/ GTID https://cloud.tencent.com/developer/article/1674635 工具 programming-idioms https://programming-idioms.org/all-idioms ohmyz.sh https://ohmyz.sh/ 随便看看 How I setup my Development Environment on macOS 2022 Edition https://dev.to/andrewbaisden/how-i-setup-my-development-environment-on-macos-2022-edition-5elf 极客时间 AIGC 知识库 https://longalong.feishu.cn/wiki/wikcngNXeTD1ZnOly0X19lPLfoh 随便记记 发现错</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;nginx-反向代理中的-proxy_redirect&#34;&gt;Nginx 反向代理中的 proxy_redirect&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/beta/article/1027558&#34;&gt;https://cloud.tencent.com/developer/beta/article/1027558&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;python-threading-the-complete-guide&#34;&gt;Python Threading: The Complete Guide&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://superfastpython.com/threading-in-python/&#34;&gt;https://superfastpython.com/threading-in-python/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;深入浅出现代web编程&#34;&gt;深入浅出现代Web编程&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://fullstackopen.com/&#34;&gt;https://fullstackopen.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;gtid&#34;&gt;GTID&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cloud.tencent.com/developer/article/1674635&#34;&gt;https://cloud.tencent.com/developer/article/1674635&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;工具&#34;&gt;工具&lt;/h2&gt;&#xA;&lt;h3 id=&#34;programming-idioms&#34;&gt;programming-idioms&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://programming-idioms.org/all-idioms&#34;&gt;https://programming-idioms.org/all-idioms&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;ohmyzsh&#34;&gt;ohmyz.sh&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ohmyz.sh/&#34;&gt;https://ohmyz.sh/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;随便看看&#34;&gt;随便看看&lt;/h2&gt;&#xA;&lt;h3 id=&#34;how-i-setup-my-development-environment-on-macos-2022-edition&#34;&gt;How I setup my Development Environment on macOS 2022 Edition&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dev.to/andrewbaisden/how-i-setup-my-development-environment-on-macos-2022-edition-5elf&#34;&gt;https://dev.to/andrewbaisden/how-i-setup-my-development-environment-on-macos-2022-edition-5elf&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;极客时间-aigc-知识库&#34;&gt;极客时间 AIGC 知识库&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://longalong.feishu.cn/wiki/wikcngNXeTD1ZnOly0X19lPLfoh&#34;&gt;https://longalong.feishu.cn/wiki/wikcngNXeTD1ZnOly0X19lPLfoh&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;随便记记&#34;&gt;随便记记&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;发现错误要尽快改，不管多大的代价都可能是最小的代价&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 2 期</title>
       <link>https://blog.chenguixian.com/post/weekly/2-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Sun, 30 Apr 2023 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/2-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 设计模式 https://refactoringguru.cn/design-patterns sadservers Troubleshoot and make a sad server happy! https://sadservers.com/ Django 中的事务 https://docs.djangoproject.com/zh-hans/4.2/topics/db/transactions/ 工具 devdocs.io 各类语言、框架的官方文档整合，还有轻应用，媲美要花钱的 dash。 图书 流畅的 Python</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;设计模式&#34;&gt;设计模式&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://refactoringguru.cn/design-patterns&#34;&gt;https://refactoringguru.cn/design-patterns&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;sadservers&#34;&gt;sadservers&lt;/h3&gt;&#xA;&lt;p&gt;Troubleshoot and make a sad server happy! &lt;a href=&#34;https://sadservers.com/&#34;&gt;https://sadservers.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;django-中的事务&#34;&gt;Django 中的事务&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.djangoproject.com/zh-hans/4.2/topics/db/transactions/&#34;&gt;https://docs.djangoproject.com/zh-hans/4.2/topics/db/transactions/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;工具&#34;&gt;工具&lt;/h2&gt;&#xA;&lt;h3 id=&#34;devdocsio&#34;&gt;devdocs.io&lt;/h3&gt;&#xA;&lt;p&gt;各类语言、框架的官方文档整合，还有轻应用，媲美要花钱的 dash。&lt;/p&gt;&#xA;&lt;h2 id=&#34;图书&#34;&gt;图书&lt;/h2&gt;&#xA;&lt;h3 id=&#34;流畅的-python第二版&#34;&gt;流畅的 Python(第二版)&lt;/h3&gt;&#xA;&lt;p&gt;从公众号的推文中发现第二版中文翻译版出版了&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>小贤周刊第 1 期</title>
       <link>https://blog.chenguixian.com/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link>
       <pubDate>Sun, 23 Apr 2023 11:57:58 +0800</pubDate>
-      
       <guid>https://blog.chenguixian.com/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid>
-      <description>技术相关 Python Concurrency 先留个坑，后续记录输出一个笔记文档。 The Hitchhiker’s Guide to Python! https://docs.python-guide.org/ https://pythonguidecn.readthedocs.io/zh/latest/ 一个 Python 语言入门的文档，接受 Python 的一些基本知识以及相关的框架</description>
+      <description>&lt;h2 id=&#34;技术相关&#34;&gt;技术相关&lt;/h2&gt;&#xA;&lt;h3 id=&#34;python-concurrency&#34;&gt;Python Concurrency&lt;/h3&gt;&#xA;&lt;p&gt;先留个坑，后续记录输出一个笔记文档。&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-hitchhikers-guide-to-python&#34;&gt;The Hitchhiker’s Guide to Python!&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.python-guide.org/&#34;&gt;https://docs.python-guide.org/&lt;/a&gt;&#xA;&lt;a href=&#34;https://pythonguidecn.readthedocs.io/zh/latest/&#34;&gt;https://pythonguidecn.readthedocs.io/zh/latest/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;一个 Python 语言入门的文档，接受 Python 的一些基本知识以及相关的框架和应用。&lt;/p&gt;&#xA;&lt;h3 id=&#34;hellogithub&#34;&gt;HelloGithub&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hellogithub.com/&#34;&gt;https://hellogithub.com/&lt;/a&gt;&lt;br&gt;&#xA;分享 GitHub 上有趣入门级的开源项目&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
