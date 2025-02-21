@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Picgo on Guixian 的日常记录</title><link>https://blog.chenguixian.com/tags/picgo/</link><description>Recent content in Picgo on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 27 Aug 2021 00:06:22 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/picgo/index.xml" rel="self" type="application/rss+xml"/><item><title>PicGo-Core (Command line) macOS 配置七牛云图床</title><link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link><pubDate>Fri, 27 Aug 2021 00:06:22 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</guid><description>&lt;p>PicGo-Core 是一个开源图片上传 node 模块.&lt;/p>
+&lt;h2 id="安装-picgo-core-command-line">安装 PicGo-Core (Command line)&lt;/h2>
+&lt;p>如果有安装 node 或者 yarn 可以直接使用以下命令安装：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">npm install picgo -g
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># or&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">yarn global add picgo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置">配置&lt;/h2>
+&lt;p>在配置七牛云上传之前，如果还没申请过 qiniu 的对象存储，先去 qiniu 注册创建，并且获取到个人账号的 key。&lt;/p></description></item></channel></rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debian on Guixian 的日常记录</title><link>https://blog.chenguixian.com/tags/debian/</link><description>Recent content in Debian on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 12 Jul 2023 21:31:26 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/debian/index.xml" rel="self" type="application/rss+xml"/><item><title>Debian 的发行版</title><link>https://blog.chenguixian.com/post/op/debian-version/</link><pubDate>Wed, 12 Jul 2023 21:31:26 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/debian-version/</guid><description>&lt;h2 id="debian-的版本">Debian 的版本&lt;/h2>
+&lt;p>Debian各个发行版及其代号：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Debian 1.1 - Buzz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 1.2 - Rex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 1.3 - Bo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 2.0 - Hamm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 2.1 - Slink
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 2.2 - Potato
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 3.0 - Woody
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 3.1 - Sarge
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 4.0 - Etch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 5.0 - Lenny
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 6.0 - Squeeze
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 7.0 - Wheezy
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 8.0 - Jessie
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 9.0 - Stretch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 10 - Buster
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 11 - Bullseye
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 12 - Bookworm (尚未发布)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>每个版本都有一个代号，代号通常是以一个卡通人物的名字命名，例如Squeeze是以Toy Story中的角色命名的。这些代号通常是从Debian开发团队中选出来的，旨在使每个版本都有一个独特的标识符。&lt;/p></description></item></channel></rss>

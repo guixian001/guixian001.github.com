@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tool on Guixian 的日常记录</title><link>https://blog.chenguixian.com/categories/tool/</link><description>Recent content in Tool on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 19 Feb 2025 10:40:23 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/tool/index.xml" rel="self" type="application/rss+xml"/><item><title>开发环境和工具</title><link>https://blog.chenguixian.com/post/tools/coder-tools/</link><pubDate>Wed, 19 Feb 2025 10:40:23 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/coder-tools/</guid><description>&lt;h3 id="1-文章概览">&lt;strong>1. 文章概览&lt;/strong>&lt;/h3>
+&lt;p>本文是&lt;a href="https://mp.weixin.qq.com/s/2qgs4JYOJFCmrxHMxtctyA">阿里同学都在用的开发环境和工具&lt;/a>的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。&lt;/p>
+&lt;h3 id="2-工具分类与推荐">&lt;strong>2. 工具分类与推荐&lt;/strong>&lt;/h3>
+&lt;h4 id="21-在线工具">&lt;strong>2.1 在线工具&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>白板工具&lt;/strong>：&lt;a href="https://www.tldraw.com">tldraw&lt;/a>&lt;br>
+用于在线协作绘图，适合团队讨论和设计。&lt;/li>
+&lt;li>&lt;strong>在线画图工具&lt;/strong>：&lt;a href="https://excalidraw.com">excalidraw&lt;/a> 和 &lt;a href="https://draw.io">draw.io&lt;/a>&lt;br>
+简单易用的在线绘图工具，适合流程图、架构图等。&lt;/li>
+&lt;li>&lt;strong>文档工具&lt;/strong>：
+&lt;ul>
+&lt;li>钉钉文档：&lt;a href="https://alidocs.dingtalk.com">alidocs&lt;/a>&lt;/li>
+&lt;li>语雀文档：&lt;a href="https://www.yuque.com">yuque&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>IT工具集合&lt;/strong>：&lt;a href="https://it-tools.tech">it-tools&lt;/a>&lt;br>
+提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。&lt;/li>
+&lt;/ul>
+&lt;h4 id="22-输入法">&lt;strong>2.2 输入法&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>RIME输入法&lt;/strong>：&lt;a href="https://rime.im/">rime.im&lt;/a>&lt;br>
+程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。&lt;/li>
+&lt;/ul>
+&lt;h4 id="23-截图软件">&lt;strong>2.3 截图软件&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>Xnip&lt;/strong>：&lt;a href="https://www.xnipapp.com">xnipapp.com&lt;/a>&lt;br>
+Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。&lt;/li>
+&lt;/ul>
+&lt;h4 id="24-鼠标控制软件">&lt;strong>2.4 鼠标控制软件&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>MOS&lt;/strong>：&lt;a href="https://github.com/Caldis/Mos">github.com/Caldis/Mos&lt;/a>&lt;br>
+用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。&lt;/li>
+&lt;/ul>
+&lt;h4 id="25-ai工具">&lt;strong>2.5 AI工具&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>ollama&lt;/strong>：本地运行大模型，&lt;a href="https://ollama.com">ollama.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Bolt.New&lt;/strong>：通过描述需求创建并部署Web应用，&lt;a href="https://github.com/stackblitz/bolt.new">bolt.new&lt;/a>&lt;/li>
+&lt;li>&lt;strong>DeepL翻译&lt;/strong>：&lt;a href="https://www.deepl.com">deepl.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>OpenAI ChatGPT&lt;/strong>：&lt;a href="https://chat.openai.com/chat">chat.openai.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Google Gemini&lt;/strong>：&lt;a href="https://gemini.google.com/app">gemini.google.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>通义千问&lt;/strong>：阿里云的AI服务，&lt;a href="https://tongyi.aliyun.com">tongyi.aliyun.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>纳米搜索&lt;/strong>：&lt;a href="https://n.cn">n.cn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>字节豆包&lt;/strong>：&lt;a href="https://www.doubao.com">doubao.com&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>注意&lt;/strong>：部分工具可能需要科学上网，使用时需遵守法律法规。&lt;/p></description></item><item><title>Mac 工具记录</title><link>https://blog.chenguixian.com/post/tools/mac-tools/</link><pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/mac-tools/</guid><description>&lt;h2 id="mac-工具记录">Mac 工具记录&lt;/h2>
+&lt;h3 id="mac-使用技巧">Mac 使用技巧&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">图标&lt;/th>
+ &lt;th style="text-align: left">mac&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘&lt;/td>
+ &lt;td style="text-align: left">command()&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥&lt;/td>
+ &lt;td style="text-align: left">option/alt&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃&lt;/td>
+ &lt;td style="text-align: left">control/ctrl&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧&lt;/td>
+ &lt;td style="text-align: left">Shift&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇪&lt;/td>
+ &lt;td style="text-align: left">Caps Lock&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">fn&lt;/td>
+ &lt;td style="text-align: left">fn&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌫&lt;/td>
+ &lt;td style="text-align: left">Backspace&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↵&lt;/td>
+ &lt;td style="text-align: left">Enter&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↹&lt;/td>
+ &lt;td style="text-align: left">Tab&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="快捷键">快捷键&lt;/h4>
+&lt;h5 id="command">command（⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘空格键&lt;/td>
+ &lt;td style="text-align: left">显示“聚焦”搜索&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘C&lt;/td>
+ &lt;td style="text-align: left">拷贝&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘V&lt;/td>
+ &lt;td style="text-align: left">粘贴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘A&lt;/td>
+ &lt;td style="text-align: left">全选&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘X&lt;/td>
+ &lt;td style="text-align: left">剪切文本&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘Z&lt;/td>
+ &lt;td style="text-align: left">撤销&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘W&lt;/td>
+ &lt;td style="text-align: left">关闭窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘Q&lt;/td>
+ &lt;td style="text-align: left">退出程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘↹&lt;/td>
+ &lt;td style="text-align: left">程序切换器&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘F&lt;/td>
+ &lt;td style="text-align: left">查找&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘D&lt;/td>
+ &lt;td style="text-align: left">复制(生成一个副本)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘N&lt;/td>
+ &lt;td style="text-align: left">新建访达窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘H&lt;/td>
+ &lt;td style="text-align: left">隐藏当前程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘⌫&lt;/td>
+ &lt;td style="text-align: left">删除到废纸篓&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="optioncommand">option+command（⌥⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘空格键&lt;/td>
+ &lt;td style="text-align: left">显示“访达”搜索窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘D&lt;/td>
+ &lt;td style="text-align: left">打开或关闭程序坞&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘⌫&lt;/td>
+ &lt;td style="text-align: left">彻底删除选中文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘V&lt;/td>
+ &lt;td style="text-align: left">剪切(先按拷贝快捷键)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘ ESC&lt;/td>
+ &lt;td style="text-align: left">强制退出程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘8&lt;/td>
+ &lt;td style="text-align: left">打开或关闭缩放&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘/&lt;/td>
+ &lt;td style="text-align: left">打开或关闭平滑图像&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘-&lt;/td>
+ &lt;td style="text-align: left">缩小&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘=&lt;/td>
+ &lt;td style="text-align: left">放大&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="shiftcommand">shift+command（⇧⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘Z&lt;/td>
+ &lt;td style="text-align: left">反撤销&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘3&lt;/td>
+ &lt;td style="text-align: left">将屏幕图片存储为文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘4&lt;/td>
+ &lt;td style="text-align: left">将所选区域的图片存储为文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘5&lt;/td>
+ &lt;td style="text-align: left">显示截图工具条&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⇧⌘3&lt;/td>
+ &lt;td style="text-align: left">将屏幕图片拷贝到剪贴板&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⇧⌘4&lt;/td>
+ &lt;td style="text-align: left">将所选区域的图片拷贝到剪贴板&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="其他">其他&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">空格键&lt;/td>
+ &lt;td style="text-align: left">预览&lt;br />在访达中对文件按下后，可以预览文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↵&lt;/td>
+ &lt;td style="text-align: left">重命名文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">F11&lt;/td>
+ &lt;td style="text-align: left">显示桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃←&lt;/td>
+ &lt;td style="text-align: left">向左移动桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃→&lt;/td>
+ &lt;td style="text-align: left">向右移动桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">fnQ&lt;/td>
+ &lt;td style="text-align: left">快速备忘录(没看到效果)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⇧⌘V&lt;/td>
+ &lt;td style="text-align: left">清除格式化粘贴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⌘F&lt;/td>
+ &lt;td style="text-align: left">全屏幕/小屏幕切换&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃空格键&lt;/td>
+ &lt;td style="text-align: left">输入法切换&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="技巧">技巧&lt;/h4>
+&lt;h5 id="常用">常用&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>按住 &lt;code>⌥&lt;/code> 点击上右菜单栏的控制中心图标可以快速进入或退出勿扰模式&lt;/p></description></item><item><title>使用 TODO List 结合轻笔记进行知识积累</title><link>https://blog.chenguixian.com/post/tools/todo-flomo/</link><pubDate>Thu, 09 Jun 2022 10:40:23 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/todo-flomo/</guid><description>&lt;h2 id="todo-list-与笔记">TODO List 与笔记&lt;/h2>
+&lt;p>使用 TODO List 类的工具可以较好的管理我们的计划事项，但是也会存在一个问题。当欧美原先做过类似的某一项工作，记不起来当时做了什么，有什么积累。在工具上也只有标题和完成状态，对于其他实践经验，有可能都记不起来了。&lt;/p></description></item><item><title>PicGo-Core (Command line) macOS 配置七牛云图床</title><link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link><pubDate>Fri, 27 Aug 2021 00:06:22 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</guid><description>&lt;p>PicGo-Core 是一个开源图片上传 node 模块.&lt;/p>
+&lt;h2 id="安装-picgo-core-command-line">安装 PicGo-Core (Command line)&lt;/h2>
+&lt;p>如果有安装 node 或者 yarn 可以直接使用以下命令安装：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">npm install picgo -g
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># or&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">yarn global add picgo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置">配置&lt;/h2>
+&lt;p>在配置七牛云上传之前，如果还没申请过 qiniu 的对象存储，先去 qiniu 注册创建，并且获取到个人账号的 key。&lt;/p></description></item><item><title>iTerm2 中使用 ClashX proxy</title><link>https://blog.chenguixian.com/post/tools/iterm2-clashx/</link><pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/iterm2-clashx/</guid><description>&lt;h2 id="iterm2-配置-http-代理">iTerm2 配置 http 代理&lt;/h2>
+&lt;p>终端下的很多应用会通过 &lt;code>http_proxy&lt;/code>、&lt;code>https_proxy&lt;/code> 环境变量的影响，比如 curl/brew/wget。如果设置了这些变量，应用会直接通过该变量设置的代理访问目的地址。
+因此我们可以使用如下的命令配置代理。&lt;/p></description></item></channel></rss>

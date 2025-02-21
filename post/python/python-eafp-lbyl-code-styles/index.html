@@ -1,0 +1,201 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Python EAFP LBYL 编程风格 - Guixian 的日常记录</title>
+<meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Chen Guixian"><meta name=description content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。
+"><meta name=keywords content="程序员的日常记录,编码人生,生活笔记"><meta name=generator content="Hugo 0.134.3 with theme even"><link rel=canonical href=https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:url" content="https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/"><meta property="og:site_name" content="Guixian 的日常记录"><meta property="og:title" content="Python EAFP LBYL 编程风格"><meta property="og:description" content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-01-18T16:03:25+08:00"><meta property="article:modified_time" content="2023-01-18T16:03:25+08:00"><meta itemprop=name content="Python EAFP LBYL 编程风格"><meta itemprop=description content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。"><meta itemprop=datePublished content="2023-01-18T16:03:25+08:00"><meta itemprop=dateModified content="2023-01-18T16:03:25+08:00"><meta itemprop=wordCount content="1240"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python EAFP LBYL 编程风格"><meta name=twitter:description content="本文介绍两种编程风格 EAFP and LBYL。
+EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Guixian 的日常记录</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Guixian 的日常记录</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Python EAFP LBYL 编程风格</h1><div class=post-meta><span class=post-time>2023-01-18</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#使用-eafp-替代-lbyl>使用 EAFP 替代 LBYL</a><ul><li><a href=#避免冗余>避免冗余</a></li><li><a href=#eafp-的执行效率更高>EAFP 的执行效率更高</a></li><li><a href=#lbyl-仍然可能失败>LBYL 仍然可能失败</a></li><li><a href=#捕获多种类型的异常>捕获多种类型的异常</a></li></ul></li><li><a href=#结论>结论</a></li><li><a href=#文档>文档</a></li></ul></li></ul></nav></div></div><div class=post-content><p>本文介绍两种编程风格 EAFP and LBYL。</p><p>EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Type a positive integer (defaults to 1):&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>s</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>n</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=ne>ValueError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>n</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span></code></pre></td></tr></table></div></div><p>LBYL：Look Before You Leap，三思而后行。首先检查是否可以成功地进行某项操作，然后再进行操作。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Type a positive integer (defaults to 1):&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>s</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=n>s</span><span class=o>.</span><span class=n>isnumeric</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>n</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>n</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=使用-eafp-替代-lbyl>使用 EAFP 替代 LBYL</h2><p>使用 EAFP 风格来编写代码有如下几点优势。</p><h3 id=避免冗余>避免冗余</h3><p>假如我们要从一个字典中获取到某一个 key 的值，该 key 可能不存在。使用 LBYL 的风格如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>d</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;a&#34;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span> <span class=s2>&#34;b&#34;</span><span class=p>:</span> <span class=mi>42</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;What key do you want to access?&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>key</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=n>key</span> <span class=ow>in</span> <span class=n>d</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>d</span><span class=p>[</span><span class=n>key</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;Cannot find key &#39;</span><span class=si>{</span><span class=n>key</span><span class=si>}</span><span class=s2>&#39;&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>这段逻辑两次访问了字典：第一次检查 key 是否存在，然后第二次获取该 key 的值。这就好比我们你打开一个盒子，看看里面是否有东西，然后关上它。然后，如果盒子不是空的，再打开它，取出里面的东西。</p><p>EAFP 的风格代码如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>d</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;a&#34;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span> <span class=s2>&#34;b&#34;</span><span class=p>:</span> <span class=mi>42</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;What key do you want to access?&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>key</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>d</span><span class=p>[</span><span class=n>key</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=ne>KeyError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;Cannot find key &#39;</span><span class=si>{</span><span class=n>key</span><span class=si>}</span><span class=s2>&#39;&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>另外 Python 官方提供了一个 dict.get 其实是与 EAFP 的思想一致的。当获取某一个 key 的值时，如果 key 不存在则使用一个默认值。</p><h3 id=eafp-的执行效率更高>EAFP 的执行效率更高</h3><p>如果预计失败不会经常发生，那么 EAFP 会更快。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&gt;&gt;&gt; import timeit
+</span></span><span class=line><span class=cl>&gt;&gt;&gt; eafp = &#34;&#34;&#34;s = &#34;345&#34;
+</span></span><span class=line><span class=cl>... try:
+</span></span><span class=line><span class=cl>...     n = int(s)
+</span></span><span class=line><span class=cl>... except ValueError:
+</span></span><span class=line><span class=cl>...     n = 0&#34;&#34;&#34;
+</span></span><span class=line><span class=cl>&gt;&gt;&gt; timeit.timeit(eafp)
+</span></span><span class=line><span class=cl>0.1687019999999393
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>&gt;&gt;&gt; lbyl = &#34;&#34;&#34;s = &#34;345&#34;
+</span></span><span class=line><span class=cl>... if s.isnumeric():
+</span></span><span class=line><span class=cl>...     n = int(s)
+</span></span><span class=line><span class=cl>... else:
+</span></span><span class=line><span class=cl>...     n = 0&#34;&#34;&#34;
+</span></span><span class=line><span class=cl>&gt;&gt;&gt; timeit.timeit(lbyl)
+</span></span><span class=line><span class=cl>0.30682630000001154
+</span></span></code></pre></td></tr></table></div></div><p>备注：这里本地测试，eafp 的方式稍稍快一些。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&gt;&gt;&gt; timeit.timeit(lbyl)
+</span></span><span class=line><span class=cl>0.13487599999999134
+</span></span><span class=line><span class=cl>&gt;&gt;&gt; timeit.timeit(eafp)
+</span></span><span class=line><span class=cl>0.10865979199999742
+</span></span></code></pre></td></tr></table></div></div><h3 id=lbyl-仍然可能失败>LBYL 仍然可能失败</h3><p>在 LBYL 中，当你进行检查后，情况可能会发生变化，后续操作操作运行可能仍然会出错。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pathlib</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;What file should I read?&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>filepath</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=n>pathlib</span><span class=o>.</span><span class=n>Path</span><span class=p>(</span><span class=n>filepath</span><span class=p>)</span><span class=o>.</span><span class=n>exists</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>filepath</span><span class=p>,</span> <span class=s2>&#34;r&#34;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>contents</span> <span class=o>=</span> <span class=n>f</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=c1># Do something with the contents.</span>
+</span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Woops, the file does not exist!&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>如果我们的系统比较复杂，比如有多个用户在使用或者有其他的一些脚本同时在进行一些逻辑，这里的代码检查完文件是否存在之后，在进行打开操作时，文件仍然可能已经不存在了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;What file should I read?&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>filepath</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>filepath</span><span class=p>,</span> <span class=s2>&#34;r&#34;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>contents</span> <span class=o>=</span> <span class=n>f</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=ne>FileNotFoundError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Woops, the file does not exist!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=c1># Do something with the contents.</span>
+</span></span><span class=line><span class=cl>    <span class=k>pass</span>
+</span></span></code></pre></td></tr></table></div></div><p>如果使用 EAFP 方法，代码要么读取文件，要么不读取，两种情况都包括在内。</p><h3 id=捕获多种类型的异常>捕获多种类型的异常</h3><p>如果我们在执行一段非常复杂的逻辑，可能会出现各种不同的非预期状况。列举可能得异常似乎比使用很长的 if 语句来做各种检查更好一些。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_inverse</span><span class=p>(</span><span class=n>num_str</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>1</span> <span class=o>/</span> <span class=nb>int</span><span class=p>(</span><span class=n>num_str</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Type an integer:&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>s</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>get_inverse</span><span class=p>(</span><span class=n>s</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=ne>ValueError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;I asked for an integer!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>except</span> <span class=ne>ZeroDivisionError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;0 has no inverse!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Type an integer:&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>s</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34; &gt;&gt; &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=n>s</span><span class=o>.</span><span class=n>isnumeric</span><span class=p>()</span> <span class=ow>and</span> <span class=n>s</span> <span class=o>!=</span> <span class=s2>&#34;0&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>get_inverse</span><span class=p>(</span><span class=n>s</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=k>elif</span> <span class=ow>not</span> <span class=n>s</span><span class=o>.</span><span class=n>isnumeric</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;I asked for an integer!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;0 has no inverse!&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>EAFP 中，我们考虑用户可能输入的不是数字或者输入了 0。在 LBYL 中使用了 isnumeric 两次，isnumeric 并不适用于负数。而且如果用户输入了比如 " 3"、&ldquo;000&rdquo;，这个数字可以被 int 转换。但是 isnumeric 会返回 false。</p><h2 id=结论>结论</h2><p>EAFP 风格是 LBYL 风格的一个非常好的替代方案，从某些角度上考虑存在一些优势。在编写代码时，尽量权衡几种方法的不同利弊，不要忘了考虑 EAFP 风格代码。
+EAFP 并不是在每一种情况下都是绝对最好的方法，但 EAFP 风格代码一般具有比较好的可读性和性能。</p><h2 id=文档>文档</h2><p><a href=https://mathspp.com/blog/pydonts/eafp-and-lbyl-coding-styles>https://mathspp.com/blog/pydonts/eafp-and-lbyl-coding-styles</a></p></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Chen Guixian</span></p><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2023-01-18</span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/working-tips-in-new-year/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">41 个新年开工工作建议</span>
+<span class="prev-text nav-mobile">上一篇</span>
+</a><a class=next href=/post/python/python-craftman-exception/><span class="next-text nav-default">Python 工匠读书笔记 5：异常和错误处理</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动
+</span><span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2017 -
+2025<span class=heart><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

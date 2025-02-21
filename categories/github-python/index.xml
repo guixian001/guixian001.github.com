@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github Python on Guixian 的日常记录</title><link>https://blog.chenguixian.com/categories/github-python/</link><description>Recent content in Github Python on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 18 Sep 2021 16:43:38 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/github-python/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub 2021 年 9 月热门 Python 项目</title><link>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</link><pubDate>Sat, 18 Sep 2021 16:43:38 +0800</pubDate><guid>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</guid><description>&lt;h2 id="yt-dlp">yt-dlp&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp&lt;/a>&lt;/li>
+&lt;li>简介
+A youtube-dl fork with additional features and fixes&lt;/li>
+&lt;li>star 数量
+6359&lt;/li>
+&lt;/ul>
+&lt;h2 id="mockingbird">MockingBird&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/babysor/MockingBird">https://github.com/babysor/MockingBird&lt;/a>&lt;/li>
+&lt;li>简介
+🚀AI拟声: 5秒内克隆您的声音并生成任意语音内容 Clone a voice in 5 seconds to generate arbitrary speech in real-time&lt;/li>
+&lt;li>star 数量
+4285&lt;/li>
+&lt;/ul>
+&lt;h2 id="real-esrgan">Real-ESRGAN&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/xinntao/Real-ESRGAN">https://github.com/xinntao/Real-ESRGAN&lt;/a>&lt;/li>
+&lt;li>简介
+Real-ESRGAN aims at developing Practical Algorithms for General Image Restoration.&lt;/li>
+&lt;li>star 数量
+2634&lt;/li>
+&lt;/ul>
+&lt;h2 id="onlyfans">OnlyFans&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/DIGITALCRIMINAL/OnlyFans">https://github.com/DIGITALCRIMINAL/OnlyFans&lt;/a>&lt;/li>
+&lt;li>简介
+Scrape all the media from an OnlyFans account - Updated regularly&lt;/li>
+&lt;li>star 数量
+2595&lt;/li>
+&lt;/ul>
+&lt;h2 id="ddia">ddia&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Vonng/ddia">https://github.com/Vonng/ddia&lt;/a>&lt;/li>
+&lt;li>简介
+《Designing Data-Intensive Application》DDIA中文翻译&lt;/li>
+&lt;li>star 数量
+8944&lt;/li>
+&lt;/ul>
+&lt;h2 id="binance-trade-bot">binance-trade-bot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/edeng23/binance-trade-bot">https://github.com/edeng23/binance-trade-bot&lt;/a>&lt;/li>
+&lt;li>简介
+Automated cryptocurrency trading bot&lt;/li>
+&lt;li>star 数量
+5048&lt;/li>
+&lt;/ul>
+&lt;h2 id="paddleocr">PaddleOCR&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/PaddlePaddle/PaddleOCR">https://github.com/PaddlePaddle/PaddleOCR&lt;/a>&lt;/li>
+&lt;li>简介
+Awesome multilingual OCR toolkits based on PaddlePaddle （practical ultra lightweight OCR system, support 80+ languages recognition, provide data annotation and synthesis tools, support training and deployment among server, mobile, embedded and IoT devices）&lt;/li>
+&lt;li>star 数量
+16325&lt;/li>
+&lt;/ul>
+&lt;h2 id="netbox">netbox&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/netbox-community/netbox">https://github.com/netbox-community/netbox&lt;/a>&lt;/li>
+&lt;li>简介
+Infrastructure resource modeling for network automation. Open source under Apache 2. Public demo: &lt;a href="https://demo.netbox.dev">https://demo.netbox.dev&lt;/a>&lt;/li>
+&lt;li>star 数量
+8897&lt;/li>
+&lt;/ul>
+&lt;h2 id="pytorch_geometric">pytorch_geometric&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/pyg-team/pytorch_geometric">https://github.com/pyg-team/pytorch_geometric&lt;/a>&lt;/li>
+&lt;li>简介
+Graph Neural Network Library for PyTorch&lt;/li>
+&lt;li>star 数量
+12399&lt;/li>
+&lt;/ul>
+&lt;h2 id="python">Python&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python&lt;/a>&lt;/li>
+&lt;li>简介
+All Algorithms implemented in Python&lt;/li>
+&lt;li>star 数量
+118215&lt;/li>
+&lt;/ul>
+&lt;h2 id="depix">Depix&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/beurtschipper/Depix">https://github.com/beurtschipper/Depix&lt;/a>&lt;/li>
+&lt;li>简介
+Recovers passwords from pixelized screenshots&lt;/li>
+&lt;li>star 数量
+19943&lt;/li>
+&lt;/ul>
+&lt;h2 id="manim">manim&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ManimCommunity/manim">https://github.com/ManimCommunity/manim&lt;/a>&lt;/li>
+&lt;li>简介
+A community-maintained Python framework for creating mathematical animations.&lt;/li>
+&lt;li>star 数量
+6872&lt;/li>
+&lt;/ul>
+&lt;h2 id="freqtrade-strategies">freqtrade-strategies&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/freqtrade/freqtrade-strategies">https://github.com/freqtrade/freqtrade-strategies&lt;/a>&lt;/li>
+&lt;li>简介
+Free trading strategies for Freqtrade bot&lt;/li>
+&lt;li>star 数量
+1415&lt;/li>
+&lt;/ul>
+&lt;h2 id="gfpgan">GFPGAN&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/TencentARC/GFPGAN">https://github.com/TencentARC/GFPGAN&lt;/a>&lt;/li>
+&lt;li>简介
+GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration.&lt;/li>
+&lt;li>star 数量
+3431&lt;/li>
+&lt;/ul>
+&lt;h2 id="deepfacelab">DeepFaceLab&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/iperov/DeepFaceLab">https://github.com/iperov/DeepFaceLab&lt;/a>&lt;/li>
+&lt;li>简介
+DeepFaceLab is the leading software for creating deepfakes.&lt;/li>
+&lt;li>star 数量
+28873&lt;/li>
+&lt;/ul>
+&lt;h2 id="30-days-of-python">30-Days-Of-Python&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Asabeneh/30-Days-Of-Python">https://github.com/Asabeneh/30-Days-Of-Python&lt;/a>&lt;/li>
+&lt;li>简介
+30 days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than100 days, follow your own pace.&lt;/li>
+&lt;li>star 数量
+7516&lt;/li>
+&lt;/ul>
+&lt;h2 id="compose">compose&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/docker/compose">https://github.com/docker/compose&lt;/a>&lt;/li>
+&lt;li>简介
+Define and run multi-container applications with Docker&lt;/li>
+&lt;li>star 数量
+23402&lt;/li>
+&lt;/ul>
+&lt;h2 id="black">black&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/psf/black">https://github.com/psf/black&lt;/a>&lt;/li>
+&lt;li>简介
+The uncompromising Python code formatter&lt;/li>
+&lt;li>star 数量
+22410&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops-exercises">devops-exercises&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/bregman-arie/devops-exercises">https://github.com/bregman-arie/devops-exercises&lt;/a>&lt;/li>
+&lt;li>简介
+Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions&lt;/li>
+&lt;li>star 数量
+15681&lt;/li>
+&lt;/ul>
+&lt;h2 id="nft-mix">nft-mix&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>url&lt;br>
+&lt;a href="https://github.com/PatrickAlphaC/nft-mix">https://github.com/PatrickAlphaC/nft-mix&lt;/a>&lt;/p></description></item></channel></rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github Golang on Guixian 的日常记录</title><link>https://blog.chenguixian.com/categories/github-golang/</link><description>Recent content in Github Golang on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 18 Sep 2021 16:28:04 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/github-golang/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub 2021 年 9 月热门 Golang 项目</title><link>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</link><pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate><guid>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</guid><description>&lt;h2 id="gokart">gokart&lt;/h2>
+&lt;h3 id="url">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/praetorian-inc/gokart">https://github.com/praetorian-inc/gokart&lt;/a>&lt;/p>
+&lt;h3 id="简介">简介&lt;/h3>
+&lt;p>A static analysis tool for securing Go code&lt;/p>
+&lt;h3 id="star-数量">star 数量&lt;/h3>
+&lt;p>1720&lt;/p>
+&lt;h2 id="filebrowser">filebrowser&lt;/h2>
+&lt;h3 id="url-1">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/filebrowser/filebrowser">https://github.com/filebrowser/filebrowser&lt;/a>&lt;/p>
+&lt;h3 id="简介-1">简介&lt;/h3>
+&lt;p>📂 Web File Browser&lt;/p>
+&lt;h3 id="star-数量-1">star 数量&lt;/h3>
+&lt;p>12833&lt;/p>
+&lt;h2 id="podman">podman&lt;/h2>
+&lt;h3 id="url-2">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/containers/podman">https://github.com/containers/podman&lt;/a>&lt;/p>
+&lt;h3 id="简介-2">简介&lt;/h3>
+&lt;p>Podman: A tool for managing OCI containers and pods.&lt;/p>
+&lt;h3 id="star-数量-2">star 数量&lt;/h3>
+&lt;p>10260&lt;/p>
+&lt;h2 id="cli">cli&lt;/h2>
+&lt;h3 id="url-3">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/cli/cli">https://github.com/cli/cli&lt;/a>&lt;/p>
+&lt;h3 id="简介-3">简介&lt;/h3>
+&lt;p>GitHub’s official command line tool&lt;/p>
+&lt;h3 id="star-数量-3">star 数量&lt;/h3>
+&lt;p>25405&lt;/p>
+&lt;h2 id="netpoll">netpoll&lt;/h2>
+&lt;h3 id="url-4">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/cloudwego/netpoll">https://github.com/cloudwego/netpoll&lt;/a>&lt;/p>
+&lt;h3 id="简介-4">简介&lt;/h3>
+&lt;p>A high-performance non-blocking I/O networking framework, which focused on RPC scenarios, developed by ByteDance.&lt;/p></description></item></channel></rss>
