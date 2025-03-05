@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Guixian 的日常记录</title><link>https://blog.chenguixian.com/tags/mac/</link><description>Recent content in Mac on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 21 Jul 2022 21:53:34 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac 工具记录</title><link>https://blog.chenguixian.com/post/tools/mac-tools/</link><pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/mac-tools/</guid><description>&lt;h2 id="mac-工具记录">Mac 工具记录&lt;/h2>
+&lt;h3 id="mac-使用技巧">Mac 使用技巧&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">图标&lt;/th>
+ &lt;th style="text-align: left">mac&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘&lt;/td>
+ &lt;td style="text-align: left">command()&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥&lt;/td>
+ &lt;td style="text-align: left">option/alt&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃&lt;/td>
+ &lt;td style="text-align: left">control/ctrl&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧&lt;/td>
+ &lt;td style="text-align: left">Shift&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇪&lt;/td>
+ &lt;td style="text-align: left">Caps Lock&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">fn&lt;/td>
+ &lt;td style="text-align: left">fn&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌫&lt;/td>
+ &lt;td style="text-align: left">Backspace&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↵&lt;/td>
+ &lt;td style="text-align: left">Enter&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↹&lt;/td>
+ &lt;td style="text-align: left">Tab&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="快捷键">快捷键&lt;/h4>
+&lt;h5 id="command">command（⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘空格键&lt;/td>
+ &lt;td style="text-align: left">显示“聚焦”搜索&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘C&lt;/td>
+ &lt;td style="text-align: left">拷贝&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘V&lt;/td>
+ &lt;td style="text-align: left">粘贴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘A&lt;/td>
+ &lt;td style="text-align: left">全选&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘X&lt;/td>
+ &lt;td style="text-align: left">剪切文本&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘Z&lt;/td>
+ &lt;td style="text-align: left">撤销&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘W&lt;/td>
+ &lt;td style="text-align: left">关闭窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘Q&lt;/td>
+ &lt;td style="text-align: left">退出程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘↹&lt;/td>
+ &lt;td style="text-align: left">程序切换器&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘F&lt;/td>
+ &lt;td style="text-align: left">查找&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘D&lt;/td>
+ &lt;td style="text-align: left">复制(生成一个副本)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘N&lt;/td>
+ &lt;td style="text-align: left">新建访达窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘H&lt;/td>
+ &lt;td style="text-align: left">隐藏当前程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘⌫&lt;/td>
+ &lt;td style="text-align: left">删除到废纸篓&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="optioncommand">option+command（⌥⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘空格键&lt;/td>
+ &lt;td style="text-align: left">显示“访达”搜索窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘D&lt;/td>
+ &lt;td style="text-align: left">打开或关闭程序坞&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘⌫&lt;/td>
+ &lt;td style="text-align: left">彻底删除选中文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘V&lt;/td>
+ &lt;td style="text-align: left">剪切(先按拷贝快捷键)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘ ESC&lt;/td>
+ &lt;td style="text-align: left">强制退出程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘8&lt;/td>
+ &lt;td style="text-align: left">打开或关闭缩放&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘/&lt;/td>
+ &lt;td style="text-align: left">打开或关闭平滑图像&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘-&lt;/td>
+ &lt;td style="text-align: left">缩小&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘=&lt;/td>
+ &lt;td style="text-align: left">放大&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="shiftcommand">shift+command（⇧⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘Z&lt;/td>
+ &lt;td style="text-align: left">反撤销&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘3&lt;/td>
+ &lt;td style="text-align: left">将屏幕图片存储为文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘4&lt;/td>
+ &lt;td style="text-align: left">将所选区域的图片存储为文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘5&lt;/td>
+ &lt;td style="text-align: left">显示截图工具条&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⇧⌘3&lt;/td>
+ &lt;td style="text-align: left">将屏幕图片拷贝到剪贴板&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⇧⌘4&lt;/td>
+ &lt;td style="text-align: left">将所选区域的图片拷贝到剪贴板&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="其他">其他&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">空格键&lt;/td>
+ &lt;td style="text-align: left">预览&lt;br />在访达中对文件按下后，可以预览文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↵&lt;/td>
+ &lt;td style="text-align: left">重命名文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">F11&lt;/td>
+ &lt;td style="text-align: left">显示桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃←&lt;/td>
+ &lt;td style="text-align: left">向左移动桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃→&lt;/td>
+ &lt;td style="text-align: left">向右移动桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">fnQ&lt;/td>
+ &lt;td style="text-align: left">快速备忘录(没看到效果)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⇧⌘V&lt;/td>
+ &lt;td style="text-align: left">清除格式化粘贴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⌘F&lt;/td>
+ &lt;td style="text-align: left">全屏幕/小屏幕切换&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃空格键&lt;/td>
+ &lt;td style="text-align: left">输入法切换&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="技巧">技巧&lt;/h4>
+&lt;h5 id="常用">常用&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>按住 &lt;code>⌥&lt;/code> 点击上右菜单栏的控制中心图标可以快速进入或退出勿扰模式&lt;/p></description></item></channel></rss>

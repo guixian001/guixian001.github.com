@@ -1,0 +1,276 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>开发环境和工具 - Guixian 的日常记录</title>
+<meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Chen Guixian"><meta name=description content="1. 文章概览 本文是阿里同学都在用的开发环境和工具的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。
+2. 工具分类与推荐 2.1 在线工具 白板工具：tldraw
+用于在线协作绘图，适合团队讨论和设计。 在线画图工具：excalidraw 和 draw.io
+简单易用的在线绘图工具，适合流程图、架构图等。 文档工具： 钉钉文档：alidocs 语雀文档：yuque IT工具集合：it-tools
+提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。 2.2 输入法 RIME输入法：rime.im
+程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。 2.3 截图软件 Xnip：xnipapp.com
+Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。 2.4 鼠标控制软件 MOS：github.com/Caldis/Mos
+用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。 2.5 AI工具 ollama：本地运行大模型，ollama.com Bolt.New：通过描述需求创建并部署Web应用，bolt.new DeepL翻译：deepl.com OpenAI ChatGPT：chat.openai.com Google Gemini：gemini.google.com 通义千问：阿里云的AI服务，tongyi.aliyun.com 纳米搜索：n.cn 字节豆包：doubao.com 注意：部分工具可能需要科学上网，使用时需遵守法律法规。
+"><meta name=keywords content="程序员的日常记录,编码人生,生活笔记"><meta name=generator content="Hugo 0.134.3 with theme even"><link rel=canonical href=https://blog.chenguixian.com/post/tools/coder-tools/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:url" content="https://blog.chenguixian.com/post/tools/coder-tools/"><meta property="og:site_name" content="Guixian 的日常记录"><meta property="og:title" content="开发环境和工具"><meta property="og:description" content="1. 文章概览 本文是阿里同学都在用的开发环境和工具的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。
+2. 工具分类与推荐 2.1 在线工具 白板工具：tldraw
+用于在线协作绘图，适合团队讨论和设计。 在线画图工具：excalidraw 和 draw.io
+简单易用的在线绘图工具，适合流程图、架构图等。 文档工具： 钉钉文档：alidocs 语雀文档：yuque IT工具集合：it-tools
+提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。 2.2 输入法 RIME输入法：rime.im
+程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。 2.3 截图软件 Xnip：xnipapp.com
+Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。 2.4 鼠标控制软件 MOS：github.com/Caldis/Mos
+用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。 2.5 AI工具 ollama：本地运行大模型，ollama.com Bolt.New：通过描述需求创建并部署Web应用，bolt.new DeepL翻译：deepl.com OpenAI ChatGPT：chat.openai.com Google Gemini：gemini.google.com 通义千问：阿里云的AI服务，tongyi.aliyun.com 纳米搜索：n.cn 字节豆包：doubao.com 注意：部分工具可能需要科学上网，使用时需遵守法律法规。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2025-02-19T10:40:23+08:00"><meta property="article:modified_time" content="2025-02-19T10:40:23+08:00"><meta itemprop=name content="开发环境和工具"><meta itemprop=description content="1. 文章概览 本文是阿里同学都在用的开发环境和工具的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。
+2. 工具分类与推荐 2.1 在线工具 白板工具：tldraw
+用于在线协作绘图，适合团队讨论和设计。 在线画图工具：excalidraw 和 draw.io
+简单易用的在线绘图工具，适合流程图、架构图等。 文档工具： 钉钉文档：alidocs 语雀文档：yuque IT工具集合：it-tools
+提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。 2.2 输入法 RIME输入法：rime.im
+程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。 2.3 截图软件 Xnip：xnipapp.com
+Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。 2.4 鼠标控制软件 MOS：github.com/Caldis/Mos
+用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。 2.5 AI工具 ollama：本地运行大模型，ollama.com Bolt.New：通过描述需求创建并部署Web应用，bolt.new DeepL翻译：deepl.com OpenAI ChatGPT：chat.openai.com Google Gemini：gemini.google.com 通义千问：阿里云的AI服务，tongyi.aliyun.com 纳米搜索：n.cn 字节豆包：doubao.com 注意：部分工具可能需要科学上网，使用时需遵守法律法规。"><meta itemprop=datePublished content="2025-02-19T10:40:23+08:00"><meta itemprop=dateModified content="2025-02-19T10:40:23+08:00"><meta itemprop=wordCount content="1944"><meta itemprop=keywords content="Tool"><meta name=twitter:card content="summary"><meta name=twitter:title content="开发环境和工具"><meta name=twitter:description content="1. 文章概览 本文是阿里同学都在用的开发环境和工具的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。
+2. 工具分类与推荐 2.1 在线工具 白板工具：tldraw
+用于在线协作绘图，适合团队讨论和设计。 在线画图工具：excalidraw 和 draw.io
+简单易用的在线绘图工具，适合流程图、架构图等。 文档工具： 钉钉文档：alidocs 语雀文档：yuque IT工具集合：it-tools
+提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。 2.2 输入法 RIME输入法：rime.im
+程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。 2.3 截图软件 Xnip：xnipapp.com
+Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。 2.4 鼠标控制软件 MOS：github.com/Caldis/Mos
+用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。 2.5 AI工具 ollama：本地运行大模型，ollama.com Bolt.New：通过描述需求创建并部署Web应用，bolt.new DeepL翻译：deepl.com OpenAI ChatGPT：chat.openai.com Google Gemini：gemini.google.com 通义千问：阿里云的AI服务，tongyi.aliyun.com 纳米搜索：n.cn 字节豆包：doubao.com 注意：部分工具可能需要科学上网，使用时需遵守法律法规。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Guixian 的日常记录</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Guixian 的日常记录</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>开发环境和工具</h1><div class=post-meta><span class=post-time>2025-02-19</span><div class=post-category><a href=/categories/tool/>Tool</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#1-文章概览><strong>1. 文章概览</strong></a></li><li><a href=#2-工具分类与推荐><strong>2. 工具分类与推荐</strong></a></li><li><a href=#3-总结><strong>3. 总结</strong></a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=1-文章概览><strong>1. 文章概览</strong></h3><p>本文是<a href=https://mp.weixin.qq.com/s/2qgs4JYOJFCmrxHMxtctyA>阿里同学都在用的开发环境和工具</a>的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。</p><h3 id=2-工具分类与推荐><strong>2. 工具分类与推荐</strong></h3><h4 id=21-在线工具><strong>2.1 在线工具</strong></h4><ul><li><strong>白板工具</strong>：<a href=https://www.tldraw.com>tldraw</a><br>用于在线协作绘图，适合团队讨论和设计。</li><li><strong>在线画图工具</strong>：<a href=https://excalidraw.com>excalidraw</a> 和 <a href=https://draw.io>draw.io</a><br>简单易用的在线绘图工具，适合流程图、架构图等。</li><li><strong>文档工具</strong>：<ul><li>钉钉文档：<a href=https://alidocs.dingtalk.com>alidocs</a></li><li>语雀文档：<a href=https://www.yuque.com>yuque</a></li></ul></li><li><strong>IT工具集合</strong>：<a href=https://it-tools.tech>it-tools</a><br>提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。</li></ul><h4 id=22-输入法><strong>2.2 输入法</strong></h4><ul><li><strong>RIME输入法</strong>：<a href=https://rime.im/>rime.im</a><br>程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。</li></ul><h4 id=23-截图软件><strong>2.3 截图软件</strong></h4><ul><li><strong>Xnip</strong>：<a href=https://www.xnipapp.com>xnipapp.com</a><br>Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。</li></ul><h4 id=24-鼠标控制软件><strong>2.4 鼠标控制软件</strong></h4><ul><li><strong>MOS</strong>：<a href=https://github.com/Caldis/Mos>github.com/Caldis/Mos</a><br>用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。</li></ul><h4 id=25-ai工具><strong>2.5 AI工具</strong></h4><ul><li><strong>ollama</strong>：本地运行大模型，<a href=https://ollama.com>ollama.com</a></li><li><strong>Bolt.New</strong>：通过描述需求创建并部署Web应用，<a href=https://github.com/stackblitz/bolt.new>bolt.new</a></li><li><strong>DeepL翻译</strong>：<a href=https://www.deepl.com>deepl.com</a></li><li><strong>OpenAI ChatGPT</strong>：<a href=https://chat.openai.com/chat>chat.openai.com</a></li><li><strong>Google Gemini</strong>：<a href=https://gemini.google.com/app>gemini.google.com</a></li><li><strong>通义千问</strong>：阿里云的AI服务，<a href=https://tongyi.aliyun.com>tongyi.aliyun.com</a></li><li><strong>纳米搜索</strong>：<a href=https://n.cn>n.cn</a></li><li><strong>字节豆包</strong>：<a href=https://www.doubao.com>doubao.com</a></li></ul><p><strong>注意</strong>：部分工具可能需要科学上网，使用时需遵守法律法规。</p><h4 id=26-浏览器插件><strong>2.6 浏览器插件</strong></h4><ul><li><strong>沉浸工翻译插件</strong>：<a href=https://immersivetranslate.com>immersivetranslate.com</a><br>提供网页翻译功能。</li><li><strong>SiderAI助手</strong>：<a href=https://sider.ai/apps/lp-chatgpt>sider.ai</a><br>提供AI辅助功能。</li><li><strong>JSON-Handle</strong>：用于格式化和查看JSON响应。</li></ul><h4 id=27-终端工具><strong>2.7 终端工具</strong></h4><ul><li><p><strong>iTerm2</strong>：Mac上更强大的终端工具，支持分屏等功能。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install iterm2  <span class=c1># 使用Homebrew安装iTerm2</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>oh-my-zsh</strong>：终端增强工具，提供丰富的插件和主题。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sh -c <span class=s2>&#34;</span><span class=k>$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=c1># zshrc 配置参考</span>
+</span></span><span class=line><span class=cl><span class=c1># Path to your oh-my-zsh installation.</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>ZSH</span><span class=o>=</span><span class=s2>&#34;$HOME/.oh-my-zsh&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>DISABLE_AUTO_UPDATE</span><span class=o>=</span><span class=bp>true</span>
+</span></span><span class=line><span class=cl><span class=n>ZSH_THEME</span><span class=o>=</span><span class=s2>&#34;gentoo&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>DISABLE_MAGIC_FUNCTIONS</span><span class=o>=</span><span class=s2>&#34;true&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>plugins</span><span class=o>=</span><span class=p>(</span><span class=n>git</span> <span class=n>z</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>source</span> <span class=o>$</span><span class=n>ZSH</span><span class=o>/</span><span class=n>oh</span><span class=o>-</span><span class=n>my</span><span class=o>-</span><span class=n>zsh</span><span class=o>.</span><span class=n>sh</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># odpscmd</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PATH</span><span class=o>=</span><span class=s2>&#34;$PATH:/opt/odpscmd/bin&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># go env</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>GOPATH</span><span class=o>=</span><span class=s2>&#34;$HOME/go&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PATH</span><span class=o>=</span><span class=s2>&#34;$HOME/go/bin:$PATH&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>GOPROXY</span><span class=o>=</span><span class=s2>&#34;http://goproxy.alibaba-inc.com&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># brew</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PATH</span><span class=o>=</span><span class=s2>&#34;/opt/homebrew/bin:$PATH&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_NO_ENV_HINTS</span><span class=o>=</span><span class=bp>true</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_NO_AUTO_UPDATE</span><span class=o>=</span><span class=s2>&#34;true&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_INSTALL_FROM_API</span><span class=o>=</span><span class=mi>1</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_API_DOMAIN</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew-bottles/api&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_BREW_GIT_REMOTE</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew/brew.git&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_CORE_GIT_REMOTE</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew/homebrew-core.git&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>HOMEBREW_BOTTLE_DOMAIN</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew/homebrew-bottles&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># java</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>JAVA_HOME</span><span class=o>=</span><span class=s2>&#34;/Library/Java/JavaVirtualMachines/openjdk-21/Contents/Home&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PATH</span><span class=o>=</span><span class=s2>&#34;$JAVA_HOME/bin:$PATH&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>CLASS_PATH</span><span class=o>=</span><span class=s2>&#34;$JAVA_HOME/lib&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># python</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PATH</span><span class=o>=</span><span class=s2>&#34;$HOME/.pyenv/bin:$PATH&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># mysql</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PATH</span><span class=o>=</span><span class=s2>&#34;/opt/homebrew/opt/mysql-client/bin:$PATH&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>LDFLAGS</span><span class=o>=</span><span class=s2>&#34;-L/opt/homebrew/opt/mysql-client/lib&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>CPPFLAGS</span><span class=o>=</span><span class=s2>&#34;-I/opt/homebrew/opt/mysql-client/include&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>export</span> <span class=n>PKG_CONFIG_PATH</span><span class=o>=</span><span class=s2>&#34;/opt/homebrew/opt/mysql-client/lib/pkgconfig&#34;</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>zsh配置</strong>：推荐使用<code>gentoo</code>主题和<code>git</code>插件。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>ZSH_THEME</span><span class=o>=</span><span class=s2>&#34;gentoo&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>plugins</span><span class=o>=(</span>git z<span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div></li></ul><h4 id=28-开发环境配置><strong>2.8 开发环境配置</strong></h4><ul><li><p><strong>Homebrew</strong>：Mac上的包管理工具，类似于Linux的<code>yum</code>或<code>apt</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 安装</span>
+</span></span><span class=line><span class=cl>/bin/bash -c <span class=s2>&#34;</span><span class=k>$(</span>curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=s2>&#34;/opt/homebrew/bin:</span><span class=nv>$PATH</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_NO_ENV_HINTS</span><span class=o>=</span><span class=nb>true</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_NO_AUTO_UPDATE</span><span class=o>=</span><span class=s2>&#34;true&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_INSTALL_FROM_API</span><span class=o>=</span><span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=c1># 配置阿里云镜像加速</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_API_DOMAIN</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew-bottles/api&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_BREW_GIT_REMOTE</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew/brew.git&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_CORE_GIT_REMOTE</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew/homebrew-core.git&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>HOMEBREW_BOTTLE_DOMAIN</span><span class=o>=</span><span class=s2>&#34;https://mirrors.aliyun.com/homebrew/homebrew-bottles&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装一些常用软件</span>
+</span></span><span class=line><span class=cl>brew install git wget tree mysql-client@8.4 python redis golangci-lint httpie protobuf
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ln -s /opt/homebrew/opt/mysql-client@8.4 /opt/homebrew/opt/mysql-client
+</span></span><span class=line><span class=cl><span class=c1># mysql 环境变量配置见后面的 zsh 部分</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>安装一些常用软件
+</span></span><span class=line><span class=cl>brew install --cask raycast visual-studio-code google-chrome postman
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>update</span> <span class=nx>更新</span> <span class=nx>Homebrew</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>search</span> <span class=kn>package</span> <span class=nx>搜索软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>install</span> <span class=kn>package</span> <span class=nx>安装软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>uninstall</span> <span class=kn>package</span> <span class=nx>卸载软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>upgrade</span> <span class=nx>升级所有软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>upgrade</span> <span class=kn>package</span> <span class=nx>升级指定软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>list</span> <span class=nx>列出已安装的软件包列表</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>services</span> <span class=nx>command</span> <span class=kn>package</span> <span class=nx>管理</span> <span class=nx>brew</span> <span class=nx>安装软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>services</span> <span class=nx>list</span> <span class=nx>列出</span> <span class=nx>brew</span> <span class=nx>管理运行的服务</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>info</span> <span class=kn>package</span> <span class=nx>查看软件包信息</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>deps</span> <span class=kn>package</span> <span class=nx>列出软件包的依赖关系</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>help</span> <span class=nx>查看帮助</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>cleanup</span> <span class=nx>清除过时软件包</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>link</span> <span class=kn>package</span> <span class=nx>创建软件包符号链接</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>unlink</span> <span class=kn>package</span> <span class=nx>取消软件包符号链接</span>
+</span></span><span class=line><span class=cl><span class=nx>brew</span> <span class=nx>doctor</span> <span class=nx>检查系统是否存在问题</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Python环境</strong>：推荐使用Python 3.12。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install python@3.12
+</span></span><span class=line><span class=cl>python3.12 -m venv ~/.pyenv  <span class=c1># 创建虚拟环境</span>
+</span></span><span class=line><span class=cl><span class=nb>source</span> ~/.pyenv/bin/activate  <span class=c1># 激活虚拟环境</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装 ipython，简化成命令 py 方便日常使用</span>
+</span></span><span class=line><span class=cl>pip3 install ipython
+</span></span><span class=line><span class=cl>ln -s ~/.pyenv/bin/ipython3 ~/.pyenv/bin/py
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Go开发环境</strong>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 配置GOPROXY</span>
+</span></span><span class=line><span class=cl>go env -w <span class=nv>GOPROXY</span><span class=o>=</span><span class=s2>&#34;https://goproxy.cn,https://proxy.golang.com.cn,direct&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 配置私有库</span>
+</span></span><span class=line><span class=cl>go env -w <span class=nv>GOPRIVATE</span><span class=o>=</span><span class=s2>&#34;*.alibaba-inc.com&#34;</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Git配置</strong>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git config --global url.<span class=s2>&#34;git@gitlab.alibaba-inc.com:&#34;</span>.insteadOf <span class=s2>&#34;https://gitlab.alibaba-inc.com/&#34;</span>
+</span></span><span class=line><span class=cl>git config --global url.<span class=s2>&#34;git@github.com:&#34;</span>.insteadOf <span class=s2>&#34;https://github.com/&#34;</span>
+</span></span></code></pre></td></tr></table></div></div></li></ul><h4 id=29-数据库工具><strong>2.9 数据库工具</strong></h4><ul><li><p><strong>Redis客户端</strong>：推荐使用<code>iredis</code>或者 <code>RedisInsight</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install iredis
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>MySQL客户端</strong>：推荐使用<code>mycli</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install mycli
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>MongoDB客户端</strong>：推荐使用<code>Mongo Client Compass</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 下载地址：https://github.com/mongodb-js/compass/releases</span>
+</span></span></code></pre></td></tr></table></div></div></li></ul><h4 id=210-容器工具><strong>2.10 容器工具</strong></h4><ul><li><p><strong>OrbStack</strong>：轻量级Docker替代品，适合MacOS。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install orbstack
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Docker配置</strong>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;registry-mirrors&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;http://yum.tbsite.net/mirrors/&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;insecure-registries&#34;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&#34;yum.tbsite.net&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Docker示例</strong>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 运行MySQL 8.0</span>
+</span></span><span class=line><span class=cl>docker run -p 3306:3306 --name mysql8 -e <span class=nv>MYSQL_ROOT_PASSWORD</span><span class=o>=</span><span class=m>123456</span> -d mysql:8
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 运行Redis 7.x</span>
+</span></span><span class=line><span class=cl>docker run -p 6379:6379 --name redis7 -d redis:7
+</span></span></code></pre></td></tr></table></div></div></li></ul><h4 id=211-其他工具><strong>2.11 其他工具</strong></h4><ul><li><p><strong>Sublime Text</strong>：轻量级文本编辑器，适合快速编辑。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ln -sf /Applications/Sublime<span class=se>\ </span>Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>RayCast</strong>：快速检索和窗口管理工具。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install --cask raycast
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>odpscmd</strong>：阿里云MaxCompute命令行工具。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 配置文件示例</span>
+</span></span><span class=line><span class=cl><span class=nv>project_name</span><span class=o>=</span>amap_aos_gaea
+</span></span><span class=line><span class=cl><span class=nv>access_id</span><span class=o>=</span>x
+</span></span><span class=line><span class=cl><span class=nv>access_key</span><span class=o>=</span>x
+</span></span><span class=line><span class=cl><span class=nv>end_point</span><span class=o>=</span>http://service-corp.odps.aliyun-inc.com/api
+</span></span></code></pre></td></tr></table></div></div></li></ul><h3 id=3-总结><strong>3. 总结</strong></h3><p>本文为开发者提供了一套全面的开发工具和环境搭建指南，涵盖了从基础工具到高级开发环境的配置。无论是Mac用户还是其他平台用户，都能从中找到适合自己的工具和配置方法。如果对某些工具感兴趣，建议进一步探索其官方文档或社区资源。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Chen Guixian</span></p><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2025-02-19</span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/op/migrate-pg-databse/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">迁移 kong 中的 PostgreSQL 数据库</span>
+<span class="prev-text nav-mobile">上一篇</span>
+</a><a class=next href=/post/misc/how-to-build-personal-tech-brand/><span class="next-text nav-default">如何打造个人技术品牌？</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动
+</span><span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2017 -
+2025<span class=heart><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

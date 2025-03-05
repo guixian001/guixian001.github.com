@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Nginx location 和 proxy_pass  - HelloMonkey</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chen Guixian" /><meta name="description" content="Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明 语法 1 2 3 4 Syntax: location [ = | ~ | ~* | ^~ ] uri { ... } location" /><meta name="keywords" content="nginx, location, proxy" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
+
+
+<link rel="canonical" href="https://blog.chenguixian.com/post/op/nginx-proxy_pass/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Nginx location 和 proxy_pass " />
+<meta property="og:description" content="Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明 语法 1 2 3 4 Syntax: location [ = | ~ | ~* | ^~ ] uri { ... } location" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.chenguixian.com/post/op/nginx-proxy_pass/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-03T19:39:31+08:00" />
+<meta property="article:modified_time" content="2021-09-03T19:39:31+08:00" />
+
+<meta itemprop="name" content="Nginx location 和 proxy_pass ">
+<meta itemprop="description" content="Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明 语法 1 2 3 4 Syntax: location [ = | ~ | ~* | ^~ ] uri { ... } location"><meta itemprop="datePublished" content="2021-09-03T19:39:31+08:00" />
+<meta itemprop="dateModified" content="2021-09-03T19:39:31+08:00" />
+<meta itemprop="wordCount" content="2507">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nginx location 和 proxy_pass "/>
+<meta name="twitter:description" content="Location Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。loacation 官方说明 语法 1 2 3 4 Syntax: location [ = | ~ | ~* | ^~ ] uri { ... } location"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">HelloMonkey</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">HelloMonkey</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Nginx location 和 proxy_pass </h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-03 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#location">Location</a>
+          <ul>
+            <li><a href="#语法">语法</a></li>
+            <li><a href="#匹配命令">匹配命令</a></li>
+            <li><a href="#匹配顺序">匹配顺序</a></li>
+            <li><a href="#示例">示例</a></li>
+            <li><a href="#命名-location">命名 location</a></li>
+          </ul>
+        </li>
+        <li><a href="#proxy_pass">proxy_pass</a>
+          <ul>
+            <li><a href="#语法-1">语法</a></li>
+            <li><a href="#proxy_pass-url-的两种形式">proxy_pass URL 的两种形式</a></li>
+            <li><a href="#其他情况">其他情况</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考文档">参考文档</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="location">Location</h2>
+<p>Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。<a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">loacation 官方说明</a></p>
+<h3 id="语法">语法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Syntax:	location [ = | ~ | ~* | ^~ ] uri { ... }
+location @name { ... }
+Default:	—
+Context:	server, location
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="匹配命令">匹配命令</h3>
+<table>
+<thead>
+<tr>
+<th>参数/修饰符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空</td>
+<td>location 后没有参数直接跟着 <strong>标准 URI</strong>，表示前缀匹配，代表跟请求中的 URI 从头开始匹配。</td>
+</tr>
+<tr>
+<td>=</td>
+<td>精确匹配，用于<strong>标准 URI</strong> 前，要求请求字符串与其精准匹配，成功则立即处理，Nginx 停止搜索其他匹配。</td>
+</tr>
+<tr>
+<td>~</td>
+<td>用于<strong>正则 URI</strong> 前，表示 URI 包含正则表达式， <strong>区分</strong>大小写</td>
+</tr>
+<tr>
+<td>~*</td>
+<td>用于<strong>正则 URI</strong> 前， 表示 URI 包含正则表达式， <strong>不区分</strong>大小写</td>
+</tr>
+<tr>
+<td>^~</td>
+<td>用于<strong>标准 URI</strong> 前，最长非正则匹配，并要求一旦匹配到就会立即处理，不再去匹配其他的。</td>
+</tr>
+<tr>
+<td>@</td>
+<td>@ 定义一个命名的 location，@ 定义的locaiton名字一般用在内部定向，例如error_page, try_files命令中。它的功能类似于编程中的goto。</td>
+</tr>
+<tr>
+<td>/</td>
+<td>通用匹配, 如果没有其它匹配,任何请求都会匹配到</td>
+</tr>
+</tbody>
+</table>
+<h3 id="匹配顺序">匹配顺序</h3>
+<blockquote>
+<p>To find location matching a given request, nginx first checks locations defined using the prefix strings (prefix locations). Among them, the location with the longest matching prefix is selected and remembered. Then regular expressions are checked, in the order of their appearance in the configuration file. The search of regular expressions terminates on the first match, and the corresponding configuration is used. If no match with a regular expression is found then the configuration of the prefix location remembered earlier is used.</p>
+<p>If the longest matching prefix location has the “<code>^~</code>” modifier then regular expressions are not checked.</p>
+<p>Also, using the “<code>=</code>” modifier it is possible to define an exact match of URI and location. If an exact match is found, the search terminates.</p>
+</blockquote>
+<p>location 的匹配并不完全按照其在配置文件中出现的顺序来匹配，请求URI 会按如下规则进行匹配：</p>
+<ol>
+<li>Nginx 首先跟进前缀字符定义的 location，选择最长的并且记录下。</li>
+<li>如果最长的前缀匹配使用了<code>^~</code>修饰符，那就直接采用该配置，不再检查正则。如果是精准匹配 <code>=</code> ，精准匹配成功则会立即停止其他类型匹配；</li>
+<li><code>=</code> 和 <code>^~</code> 均未匹配成功前提下，查找正则匹配 ~ 和 ~* 。当同时有多个正则匹配时，按其在配置文件中出现的先后顺序优先匹配，命中则立即停止其他类型匹配；</li>
+<li>所有正则匹配均未成功时，返回步骤 1 中暂存的普通前缀匹配（不带参数 ^~ ）结果</li>
+</ol>
+<p>优先级由高到低：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">1.</span> <span class="s">location</span> <span class="p">=</span>    <span class="c1"># 精准匹配
+</span><span class="c1"></span><span class="mi">2</span><span class="s">.</span> <span class="s">location</span> <span class="s">^~</span>   <span class="c1"># 带参前缀匹配
+</span><span class="c1"></span><span class="mi">3</span><span class="s">.</span> <span class="s">location</span> <span class="p">~</span>    <span class="sr">#</span> <span class="s">正则匹配（区分大小写）</span>
+<span class="mi">4</span><span class="s">.</span> <span class="s">location</span> <span class="p">~</span><span class="sr">*</span>   <span class="c1"># 正则匹配（不区分大小写）
+</span><span class="c1"></span><span class="mi">5</span><span class="s">.</span> <span class="s">location</span> <span class="s">/a</span>   <span class="c1"># 普通前缀匹配，优先级低于带参数前缀匹配。
+</span><span class="c1"></span><span class="mi">6</span><span class="s">.</span> <span class="s">location</span> <span class="s">/</span>    <span class="c1"># 任何没有匹配成功的，都会匹配这里处理
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Nginx 会首先会检查多个location中是否有普通的uri匹配，如果有多个匹配，会先记住匹配度最高的那个。然后再检查正则匹配，这里正则匹配是有顺序的，从上到下依次匹配，一旦匹配成功，则结束检查，并就会使用这个location 块处理此请求。如果正则匹配全部失败，就会使用刚才记录普通uri匹配度最高的那个location块处理此请求。</p>
+<p><img src="https://gitee.com/guixian/static-files/raw/master/image/2021/09/640-7ea49e" alt="图片"></p>
+<h3 id="示例">示例</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span>  <span class="p">=</span> <span class="s">/</span> <span class="p">{</span>
+  <span class="c1"># 精确匹配 / ，主机名后面不能带任何字符串
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">A</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span>  <span class="s">/</span> <span class="p">{</span>
+  <span class="c1"># 因为所有的地址都以 / 开头，所以这条规则将匹配到所有请求
+</span><span class="c1"></span>  <span class="c1"># 但是正则和最长字符串会优先匹配
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">B</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="s">/documents/</span> <span class="p">{</span>
+  <span class="c1"># 匹配任何以 /documents/ 开头的地址，匹配符合以后，还要继续往下搜索
+</span><span class="c1"></span>  <span class="c1"># 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">C</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="p">~</span> <span class="sr">/documents/Abc</span> <span class="p">{</span>
+  <span class="c1"># 匹配任何以 /documents/Abc 开头的地址，匹配符合以后，还要继续往下搜索
+</span><span class="c1"></span>  <span class="c1"># 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">CC</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="s">^~</span> <span class="s">/images/</span> <span class="p">{</span>
+  <span class="c1"># 匹配任何以 /images/ 开头的地址，匹配符合以后，停止往下搜索正则，采用这一条。
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">D</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">\.(gif|jpg|jpeg)</span>$ <span class="p">{</span>
+  <span class="c1"># 匹配所有以 gif,jpg或jpeg 结尾的请求
+</span><span class="c1"></span>  <span class="c1"># 然而，所有请求 /images/ 下的图片会被 config D 处理，因为 ^~ 到达不了这一条正则
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">E</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="s">/images/</span> <span class="p">{</span>
+  <span class="c1"># 字符匹配到 /images/
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">F</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="s">/images/abc</span> <span class="p">{</span>
+  <span class="c1"># 字符匹配到 /images/abc
+</span><span class="c1"></span>  <span class="kn">[</span> <span class="s">configuration</span> <span class="s">G</span> <span class="s">]</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="p">~</span> <span class="sr">/images/abc/</span> <span class="p">{</span>
+	<span class="c1"># 正则匹配 /images/abc/
+</span><span class="c1"></span>	<span class="c1"># 先最长匹配 [ config G ] 开头的地址，继续往下搜索，匹配到这一条正则
+</span><span class="c1"></span>    <span class="kn">[</span> <span class="s">configuration</span> <span class="s">H</span> <span class="s">]</span>
+<span class="err">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>/ -&gt; config A
+精确完全匹配，即使/index.html也匹配不了</li>
+<li>/downloads/download.html -&gt; config B
+匹配B以后，往下没有任何匹配，采用B</li>
+<li>/images/1.gif -&gt; configuration D
+^~ 优先</li>
+<li>/images/abc/def -&gt; config H
+最长匹配到 H，除了按照上述的修饰符匹配优先级，还有一条最长匹配的规则。按照这里的配置 D/F/G 均匹配过，但是最后以正则最长的匹配为准。如果在匹配中去掉 H 这条配置，那么就会匹配到 G。<strong>如果去掉 G 这条规则，会匹配到 D，也就是存在 G 的时候虽然 ^~ 优先级高于正则但是低于空前缀(location /images/abc)的精确匹配，当请求 /images/abc/def 会先被 G 匹配上，然后再继续寻找正则匹配。</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">&lt;!--Locations</span> <span class="s">tried--&gt;</span>
+<span class="s">prefix</span> <span class="s">match</span> <span class="s">for</span> <span class="s">location:</span> <span class="s">/</span>
+<span class="s">priority</span> <span class="s">prefix</span> <span class="s">match</span> <span class="s">for</span> <span class="s">location:</span> <span class="s">/images/</span>
+<span class="s">prefix</span> <span class="s">match</span> <span class="s">for</span> <span class="s">location:</span> <span class="s">/images/</span>
+<span class="s">prefix</span> <span class="s">match</span> <span class="s">for</span> <span class="s">location:</span> <span class="s">/images/abc</span>
+<span class="s">case</span> <span class="s">sensitive</span> <span class="s">regex</span> <span class="s">match</span> <span class="s">for</span> <span class="s">location:</span> <span class="s">/images/abc/</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>/documents/document.html -&gt; config C
+匹配到C，往下没有任何匹配，采用C</p>
+</li>
+<li>
+<p>/documents/1.jpg -&gt; configuration E
+匹配到C，往下正则匹配到E</p>
+</li>
+<li>
+<p>/documents/Abc.jpg -&gt; config CC
+最长匹配到C，往下正则顺序匹配到CC，不会往下到E</p>
+</li>
+</ul>
+<h3 id="命名-location">命名 location</h3>
+<blockquote>
+<p>The “<code>@</code>” prefix defines a named location. Such a location is not used for a regular request processing, but instead used for request redirection. They cannot be nested, and cannot contain nested locations.</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+    <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri/</span> <span class="s">@custom</span>
+<span class="err">}</span>
+<span class="s">location</span> <span class="s">@custom</span> <span class="p">{</span>
+    <span class="c1"># ...do something
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="proxy_pass">proxy_pass</h2>
+<p>proxy_pass 属于 <code>nginx_http_proxy_module</code> 中的指令，用于设置代理。</p>
+<h3 id="语法-1">语法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">Syntax:</span>	<span class="s">proxy_pass</span> <span class="s">URL</span><span class="p">;</span>
+<span class="k">Default:</span>	<span class="s">—</span>
+<span class="s">Context:</span>	<span class="s">location,</span> <span class="s">if</span> <span class="s">in</span> <span class="s">location,</span> <span class="s">limit_except</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Sets the protocol and address of a proxied server and an optional URI to which a location should be mapped. As a protocol, “<code>http</code>” or “<code>https</code>” can be specified.</p>
+</blockquote>
+<p>proxy_pass 后面设置代理服务器的协议、地址，后面可以携带 URI。</p>
+<h3 id="proxy_pass-url-的两种形式">proxy_pass URL 的两种形式</h3>
+<p>这里的是否携带 URI，是指协议、域名、端口之后没有携带更详细路径。</p>
+<h4 id="带-uri">带 URI</h4>
+<p>形如 <a href="https://test.com/">https://test.com/</a>、https://test.com/aa，即只要是域名后面有 <code>/</code> 的这种形式。</p>
+<blockquote>
+<p>If the <code>proxy_pass</code> directive is specified with a URI, then when a request is passed to the server, the part of a <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">normalized</a> request URI matching the location is replaced by a URI specified in the directive:</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/proxy/api</span> <span class="p">{</span>
+	<span class="kn">proxy_pass</span> <span class="s">https://proxy.com/test/v1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>访问 <strong>/proxy/api</strong>/aa/bb 会变成实际访问 <code>https://proxy.com/test/v1/aa/bb</code>。也就是 location 匹配到 path 会被 URL 里面的地址给替换掉。</p>
+<h4 id="不带-uri">不带 URI</h4>
+<blockquote>
+<p>If <code>proxy_pass</code> is specified without a URI, the request URI is passed to the server in the same form as sent by a client when the original request is processed, or the full normalized request URI is passed when processing the changed URI</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/proxy/api</span> <span class="p">{</span>
+	<span class="kn">proxy_pass</span> <span class="s">https://proxy.com</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>访问 /proxy/api/aa/bb 会变成实际访问 <code>https://proxy.com/proxy/api/aa/bb</code>。也就是 location 匹配到的 path  会被直接透传给 proxy。</p>
+<h3 id="其他情况">其他情况</h3>
+<h4 id="location-是正则或者在命名-location-中">location 是正则或者在命名 location 中</h4>
+<p>proxy_pass 需要被设置为不带 URI 的形式</p>
+<h4 id="使用了-rewrite-规则并且用于处理请求">使用了 rewrite 规则，并且用于处理请求</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/name/</span> <span class="p">{</span>
+    <span class="kn">rewrite</span>    <span class="s">/name/([^/]+)</span> <span class="s">/users?name=</span><span class="nv">$1</span> <span class="s">break</span><span class="p">;</span>
+    <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这种情况下 proxy_pass 后面即使是携带了 URI 的也会被忽略，被 rewrite 改写后的 URI 会被传递给设置的 proxy（剔除掉设置的 URI 部分）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/get</span> <span class="p">{</span>
+        <span class="kn">rewrite</span> <span class="s">^/get/(.*)</span> <span class="s">/get?path=</span><span class="nv">$1</span> <span class="s">break</span><span class="p">;</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://3.233.172.144/node</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>访问 <code>/get/111</code> 会变成 http://3.233.172.144/get?path=11111</p>
+<h4 id="在-proxy_pass-中使用的变量">在 proxy_pass 中使用的变量</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="s">/name/</span> <span class="p">{</span>
+    <span class="kn">proxy_pass</span> <span class="s">http://nginx.com</span><span class="nv">$request_uri</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会替换 location 匹配的 path 部分。访问 /name/1111 会变成 <a href="http://nginx.com/name/1111">http://nginx.com/name/1111</a></p>
+<h2 id="参考文档">参考文档</h2>
+<p><a href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass">nginx proxy 官方文档</a>
+<a href="https://xuexb.github.io/learn-nginx/example/proxy_pass.html#url-%E5%8F%AA%E6%98%AF-host">proxy_pass url 反向代理的坑</a>
+<a href="https://github.com/DocsHome/nginx-docs">Nginx 中文文档</a>
+<a href="https://nginx.viraptor.info/">Nginx location match tester</a>
+<a href="https://hqidi.com/95.html">Nginx的location规则迷之匹配</a>
+<a href="https://segmentfault.com/a/1190000022315733">https://segmentfault.com/a/1190000022315733</a>
+<a href="https://www.journaldev.com/26342/nginx-location-directive">https://www.journaldev.com/26342/nginx-location-directive</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Chen Guixian</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-09-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/op/nginx-location-proxy_pass/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Nginx location 和 proxy_pass </span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/hugo-blog/">
+            <span class="next-text nav-default">使用 hugo 搭建 blog</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://blog.chenguixian.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

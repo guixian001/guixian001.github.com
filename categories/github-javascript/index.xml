@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github Javascript on Guixian 的日常记录</title><link>https://blog.chenguixian.com/categories/github-javascript/</link><description>Recent content in Github Javascript on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 18 Sep 2021 16:48:09 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/categories/github-javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub 2021 年 9 月热门 Javascript 项目</title><link>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</link><pubDate>Sat, 18 Sep 2021 16:48:09 +0800</pubDate><guid>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</guid><description>&lt;h2 id="thealgorithmsjavascript">/TheAlgorithms/Javascript&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/TheAlgorithms/Javascript">https://github.com/TheAlgorithms/Javascript&lt;/a>&lt;/li>
+&lt;li>简介
+A repository for All algorithms implemented in Javascript (for educational purposes only)&lt;/li>
+&lt;li>star 数量
+14152&lt;/li>
+&lt;/ul>
+&lt;h2 id="pedroslopezwhatsapp-webjs">/pedroslopez/whatsapp-web.js&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/pedroslopez/whatsapp-web.js">https://github.com/pedroslopez/whatsapp-web.js&lt;/a>&lt;/li>
+&lt;li>简介
+A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app&lt;/li>
+&lt;li>star 数量
+3379&lt;/li>
+&lt;/ul>
+&lt;h2 id="chrisleekrbinance-trading-bot">/chrisleekr/binance-trading-bot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/chrisleekr/binance-trading-bot">https://github.com/chrisleekr/binance-trading-bot&lt;/a>&lt;/li>
+&lt;li>简介
+Automated Binance trading bot - Buy low/Sell high with stop loss limit/Trade multiple cryptocurrencies with Grid Trading&lt;/li>
+&lt;li>star 数量
+2961&lt;/li>
+&lt;/ul>
+&lt;h2 id="googlezx">/google/zx&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/google/zx">https://github.com/google/zx&lt;/a>&lt;/li>
+&lt;li>简介
+A tool for writing better scripts&lt;/li>
+&lt;li>star 数量
+22855&lt;/li>
+&lt;/ul>
+&lt;h2 id="anuraghazragithub-readme-stats">/anuraghazra/github-readme-stats&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/anuraghazra/github-readme-stats">https://github.com/anuraghazra/github-readme-stats&lt;/a>&lt;/li>
+&lt;li>简介
+⚡ Dynamically generated stats for your github readmes&lt;/li>
+&lt;li>star 数量
+30661&lt;/li>
+&lt;/ul>
+&lt;h2 id="openzeppelinopenzeppelin-contracts">/OpenZeppelin/openzeppelin-contracts&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/OpenZeppelin/openzeppelin-contracts">https://github.com/OpenZeppelin/openzeppelin-contracts&lt;/a>&lt;/li>
+&lt;li>简介
+OpenZeppelin Contracts is a library for secure smart contract development.&lt;/li>
+&lt;li>star 数量
+12315&lt;/li>
+&lt;/ul>
+&lt;h2 id="jgraphdrawio-desktop">/jgraph/drawio-desktop&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/jgraph/drawio-desktop">https://github.com/jgraph/drawio-desktop&lt;/a>&lt;/li>
+&lt;li>简介
+Official electron build of diagrams.net&lt;/li>
+&lt;li>star 数量
+21703&lt;/li>
+&lt;/ul>
+&lt;h2 id="lingdong-fishdraw">/LingDong-/fishdraw&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/LingDong-/fishdraw">https://github.com/LingDong-/fishdraw&lt;/a>&lt;/li>
+&lt;li>简介
+procedurally generated fish drawings&lt;/li>
+&lt;li>star 数量
+1694&lt;/li>
+&lt;/ul>
+&lt;h2 id="louislamuptime-kuma">/louislam/uptime-kuma&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/louislam/uptime-kuma">https://github.com/louislam/uptime-kuma&lt;/a>&lt;/li>
+&lt;li>简介
+A fancy self-hosted monitoring tool&lt;/li>
+&lt;li>star 数量
+3343&lt;/li>
+&lt;/ul>
+&lt;h2 id="yangshuntech-interview-handbook">/yangshun/tech-interview-handbook&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/yangshun/tech-interview-handbook">https://github.com/yangshun/tech-interview-handbook&lt;/a>&lt;/li>
+&lt;li>简介
+💯 Curated interview preparation materials for busy engineers&lt;/li>
+&lt;li>star 数量
+58591&lt;/li>
+&lt;/ul>
+&lt;h2 id="projectopenseaopensea-creatures">/ProjectOpenSea/opensea-creatures&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ProjectOpenSea/opensea-creatures">https://github.com/ProjectOpenSea/opensea-creatures&lt;/a>&lt;/li>
+&lt;li>简介
+Example non-fungible collectible, to demonstrate OpenSea integration&lt;/li>
+&lt;li>star 数量
+490&lt;/li>
+&lt;/ul>
+&lt;h2 id="haehnchencrypto-trading-bot">/Haehnchen/crypto-trading-bot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Haehnchen/crypto-trading-bot">https://github.com/Haehnchen/crypto-trading-bot&lt;/a>&lt;/li>
+&lt;li>简介
+Cryptocurrency trading bot in javascript for Bitfinex, Bitmex, Binance, FTX, Bybit &amp;hellip; (public edition)&lt;/li>
+&lt;li>star 数量
+1794&lt;/li>
+&lt;/ul>
+&lt;h2 id="ffmpegwasmffmpegwasm">/ffmpegwasm/ffmpeg.wasm&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ffmpegwasm/ffmpeg.wasm">https://github.com/ffmpegwasm/ffmpeg.wasm&lt;/a>&lt;/li>
+&lt;li>简介
+FFmpeg for browser and node, powered by WebAssembly&lt;/li>
+&lt;li>star 数量
+6056&lt;/li>
+&lt;/ul>
+&lt;h2 id="narkozhacker-scripts">/NARKOZ/hacker-scripts&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/NARKOZ/hacker-scripts">https://github.com/NARKOZ/hacker-scripts&lt;/a>&lt;/li>
+&lt;li>简介
+Based on a true story&lt;/li>
+&lt;li>star 数量
+42059&lt;/li>
+&lt;/ul>
+&lt;h2 id="sudhanplayzdiscord-musicbot">/SudhanPlayz/Discord-MusicBot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/SudhanPlayz/Discord-MusicBot">https://github.com/SudhanPlayz/Discord-MusicBot&lt;/a>&lt;/li>
+&lt;li>简介
+An advanced discord music bot, supports Spotify, Soundcloud, YouTube with Shuffling, Volume Control and Web Dashboard with Slash Commands support!&lt;/li>
+&lt;li>star 数量
+829&lt;/li>
+&lt;/ul>
+&lt;h2 id="ascodersweekly">/ascoders/weekly&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ascoders/weekly">https://github.com/ascoders/weekly&lt;/a>&lt;/li>
+&lt;li>简介
+前端精读周刊。帮你理解最前沿、实用的技术。&lt;/li>
+&lt;li>star 数量
+14483&lt;/li>
+&lt;/ul>
+&lt;h2 id="asabeneh30-days-of-react">/Asabeneh/30-Days-Of-React&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Asabeneh/30-Days-Of-React">https://github.com/Asabeneh/30-Days-Of-React&lt;/a>&lt;/li>
+&lt;li>简介
+30 Days of React challenge is a step by step guide to learn React in 30 days. It requires HTML, CSS, and JavaScript knowledge. You should be comfortable with JavaScript before you start to React. If you are not comfortable with JavaScript check out 30DaysOfJavaScript. This is a continuation of 30 Days Of JS. This challenge may take more than 100…&lt;/li>
+&lt;li>star 数量
+8236&lt;/li>
+&lt;/ul>
+&lt;h2 id="jely2002youtube-dl-gui">/jely2002/youtube-dl-gui&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/jely2002/youtube-dl-gui">https://github.com/jely2002/youtube-dl-gui&lt;/a>&lt;/li>
+&lt;li>简介
+A cross-platform GUI for youtube-dl made in Electron and node.js&lt;/li>
+&lt;li>star 数量
+2245&lt;/li>
+&lt;/ul>
+&lt;h2 id="khanhasspicetify-cli">/khanhas/spicetify-cli&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/khanhas/spicetify-cli">https://github.com/khanhas/spicetify-cli&lt;/a>&lt;/li>
+&lt;li>简介
+Commandline tool to customize Spotify client. Supports Windows, MacOS and Linux.&lt;/li>
+&lt;li>star 数量
+8269&lt;/li>
+&lt;/ul>
+&lt;h2 id="lecoupaawesome-cheatsheets">/LeCoupa/awesome-cheatsheets&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/LeCoupa/awesome-cheatsheets">https://github.com/LeCoupa/awesome-cheatsheets&lt;/a>&lt;/li>
+&lt;li>简介
+👩‍💻👨‍💻 Awesome cheatsheets for popular programming languages, frameworks and development tools. They include everything you should know in one single file.&lt;/li>
+&lt;li>star 数量
+22520&lt;/li>
+&lt;/ul>
+&lt;h2 id="asabeneh30-days-of-javascript">/Asabeneh/30-Days-Of-JavaScript&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Asabeneh/30-Days-Of-JavaScript">https://github.com/Asabeneh/30-Days-Of-JavaScript&lt;/a>&lt;/li>
+&lt;li>简介
+30 days of JavaScript programming challenge is a step-by-step guide to learn JavaScript programming language in 30 days. This challenge may take more than 100 days, please just follow your own pace.&lt;/li>
+&lt;li>star 数量
+9736&lt;/li>
+&lt;/ul>
+&lt;h2 id="mgechevgoogle-interview-preparation-problems">/mgechev/google-interview-preparation-problems&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/mgechev/google-interview-preparation-problems">https://github.com/mgechev/google-interview-preparation-problems&lt;/a>&lt;/li>
+&lt;li>简介
+leetcode problems I solved to prepare for my Google interview.&lt;/li>
+&lt;li>star 数量
+1711&lt;/li>
+&lt;/ul>
+&lt;h2 id="larvalabscryptopunks">/larvalabs/cryptopunks&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/larvalabs/cryptopunks">https://github.com/larvalabs/cryptopunks&lt;/a>&lt;/li>
+&lt;li>简介
+Collectible 8-bit characters on the Ethereum blockchain.&lt;/li>
+&lt;li>star 数量
+862&lt;/li>
+&lt;/ul>
+&lt;h2 id="shufflewzcfaker2">/shufflewzc/faker2&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/shufflewzc/faker2">https://github.com/shufflewzc/faker2&lt;/a>&lt;/li>
+&lt;li>简介
+不知名大佬备份&lt;/li>
+&lt;li>star 数量
+1621&lt;/li>
+&lt;/ul>
+&lt;h2 id="atralicecursoprephenry">/atralice/Curso.Prep.Henry&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/atralice/Curso.Prep.Henry">https://github.com/atralice/Curso.Prep.Henry&lt;/a>&lt;/li>
+&lt;li>简介
+Curso de Preparación para Ingresar a Henry.&lt;/li>
+&lt;li>star 数量
+467&lt;/li>
+&lt;/ul></description></item></channel></rss>

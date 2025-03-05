@@ -1,0 +1,1336 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Python设计模式 - Guixian 的日常记录</title>
+<meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="Chen Guixian"><meta name=description content="设计模式从大的分类上可以分为 创建型设计模式、结构型设计模式、行为模式。
+Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类型”、可自定义的数据模型等各种灵活特性。因此，我们极少会用Python来一比一还原经典设计模式，而几乎总是会为每种设计模式找到更适合Python的表现形式。
+"><meta name=keywords content="程序员的日常记录,编码人生,生活笔记"><meta name=generator content="Hugo 0.134.3 with theme even"><link rel=canonical href=https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:url" content="https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><meta property="og:site_name" content="Guixian 的日常记录"><meta property="og:title" content="Python设计模式"><meta property="og:description" content="设计模式从大的分类上可以分为 创建型设计模式、结构型设计模式、行为模式。
+Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类型”、可自定义的数据模型等各种灵活特性。因此，我们极少会用Python来一比一还原经典设计模式，而几乎总是会为每种设计模式找到更适合Python的表现形式。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-04-24T19:10:47+08:00"><meta property="article:modified_time" content="2023-04-24T19:10:47+08:00"><meta property="article:tag" content="Python"><meta itemprop=name content="Python设计模式"><meta itemprop=description content="设计模式从大的分类上可以分为 创建型设计模式、结构型设计模式、行为模式。
+Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类型”、可自定义的数据模型等各种灵活特性。因此，我们极少会用Python来一比一还原经典设计模式，而几乎总是会为每种设计模式找到更适合Python的表现形式。"><meta itemprop=datePublished content="2023-04-24T19:10:47+08:00"><meta itemprop=dateModified content="2023-04-24T19:10:47+08:00"><meta itemprop=wordCount content="6272"><meta itemprop=keywords content="Python"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python设计模式"><meta name=twitter:description content="设计模式从大的分类上可以分为 创建型设计模式、结构型设计模式、行为模式。
+Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类型”、可自定义的数据模型等各种灵活特性。因此，我们极少会用Python来一比一还原经典设计模式，而几乎总是会为每种设计模式找到更适合Python的表现形式。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Guixian 的日常记录</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Guixian 的日常记录</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Python设计模式</h1><div class=post-meta><span class=post-time>2023-04-24</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><a href=#设计模式-6-大原则>设计模式 6 大原则</a><ul><li><a href=#单一职责原则single-responsibility-principle>单一职责原则Single Responsibility Principle</a></li><li><a href=#开闭原则open-close-principle>开闭原则Open Close Principle</a></li><li><a href=#里氏替换原则liskov-substitution-principle>里氏替换原则Liskov Substitution Principle</a></li><li><a href=#接口隔离原则interface-segregation-principle>接口隔离原则Interface Segregation Principle</a></li><li><a href=#依赖倒置原则dependence-inversion-principle>依赖倒置原则Dependence Inversion Principle</a></li><li><a href=#迪米特法则demeter-principle>迪米特法则Demeter Principle</a></li><li><a href=#合成复用原则composite-reuse-principle>合成复用原则Composite Reuse Principle</a></li></ul></li><li><a href=#单例模式>单例模式</a><ul><li><a href=#方法-1>方法 1</a></li><li><a href=#方法-2>方法 2</a></li><li><a href=#方法-3>方法 3</a></li><li><a href=#方法-4>方法 4</a></li><li><a href=#单例模式与-borg-的区别>单例模式与 borg 的区别</a></li></ul></li><li><a href=#工厂模式解决对象创建的问题>工厂模式（解决对象创建的问题）</a></li><li><a href=#抽象工厂>抽象工厂</a></li><li><a href=#构造模式控制复杂对象的构造>构造模式（控制复杂对象的构造）</a></li><li><a href=#原型模式解决对象拷贝问题>原型模式（解决对象拷贝问题）</a></li><li><a href=#适配器模式解决接口不兼容问题>适配器模式（解决接口不兼容问题）</a></li><li><a href=#装饰器模式无需子类化实现扩展对象功能>装饰器模式（无需子类化实现扩展对象功能）</a></li><li><a href=#代理模式-通过一层间接保护层实现更安全的接口访问>代理模式 （通过一层间接保护层实现更安全的接口访问）</a></li><li><a href=#外观模式外观模式-简化复杂对象的访问问题>外观模式(外观模式: 简化复杂对象的访问问题)</a></li><li><a href=#享元模式实现对象复用从而改善资源使用>享元模式(实现对象复用从而改善资源使用)</a></li><li><a href=#迭代器模式>迭代器模式</a></li><li><a href=#观察者模式>观察者模式</a></li><li><a href=#策略模式>策略模式</a></li><li><a href=#参考>参考</a></li></ul></li></ul></nav></div></div><div class=post-content><p>设计模式从大的分类上可以分为 <strong>创建型设计模式、结构型设计模式、行为模式</strong>。</p><p>Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类型”、可自定义的数据模型等各种灵活特性。因此，我们极少会用Python来一比一还原经典设计模式，而几乎总是会为每种设计模式找到更适合Python的表现形式。</p><h2 id=设计模式-6-大原则>设计模式 6 大原则</h2><ul><li>SOLID 原则（前五个可以成为 SOLID 原则）</li></ul><h3 id=单一职责原则single-responsibility-principle>单一职责原则Single Responsibility Principle</h3><p><strong>定义</strong>：一个类或者一个接口，最好只负责一项职责。</p><p><strong>问题由来</strong>：类T负责两个不同的职责P1和P2。由于职责P1需要发生改变而需要修改T类时，有可能导致原来运行正常的职责P2功能发生故障。</p><p><strong>解决方法</strong>：遵循单一职责原则。分别建立两个类T1和T2，使类T1负责职责P1，类T2负责职责P2。这样，当修改类T1也不会影响职责P2；同理，当修改类T2时不会影响职责P1。</p><h3 id=开闭原则open-close-principle>开闭原则Open Close Principle</h3><p>定义：一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。</p><p>问题由来：在软件的生命周期内，因为变化、升级和维护等原因需要对软件原有代码进行修改时，可能会给旧代码中引入错误，也可能会使我们不得不对整个功能进行重构，并且需要原有代码经过重新测试。</p><p>解决方案：当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化。</p><h3 id=里氏替换原则liskov-substitution-principle>里氏替换原则Liskov Substitution Principle</h3><p>定义：所有引用基类的地方必须能透明地使用其子类的对象。</p><p>问题由来：有一功能P1，由类A完成。现需要将功能P1进行扩展，扩展后的功能为P，其中P由原有功能P1与新功能P2组成。新功能P由类A的子类B来完成，则子类B在完成新功能P2的同时，有可能会导致原有功能P1发生故障。</p><p>解决方案：当使用继承时，遵循里氏替换原则。类B继承类A时，除添加新的方法完成新增功能P2外，尽量不要重写父类A的方法，也尽量不要重载父类A的方法。</p><p>继承包含这样一层含义：父类中凡是已经实现好的方法（相对于抽象方法而言），实际上是在设定一系列的规范和契约，虽然它不强制要求所有的子类必须遵从这些契约，但是如果子类对这些非抽象方法任意修改，就会对整个继承体系造成破坏。而里氏替换原则就是表达了这一层含义。</p><p>继承作为面向对象三大特性之一，在给程序设计带来巨大便利的同时，也带来了弊端。比如使用继承会给程序带来侵入性，程序的可移植性降低，增加了对象间的耦合性，如果一个类被其他的类所继承，则当这个类需要修改时，必须考虑到所有的子类，并且父类修改后，所有涉及到子类的功能都有可能会产生故障。</p><h3 id=接口隔离原则interface-segregation-principle>接口隔离原则Interface Segregation Principle</h3><p>定义：客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。 否则将会造成接口污染。类A通过接口I依赖类B，类C通过接口I依赖类D，如果接口I对于类A和类B来说不是最小接口，则类B和类D必须去实现他们不需要的方法。</p><p>解决方案：将臃肿的接口I拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则。</p><h3 id=依赖倒置原则dependence-inversion-principle>依赖倒置原则Dependence Inversion Principle</h3><p>定义：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象。其核心思想是：依赖于抽象。</p><p>问题由来：类A直接依赖类B，假如要将类A改为依赖类C，则必须通过修改类A的代码来达成。这种场景下，类A一般是高层模块，负责复杂的业务逻辑；类B和类C是低层模块，负责基本的原子操作；假如修改类A，会给程序带来不必要的风险。</p><p>解决方案：将类A修改为依赖接口I，类B和类C各自实现接口I，类A通过接口I间接与类B或者类C发生联系，则会大大降低修改类A的几率。</p><h3 id=迪米特法则demeter-principle>迪米特法则Demeter Principle</h3><p>定义：一个对象应该对其他对象保持最少的了解。其核心精神是：不和陌生人说话，通俗之意是一个对象对自己需要耦合关联调用的类应该知道的更少。这样会导致类之间的耦合度降低，每个类都尽量减少对其他类的依赖，因此，这也很容易使得系统的功能模块相互独立，之间不存在很强的依赖关系。</p><p>问题由来：类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大。</p><p>解决方案：尽量降低类与类之间的耦合。</p><h3 id=合成复用原则composite-reuse-principle>合成复用原则Composite Reuse Principle</h3><p>原则是尽量使用合成/聚合的方式，而不是使用继承。</p><h2 id=单例模式>单例模式</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 1：单例模式</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>AppConfig</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>_instance</span> <span class=o>=</span> <span class=kc>None</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__new__</span><span class=p>(</span><span class=bp>cls</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span> <span class=ow>is</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>inst</span> <span class=o>=</span> <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__new__</span><span class=p>(</span><span class=bp>cls</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span> <span class=o>=</span> <span class=n>inst</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2：全局对象</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>AppConfig</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=o>...</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>_config</span> <span class=o>=</span> <span class=n>AppConfig</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><p>一个模块级的全局对象用更少的代码满足了同样的需求。</p><h3 id=方法-1>方法 1</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 方法1,实现__new__方法</span>
+</span></span><span class=line><span class=cl><span class=c1># 并在将一个类的实例绑定到类变量_instance上,</span>
+</span></span><span class=line><span class=cl><span class=c1># 如果cls._instance为None说明该类还没有实例化过,实例化该类,并返回</span>
+</span></span><span class=line><span class=cl><span class=c1># 如果cls._instance不为None,直接返回cls._instance</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Singleton</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__new__</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=ow>not</span> <span class=nb>hasattr</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=s1>&#39;_instance&#39;</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>            <span class=n>orig</span> <span class=o>=</span> <span class=nb>super</span><span class=p>(</span><span class=n>Singleton</span><span class=p>,</span> <span class=bp>cls</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span> <span class=o>=</span> <span class=n>orig</span><span class=o>.</span><span class=fm>__new__</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyClass</span><span class=p>(</span><span class=n>Singleton</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>a</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>one</span> <span class=o>=</span> <span class=n>MyClass</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>two</span> <span class=o>=</span> <span class=n>MyClass</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>two</span><span class=o>.</span><span class=n>a</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span><span class=o>.</span><span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=c1># 3</span>
+</span></span><span class=line><span class=cl><span class=c1># one和two完全相同,可以用id(), ==, is检测</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>one</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 29097904</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>two</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 29097904</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=o>==</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># True</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=ow>is</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># True</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=方法-2>方法 2</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 方法2,共享属性;所谓单例就是所有引用(实例、对象)拥有相同的状态(属性)和行为(方法)</span>
+</span></span><span class=line><span class=cl><span class=c1># 同一个类的所有实例天然拥有相同的行为(方法),</span>
+</span></span><span class=line><span class=cl><span class=c1># 只需要保证同一个类的所有实例具有相同的状态(属性)即可</span>
+</span></span><span class=line><span class=cl><span class=c1># 所有实例共享属性的最简单最直接的方法就是__dict__属性指向(引用)同一个字典(dict)</span>
+</span></span><span class=line><span class=cl><span class=c1># 可参看:http://code.activestate.com/recipes/66531/</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Borg</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>_state</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__new__</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>ob</span> <span class=o>=</span> <span class=nb>super</span><span class=p>(</span><span class=n>Borg</span><span class=p>,</span> <span class=bp>cls</span><span class=p>)</span><span class=o>.</span><span class=fm>__new__</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>ob</span><span class=o>.</span><span class=vm>__dict__</span> <span class=o>=</span> <span class=bp>cls</span><span class=o>.</span><span class=n>_state</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>ob</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyClass2</span><span class=p>(</span><span class=n>Borg</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>a</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>one</span> <span class=o>=</span> <span class=n>MyClass2</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>two</span> <span class=o>=</span> <span class=n>MyClass2</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># one和two是两个不同的对象,id, ==, is对比结果可看出</span>
+</span></span><span class=line><span class=cl><span class=n>two</span><span class=o>.</span><span class=n>a</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span><span class=o>.</span><span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=c1># 3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>one</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 28873680</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>two</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 28873712</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=o>==</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># False</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=ow>is</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># False</span>
+</span></span><span class=line><span class=cl><span class=c1># 但是one和two具有相同的（同一个__dict__属性）,见:</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>one</span><span class=o>.</span><span class=vm>__dict__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 30104000</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>two</span><span class=o>.</span><span class=vm>__dict__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 30104000</span>
+</span></span></code></pre></td></tr></table></div></div><p>就是 <code>https://github.com/faif/python-patterns/blob/master/patterns/creational/borg.py</code> 另外一种实现。</p><h3 id=方法-3>方法 3</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 方法3:本质上是方法1的升级（或者说高级）版</span>
+</span></span><span class=line><span class=cl><span class=c1># 使用__metaclass__（元类）的高级python用法</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Singleton2</span><span class=p>(</span><span class=nb>type</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>bases</span><span class=p>,</span> <span class=nb>dict</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>(</span><span class=n>Singleton2</span><span class=p>,</span> <span class=bp>cls</span><span class=p>)</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>bases</span><span class=p>,</span> <span class=nb>dict</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span> <span class=o>=</span> <span class=kc>None</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__call__</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span> <span class=ow>is</span> <span class=kc>None</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span> <span class=o>=</span> <span class=nb>super</span><span class=p>(</span><span class=n>Singleton2</span><span class=p>,</span> <span class=bp>cls</span><span class=p>)</span><span class=o>.</span><span class=fm>__call__</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>cls</span><span class=o>.</span><span class=n>_instance</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyClass3</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>__metaclass__</span> <span class=o>=</span> <span class=n>Singleton2</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>one</span> <span class=o>=</span> <span class=n>MyClass3</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>two</span> <span class=o>=</span> <span class=n>MyClass3</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>two</span><span class=o>.</span><span class=n>a</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span><span class=o>.</span><span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=c1># 3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>one</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 31495472</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>two</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 31495472</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=o>==</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># True</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=ow>is</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># True</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=方法-4>方法 4</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 方法4:也是方法1的升级（高级）版本,</span>
+</span></span><span class=line><span class=cl><span class=c1># 使用装饰器(decorator),</span>
+</span></span><span class=line><span class=cl><span class=c1># 这是一种更pythonic,更elegant的方法,</span>
+</span></span><span class=line><span class=cl><span class=c1># 单例类本身根本不知道自己是单例的,因为他本身(自己的代码)并不是单例的</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>singleton</span><span class=p>(</span><span class=bp>cls</span><span class=p>,</span> <span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>instances</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>_singleton</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>cls</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>instances</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>instances</span><span class=p>[</span><span class=bp>cls</span><span class=p>]</span> <span class=o>=</span> <span class=bp>cls</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kw</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>instances</span><span class=p>[</span><span class=bp>cls</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>_singleton</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@singleton</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyClass4</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>a</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>x</span><span class=o>=</span><span class=mi>0</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>x</span> <span class=o>=</span> <span class=n>x</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>one</span> <span class=o>=</span> <span class=n>MyClass4</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>two</span> <span class=o>=</span> <span class=n>MyClass4</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>two</span><span class=o>.</span><span class=n>a</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span><span class=o>.</span><span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=c1># 3</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>one</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 29660784</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=nb>id</span><span class=p>(</span><span class=n>two</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1># 29660784</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=o>==</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># True</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span> <span class=ow>is</span> <span class=n>two</span>
+</span></span><span class=line><span class=cl><span class=c1># True</span>
+</span></span><span class=line><span class=cl><span class=n>one</span><span class=o>.</span><span class=n>x</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>one</span><span class=o>.</span><span class=n>x</span>
+</span></span><span class=line><span class=cl><span class=c1># 1</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span> <span class=n>two</span><span class=o>.</span><span class=n>x</span>
+</span></span><span class=line><span class=cl><span class=c1># 1</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=单例模式与-borg-的区别>单例模式与 borg 的区别</h3><ul><li>如果是需要保证只有一个实例，那就选择单例模式</li><li>Borg 允许多个实例被创建，但所有的实例都共享状态和行为方式。通过这种“数据重载”实现。</li></ul><h2 id=工厂模式解决对象创建的问题>工厂模式（解决对象创建的问题）</h2><p>处理对象创建、实例化延迟到子类。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Dog</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>speak</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;wang wang&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Cat</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>speak</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;miao miao&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>animal_factory</span><span class=p>(</span><span class=n>name</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>name</span> <span class=o>==</span> <span class=s1>&#39;dog&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Dog</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>elif</span> <span class=n>name</span> <span class=o>==</span> <span class=s1>&#39;cat&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Cat</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;
+</span></span></span><span class=line><span class=cl><span class=s2>工厂模式：实例化延迟到子类
+</span></span></span><span class=line><span class=cl><span class=s2>缺点是使用类作为代价，且factory修改不封闭，每增加product就要修改
+</span></span></span><span class=line><span class=cl><span class=s2>但可以使用配置文件，就可以封闭了
+</span></span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Product_opt</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getResult</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Product_add</span><span class=p>(</span><span class=n>Product_opt</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getResult</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>num1</span><span class=o>+</span><span class=bp>self</span><span class=o>.</span><span class=n>num2</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Product_sub</span><span class=p>(</span><span class=n>Product_opt</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getResult</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>num1</span><span class=o>-</span><span class=bp>self</span><span class=o>.</span><span class=n>num2</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Product_err</span><span class=p>(</span><span class=n>Product_opt</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getResult</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span> <span class=s2>&#34;error&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Factory</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>operation</span><span class=o>=</span><span class=p>{}</span>
+</span></span><span class=line><span class=cl>    <span class=n>operation</span><span class=p>[</span><span class=s2>&#34;+&#34;</span><span class=p>]</span><span class=o>=</span><span class=n>Product_add</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>operation</span><span class=p>[</span><span class=s2>&#34;-&#34;</span><span class=p>]</span><span class=o>=</span><span class=n>Product_sub</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>createproduct</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span><span class=n>ch</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>ch</span> <span class=ow>in</span> <span class=bp>self</span><span class=o>.</span><span class=n>operation</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>op</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>operation</span><span class=p>[</span><span class=n>ch</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>op</span> <span class=o>=</span> <span class=n>Product_err</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>op</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span><span class=o>==</span><span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>num1</span><span class=o>=</span><span class=nb>input</span><span class=p>(</span><span class=s2>&#34;a:&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>op</span><span class=o>=</span><span class=n>raw_input</span><span class=p>(</span><span class=s2>&#34;operation:&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>num2</span><span class=o>=</span><span class=nb>input</span><span class=p>(</span><span class=s2>&#34;b:&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>factory</span><span class=o>=</span><span class=n>Factory</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>product</span><span class=o>=</span><span class=n>factory</span><span class=o>.</span><span class=n>createproduct</span><span class=p>(</span><span class=n>op</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>product</span><span class=o>.</span><span class=n>num1</span><span class=o>=</span><span class=n>num1</span>
+</span></span><span class=line><span class=cl>    <span class=n>product</span><span class=o>.</span><span class=n>num2</span><span class=o>=</span><span class=n>num2</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>product</span><span class=o>.</span><span class=n>getResult</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><p>工厂方法适合对象种类较少的情况，如果有多种不同类型对象需要创建，使用抽象工厂模式。</p><h2 id=抽象工厂>抽象工厂</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 理解</span>
+</span></span><span class=line><span class=cl><span class=c1># Abstract_Factory模式是Factory的扩展，</span>
+</span></span><span class=line><span class=cl><span class=c1># Factory用于生产一类产品而抽象工厂用于生产多个产品系列</span>
+</span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;
+</span></span></span><span class=line><span class=cl><span class=s2>创建型设计模式
+</span></span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34; 例子：
+</span></span></span><span class=line><span class=cl><span class=s2># 两个工厂，一个生产狗玩具，一个生产猫玩具，而玩具共有两类一类机器玩具，一类毛绒玩具
+</span></span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Abstract_Factory</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>factory</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>toy_factory</span> <span class=o>=</span> <span class=n>factory</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>cat_Factory</span><span class=p>(</span><span class=n>Abstract_Factory</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=c1># 当然这里可以象Factory_Method使用查表</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_soft_cat</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>soft_cat_toy</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_machine_cat</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>machine_cat_toy</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>dog_Factory</span><span class=p>(</span><span class=n>Abstract_Factory</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_soft_dog</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>soft_dog_toy</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_machine_dog</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>machine_dog_toy</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Abstract_Product_dog</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getname</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>speak</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span> <span class=s2>&#34;wangwang&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>soft_dog_toy</span><span class=p>(</span><span class=n>Abstract_Product_dog</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getname</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;soft dog toy&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>machine_dog_toy</span><span class=p>(</span><span class=n>Abstract_Product_dog</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getname</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;machine dog toy&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Abstract_Product_cat</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getname</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>speak</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span> <span class=s2>&#34;miaomiao&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>soft_cat_toy</span><span class=p>(</span><span class=n>Abstract_Product_cat</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getname</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;soft cat toy&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>machine_cat_toy</span><span class=p>(</span><span class=n>Abstract_Product_cat</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>getname</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;machine cat toy&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>factory</span> <span class=o>=</span> <span class=n>Abstract_Factory</span><span class=p>(</span><span class=n>dog_Factory</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>    <span class=n>dog1</span> <span class=o>=</span> <span class=n>factory</span><span class=o>.</span><span class=n>toy_factory</span><span class=o>.</span><span class=n>create_soft_dog</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>dog1</span><span class=o>.</span><span class=n>speak</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>dog1</span><span class=o>.</span><span class=n>getname</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>dog2</span> <span class=o>=</span> <span class=n>factory</span><span class=o>.</span><span class=n>toy_factory</span><span class=o>.</span><span class=n>create_machine_dog</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>dog2</span><span class=o>.</span><span class=n>speak</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>dog2</span><span class=o>.</span><span class=n>getname</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>factory</span> <span class=o>=</span> <span class=n>Abstract_Factory</span><span class=p>(</span><span class=n>cat_Factory</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=n>cat1</span> <span class=o>=</span> <span class=n>factory</span><span class=o>.</span><span class=n>toy_factory</span><span class=o>.</span><span class=n>create_soft_cat</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>cat1</span><span class=o>.</span><span class=n>speak</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>cat1</span><span class=o>.</span><span class=n>getname</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>cat2</span> <span class=o>=</span> <span class=n>factory</span><span class=o>.</span><span class=n>toy_factory</span><span class=o>.</span><span class=n>create_machine_cat</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>cat2</span><span class=o>.</span><span class=n>speak</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>cat2</span><span class=o>.</span><span class=n>getname</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=构造模式控制复杂对象的构造>构造模式（控制复杂对象的构造）</h2><p>当对象需要多个部分组合起来一步步创建，并且创建和表示分离的时候。可以这么理解，你要买电脑，工厂模式直接返回一个你需要型号的电脑，但是构造模式允许你自定义电脑各种配置类型，组装完成后给你。这个过程你可以传入builder从而自定义创建的方式。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># builder模式</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Computer</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>serial_number</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>serial</span> <span class=o>=</span> <span class=n>serial_number</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>memory</span> <span class=o>=</span> <span class=kc>None</span>      <span class=c1># in gigabytes</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>hdd</span> <span class=o>=</span> <span class=kc>None</span>         <span class=c1># in gigabytes</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>gpu</span> <span class=o>=</span> <span class=kc>None</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__str__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>info</span> <span class=o>=</span> <span class=p>(</span><span class=s1>&#39;Memory: </span><span class=si>{}</span><span class=s1>GB&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>memory</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Hard Disk: </span><span class=si>{}</span><span class=s1>GB&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>hdd</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Graphics Card: </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>gpu</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>info</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>ComputerBuilder</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>computer</span> <span class=o>=</span> <span class=n>Computer</span><span class=p>(</span><span class=s1>&#39;AG23385193&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>configure_memory</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>amount</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>computer</span><span class=o>.</span><span class=n>memory</span> <span class=o>=</span> <span class=n>amount</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>configure_hdd</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>amount</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>computer</span><span class=o>.</span><span class=n>hdd</span> <span class=o>=</span> <span class=n>amount</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>configure_gpu</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>gpu_model</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>computer</span><span class=o>.</span><span class=n>gpu</span> <span class=o>=</span> <span class=n>gpu_model</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>HardwareEngineer</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>builder</span> <span class=o>=</span> <span class=kc>None</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>construct_computer</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>memory</span><span class=p>,</span> <span class=n>hdd</span><span class=p>,</span> <span class=n>gpu</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>builder</span> <span class=o>=</span> <span class=n>ComputerBuilder</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>step</span> <span class=k>for</span> <span class=n>step</span> <span class=ow>in</span> <span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>builder</span><span class=o>.</span><span class=n>configure_memory</span><span class=p>(</span><span class=n>memory</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>                        <span class=bp>self</span><span class=o>.</span><span class=n>builder</span><span class=o>.</span><span class=n>configure_hdd</span><span class=p>(</span><span class=n>hdd</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>                        <span class=bp>self</span><span class=o>.</span><span class=n>builder</span><span class=o>.</span><span class=n>configure_gpu</span><span class=p>(</span><span class=n>gpu</span><span class=p>))]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@property</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>computer</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>builder</span><span class=o>.</span><span class=n>computer</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 使用buidler，可以创建多个builder类实现不同的组装方式</span>
+</span></span><span class=line><span class=cl><span class=n>engineer</span> <span class=o>=</span> <span class=n>HardwareEngineer</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>engineer</span><span class=o>.</span><span class=n>construct_computer</span><span class=p>(</span><span class=n>hdd</span><span class=o>=</span><span class=mi>500</span><span class=p>,</span> <span class=n>memory</span><span class=o>=</span><span class=mi>8</span><span class=p>,</span> <span class=n>gpu</span><span class=o>=</span><span class=s1>&#39;GeForce GTX 650 Ti&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>computer</span> <span class=o>=</span> <span class=n>engineer</span><span class=o>.</span><span class=n>computer</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>computer</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=原型模式解决对象拷贝问题>原型模式（解决对象拷贝问题）</h2><p>原型与工厂模式的区别应该是少一个与与产品平行的工厂类，通过克隆自己，可以创造多个对象。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1>#例子</span>
+</span></span><span class=line><span class=cl><span class=c1>#有一个哺乳动物的原型，每个动物有名称，</span>
+</span></span><span class=line><span class=cl><span class=c1>#人有很多，所以有很多Object,我们通过clone得到人的对象，然后在附上不同属性</span>
+</span></span><span class=line><span class=cl><span class=c1>#猴子也有很多，我们也可以通过clone得到多个猴子</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Prototype</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>typename</span><span class=o>=</span><span class=s1>&#39;mammalian&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>clone</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Person</span><span class=p>(</span><span class=n>Prototype</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>hair</span><span class=o>=</span><span class=s1>&#39;black&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>Name</span><span class=o>=</span><span class=s1>&#39;Person&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=n>Prototype</span><span class=o>.</span><span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span><span class=c1>#调用父类初始化函数的一种方法</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>clone</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Person</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Monkey</span><span class=p>(</span><span class=n>Prototype</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>hair</span><span class=o>=</span><span class=s1>&#39;red&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>Name</span><span class=o>=</span><span class=s1>&#39;monkey&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>(</span><span class=n>Prototype</span><span class=p>,</span><span class=bp>self</span><span class=p>)</span><span class=o>.</span><span class=fm>__init__</span><span class=p>()</span><span class=c1>#调用父类初始化的另一种方法</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>clone</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Monkey</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=c1>#client</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span><span class=o>==</span><span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>p</span><span class=o>=</span><span class=n>Person</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>p1</span><span class=o>=</span><span class=n>p</span><span class=o>.</span><span class=n>clone</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>p</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>p</span><span class=o>.</span><span class=n>typename</span><span class=p>,</span><span class=n>p</span><span class=o>.</span><span class=n>hair</span><span class=p>,</span><span class=n>p</span><span class=o>.</span><span class=n>Name</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>p1</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>p1</span><span class=o>.</span><span class=n>typename</span><span class=p>,</span><span class=n>p1</span><span class=o>.</span><span class=n>hair</span><span class=p>,</span><span class=n>p</span><span class=o>.</span><span class=n>Name</span>
+</span></span><span class=line><span class=cl>    <span class=n>Monkey</span><span class=o>=</span><span class=n>monkey</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>Monkey1</span><span class=o>=</span><span class=n>Monkey</span><span class=o>.</span><span class=n>clone</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>Monkey</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>Monkey</span><span class=o>.</span><span class=n>typename</span><span class=p>,</span><span class=n>Monkey</span><span class=o>.</span><span class=n>hair</span><span class=p>,</span><span class=n>Monkey</span><span class=o>.</span><span class=n>Name</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>Monkey1</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span> <span class=n>Monkey</span><span class=o>.</span><span class=n>typename</span><span class=p>,</span><span class=n>Monkey1</span><span class=o>.</span><span class=n>hair</span><span class=p>,</span><span class=n>Monkey</span><span class=o>.</span><span class=n>Name</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=适配器模式解决接口不兼容问题>适配器模式（解决接口不兼容问题）</h2><p>结构型设计模式通过组合对象来实现新功能。</p><p>适配器模式通过引入间接层来实现不兼容接口之间的适配。现实中最好的例子就是手机充电口，不同型号安卓手机都可以用同样的充电线充电。在python中可以通过继承实现适配，也可以通过使用class的__dict__属性。 开闭原则：适配器模式和OOP中的开闭原则关系密切，开闭原则强调对扩展开放，对修改关闭。通过适配器模式我们可以通过创建适配器模式在不修改原有类代码的情况下实现新的功能。</p><p>当我们需要给不同的对象统一接口的时候可以使用适配器模式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Dog</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=s2>&#34;Dog&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>bark</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;woof!&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Cat</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=s2>&#34;Cat&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>meow</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;meow!&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Adapter</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>obj</span><span class=p>,</span> <span class=o>**</span><span class=n>adapted_methods</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;&#34;&#34;适配器类接收适配器方法&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>obj</span> <span class=o>=</span> <span class=n>obj</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=vm>__dict__</span><span class=o>.</span><span class=n>update</span><span class=p>(</span><span class=n>adapted_methods</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__getattr__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>item</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nb>getattr</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>obj</span><span class=p>,</span> <span class=n>item</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>objects</span> <span class=o>=</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl><span class=n>dog</span> <span class=o>=</span> <span class=n>Dog</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>objects</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>Adapter</span><span class=p>(</span><span class=n>dog</span><span class=p>,</span> <span class=n>make_noise</span><span class=o>=</span><span class=n>dog</span><span class=o>.</span><span class=n>bark</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=n>cat</span> <span class=o>=</span> <span class=n>Cat</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>objects</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>Adapter</span><span class=p>(</span><span class=n>cat</span><span class=p>,</span> <span class=n>make_noise</span><span class=o>=</span><span class=n>cat</span><span class=o>.</span><span class=n>meow</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>obj</span> <span class=ow>in</span> <span class=n>objects</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;a </span><span class=si>{}</span><span class=s2> goes </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>obj</span><span class=o>.</span><span class=n>name</span><span class=p>,</span> <span class=n>obj</span><span class=o>.</span><span class=n>make_noise</span><span class=p>()))</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=装饰器模式无需子类化实现扩展对象功能>装饰器模式（无需子类化实现扩展对象功能）</h2><p>通常给一个对象添加新功能有三种方式：</p><ul><li>直接给对象所属的类添加方法。</li><li>使用『组合』</li><li>使用『继承』，优先使用组合而非继承。</li></ul><p>装饰器模式提供了第四种选择，通过动态改变对象扩展对象功能。其他编程语言通常使用继承实现装饰器装饰器模式，而python内置了装饰器。装饰器有很多用途，比如数据校验，事务处理，缓存，日志等。比如用装饰器实现一个简单的缓存，Python 自带了functools.lru_cache。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>time</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>log_time</span><span class=p>(</span><span class=n>func</span><span class=p>):</span>  <span class=c1># 接受一个函数作为参数</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>_log</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>beg</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=n>res</span> <span class=o>=</span> <span class=n>func</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;use time: </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span> <span class=o>-</span> <span class=n>beg</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>res</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>_log</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@log_time</span>  <span class=c1># 装饰器语法糖</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>mysleep</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>mysleep</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 另一种写法，和上面的调用方式等价</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>mysleep2</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>newsleep</span> <span class=o>=</span> <span class=n>log_time</span><span class=p>(</span><span class=n>mysleep2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>newsleep</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=代理模式-通过一层间接保护层实现更安全的接口访问>代理模式 （通过一层间接保护层实现更安全的接口访问）</h2><p>访问真正的对象之前做一些操作。有四种常用的代理类型:</p><ul><li>A remote proxy.使得访问远程对象就像本地访问一样，例如网络服务器。隐藏复杂性，使得访问本地远程统一。比如ORM</li><li>A virtual proxy。用来实现延迟访问，比如一些需要复杂计算的对象，python里可以实现lazy_property，性能改善</li><li>A protection/protective proxy. 控制敏感对象的访问，加上一层保护层，实现安全控制</li><li>A smart(reference) proxy. 访问对象时加上一层额外操作，例如引用计数和线程安全检查。weakref.proxy()</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>AbstractSubject</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>resquest</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Realsubject</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>RealSubject</span><span class=p>(</span><span class=n>AbstractSubject</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>request</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span> <span class=s2>&#34;i&#39;m working&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=c1># Proxy</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Proxy</span><span class=p>(</span><span class=n>AbstractSubject</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>subject</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>subject</span> <span class=o>=</span> <span class=n>subject</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>request</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>ip</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>ip</span> <span class=o>==</span> <span class=s1>&#39;1&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>subject</span><span class=o>.</span><span class=n>request</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span> <span class=s1>&#39;you ip isnot right&#39;</span>
+</span></span><span class=line><span class=cl>            <span class=c1># client</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>sub</span> <span class=o>=</span> <span class=n>RealSubject</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>proxy</span> <span class=o>=</span> <span class=n>Proxy</span><span class=p>(</span><span class=n>sub</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>proxy</span><span class=o>.</span><span class=n>request</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>proxy</span><span class=o>.</span><span class=n>request</span><span class=p>(</span><span class=s1>&#39;1&#39;</span><span class=p>)</span>  
+</span></span></code></pre></td></tr></table></div></div><h2 id=外观模式外观模式-简化复杂对象的访问问题>外观模式(外观模式: 简化复杂对象的访问问题)</h2><p>外观模式用来简化复杂系统的访问。通过简化的接口只访问需要的部分，隐藏系统复杂性。想象一下公司接线员，虽然公司内部运行机制比较复杂，但是接线员可以迅速帮你解决特定问题。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>abc</span> <span class=kn>import</span> <span class=n>ABCMeta</span><span class=p>,</span> <span class=n>abstractmethod</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>enum</span> <span class=kn>import</span> <span class=n>Enum</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>State</span> <span class=o>=</span> <span class=n>Enum</span><span class=p>(</span><span class=s1>&#39;State&#39;</span><span class=p>,</span> <span class=s1>&#39;new running sleeping restart zombie&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Server</span><span class=p>(</span><span class=n>metaclass</span><span class=o>=</span><span class=n>ABCMeta</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34; 抽象基类 &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__str__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>name</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>boot</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>kill</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>restart</span><span class=o>=</span><span class=kc>True</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>FileServer</span><span class=p>(</span><span class=n>Server</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;actions required for initializing the file server&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=s1>&#39;FileServer&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>state</span> <span class=o>=</span> <span class=n>State</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>boot</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;booting the </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;actions required for booting the file server&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>state</span> <span class=o>=</span> <span class=n>State</span><span class=o>.</span><span class=n>running</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>kill</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>restart</span><span class=o>=</span><span class=kc>True</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Killing </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;actions required for killing the file server&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>state</span> <span class=o>=</span> <span class=n>State</span><span class=o>.</span><span class=n>restart</span> <span class=k>if</span> <span class=n>restart</span> <span class=k>else</span> <span class=n>State</span><span class=o>.</span><span class=n>zombie</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_file</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>user</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>permissions</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;check validity of permissions, user rights, etc.&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;trying to create the file &#39;</span><span class=si>{}</span><span class=s2>&#39; for user &#39;</span><span class=si>{}</span><span class=s2>&#39; with permissions </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>user</span><span class=p>,</span> <span class=n>permissions</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>ProcessServer</span><span class=p>(</span><span class=n>Server</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;actions required for initializing the process server&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=s1>&#39;ProcessServer&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>state</span> <span class=o>=</span> <span class=n>State</span><span class=o>.</span><span class=n>new</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>boot</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;booting the </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;actions required for booting the process server&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>state</span> <span class=o>=</span> <span class=n>State</span><span class=o>.</span><span class=n>running</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>kill</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>restart</span><span class=o>=</span><span class=kc>True</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Killing </span><span class=si>{}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;actions required for killing the process server&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>state</span> <span class=o>=</span> <span class=n>State</span><span class=o>.</span><span class=n>restart</span> <span class=k>if</span> <span class=n>restart</span> <span class=k>else</span> <span class=n>State</span><span class=o>.</span><span class=n>zombie</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_process</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>user</span><span class=p>,</span> <span class=n>name</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;&#39;&#39;check user rights, generate PID, etc.&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;trying to create the process &#39;</span><span class=si>{}</span><span class=s2>&#39; for user &#39;</span><span class=si>{}</span><span class=s2>&#39;&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>user</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>OperatingSystem</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;&#39;&#39; 实现外观模式，外部使用的代码不必知道 FileServer 和 ProcessServer的
+</span></span></span><span class=line><span class=cl><span class=s1>    内部机制，只需要通过 OperatingSystem类调用&#39;&#39;&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>fs</span> <span class=o>=</span> <span class=n>FileServer</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>ps</span> <span class=o>=</span> <span class=n>ProcessServer</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>start</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;&#34;&#34; 被客户端代码使用 &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>i</span><span class=o>.</span><span class=n>boot</span><span class=p>()</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>fs</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>ps</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_file</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>user</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>permissions</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>fs</span><span class=o>.</span><span class=n>create_file</span><span class=p>(</span><span class=n>user</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>permissions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>create_process</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>user</span><span class=p>,</span> <span class=n>name</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>ps</span><span class=o>.</span><span class=n>create_process</span><span class=p>(</span><span class=n>user</span><span class=p>,</span> <span class=n>name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>main</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>os</span> <span class=o>=</span> <span class=n>OperatingSystem</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>os</span><span class=o>.</span><span class=n>start</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>os</span><span class=o>.</span><span class=n>create_file</span><span class=p>(</span><span class=s1>&#39;foo&#39;</span><span class=p>,</span> <span class=s1>&#39;hello&#39;</span><span class=p>,</span> <span class=s1>&#39;-rw-r-r&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>os</span><span class=o>.</span><span class=n>create_process</span><span class=p>(</span><span class=s1>&#39;bar&#39;</span><span class=p>,</span> <span class=s1>&#39;ls /tmp&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>main</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=享元模式实现对象复用从而改善资源使用>享元模式(实现对象复用从而改善资源使用)</h2><p>运用共享技术，减少大量细粒度对象对存储的开销</p><h2 id=迭代器模式>迭代器模式</h2><ul><li>python内置对迭代器模式的支持</li><li>比如我们可以用for遍历各种Interable的数据类型</li><li>python里可以实现__next__和__iter__实现迭代器</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>NumberWords</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Counts by word numbers, up to a maximum of five&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>_WORD_MAP</span> <span class=o>=</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;one&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;two&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;three&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;four&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;five&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>start</span><span class=p>,</span> <span class=n>stop</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>start</span> <span class=o>=</span> <span class=n>start</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>stop</span> <span class=o>=</span> <span class=n>stop</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__iter__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>  <span class=c1># this makes the class an Iterable</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__next__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>  <span class=c1># this makes the class an Iterator</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>start</span> <span class=o>&gt;</span> <span class=bp>self</span><span class=o>.</span><span class=n>stop</span> <span class=ow>or</span> <span class=bp>self</span><span class=o>.</span><span class=n>start</span> <span class=o>&gt;</span> <span class=nb>len</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>_WORD_MAP</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>            <span class=k>raise</span> <span class=ne>StopIteration</span>
+</span></span><span class=line><span class=cl>        <span class=n>current</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>start</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>start</span> <span class=o>+=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_WORD_MAP</span><span class=p>[</span><span class=n>current</span> <span class=o>-</span> <span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>number</span> <span class=ow>in</span> <span class=n>NumberWords</span><span class=p>(</span><span class=n>start</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>stop</span><span class=o>=</span><span class=mi>2</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>number</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=观察者模式>观察者模式</h2><ul><li>发布订阅是一种罪常用的实现方式</li><li>发布订阅用于解耦逻辑</li><li>可以通过回调等方式实现，当发生事件时，调用相应的回调函数</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Publisher</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>observers</span> <span class=o>=</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>add</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>observer</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>observer</span> <span class=ow>not</span> <span class=ow>in</span> <span class=bp>self</span><span class=o>.</span><span class=n>observers</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>observers</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>observer</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Failed to add observer&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>remove</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>observer</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>observers</span><span class=o>.</span><span class=n>remove</span><span class=p>(</span><span class=n>observer</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>except</span> <span class=ne>ValueError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Failed to remove observer&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>notify</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>o</span><span class=o>.</span><span class=n>notify_by</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span> <span class=k>for</span> <span class=n>o</span> <span class=ow>in</span> <span class=bp>self</span><span class=o>.</span><span class=n>observers</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Formatter</span><span class=p>(</span><span class=n>Publisher</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>super</span><span class=p>()</span><span class=o>.</span><span class=fm>__init__</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>name</span> <span class=o>=</span> <span class=n>name</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>_data</span> <span class=o>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@property</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>data</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_data</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@data.setter</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>data</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>new_value</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>_data</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>new_value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>notify</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>BinaryFormatter</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>notify_by</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>publisher</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=nb>type</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span><span class=o>.</span><span class=vm>__name__</span><span class=si>}</span><span class=s1>:</span><span class=si>{</span><span class=n>publisher</span><span class=o>.</span><span class=n>name</span><span class=si>}</span><span class=s1> has new bin data bin data = </span><span class=si>{</span><span class=nb>bin</span><span class=p>(</span><span class=n>publisher</span><span class=o>.</span><span class=n>data</span><span class=p>)</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>df</span> <span class=o>=</span> <span class=n>Formatter</span><span class=p>(</span><span class=s1>&#39;formatter&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>bf1</span> <span class=o>=</span> <span class=n>BinaryFormatter</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>bf2</span> <span class=o>=</span> <span class=n>BinaryFormatter</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>df</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>bf1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>df</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>bf2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>df</span><span class=o>.</span><span class=n>observers</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>df</span><span class=o>.</span><span class=n>data</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=策略模式>策略模式</h2><ul><li>根据不同的输入采取不同的策略</li><li>比如买东西超过10个打八折，超过20个打7折</li><li>对外暴露统一的接口，内部采用不同的策略计算</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>Order</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>price</span><span class=p>,</span> <span class=n>discount_strategy</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>=</span> <span class=n>price</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>discount_strategy</span> <span class=o>=</span> <span class=n>discount_strategy</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>price_after_discount</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>discount_strategy</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>discount</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>discount_strategy</span><span class=p>(</span><span class=bp>self</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>discount</span> <span class=o>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>price</span> <span class=o>-</span> <span class=n>discount</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__repr__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s2>&#34;Price: </span><span class=si>{}</span><span class=s2>, price after discount: </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>price</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>price_after_discount</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>ten_percent_discount</span><span class=p>(</span><span class=n>order</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>order</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.10</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>on_sale_discount</span><span class=p>(</span><span class=n>order</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>order</span><span class=o>.</span><span class=n>price</span> <span class=o>*</span> <span class=mf>0.25</span> <span class=o>+</span> <span class=mi>20</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>order0</span> <span class=o>=</span> <span class=n>Order</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>order1</span> <span class=o>=</span> <span class=n>Order</span><span class=p>(</span><span class=mi>100</span><span class=p>,</span> <span class=n>discount_strategy</span><span class=o>=</span><span class=n>ten_percent_discount</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>order2</span> <span class=o>=</span> <span class=n>Order</span><span class=p>(</span><span class=mi>1000</span><span class=p>,</span> <span class=n>discount_strategy</span><span class=o>=</span><span class=n>on_sale_discount</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>order0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>order1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>order2</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=参考>参考</h2><ul><li><a href=https://python-web-guide.readthedocs.io/zh/latest/design/design.html>https://python-web-guide.readthedocs.io/zh/latest/design/design.html</a></li><li><a href=https://github.com/PacktPublishing/Mastering-Python-Design-Patterns-Second-Edition>https://github.com/PacktPublishing/Mastering-Python-Design-Patterns-Second-Edition</a></li><li><a href=https://github.com/faif/python-patterns>https://github.com/faif/python-patterns</a></li><li><a href=https://github.com/DasyDong/developer-roadmap/>https://github.com/DasyDong/developer-roadmap/</a></li></ul></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Chen Guixian</span></p><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2023-04-24</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/python/>Python</a></div><nav class=post-nav><a class=prev href=/post/weekly/2-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">小贤周刊第 2 期</span>
+<span class="prev-text nav-mobile">上一篇</span>
+</a><a class=next href=/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/><span class="next-text nav-default">小贤周刊第 1 期</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动
+</span><span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span><span class=copyright-year>&copy;
+2017 -
+2025<span class=heart><i class="iconfont icon-heart"></i></span><span>Chen Guixian</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script></body></html>

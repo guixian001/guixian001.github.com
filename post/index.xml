@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Guixian 的日常记录</title><link>https://blog.chenguixian.com/post/</link><description>Recent content in Posts on Guixian 的日常记录</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 01 Mar 2025 21:31:26 +0800</lastBuildDate><atom:link href="https://blog.chenguixian.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>迁移 kong 中的 PostgreSQL 数据库</title><link>https://blog.chenguixian.com/post/op/migrate-pg-databse/</link><pubDate>Sat, 01 Mar 2025 21:31:26 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/migrate-pg-databse/</guid><description>&lt;h2 id="迁移-kong-中的-postgresql-数据库">迁移 kong 中的 PostgreSQL 数据库&lt;/h2>
+&lt;h3 id="背景">背景&lt;/h3>
+&lt;p>最近需要进行部署环境的迁移，原先 kong 使用的 PostgreSQL 数据库是几年前部署的了，一下子把命令全部忘光了。所以操作完成之后做个简单的记录。以下描述是基于 9.6 的，不适用于最新版本。&lt;/p></description></item><item><title>开发环境和工具</title><link>https://blog.chenguixian.com/post/tools/coder-tools/</link><pubDate>Wed, 19 Feb 2025 10:40:23 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/coder-tools/</guid><description>&lt;h3 id="1-文章概览">&lt;strong>1. 文章概览&lt;/strong>&lt;/h3>
+&lt;p>本文是&lt;a href="https://mp.weixin.qq.com/s/2qgs4JYOJFCmrxHMxtctyA">阿里同学都在用的开发环境和工具&lt;/a>的摘要，主要介绍了后端开发常用的工具和开发环境搭建，内容涵盖了在线工具、输入法、截图软件、AI工具、浏览器插件、终端工具、开发环境配置、数据库工具等。部分工具针对MacOS操作系统，但大部分工具适用于各主流平台。&lt;/p>
+&lt;h3 id="2-工具分类与推荐">&lt;strong>2. 工具分类与推荐&lt;/strong>&lt;/h3>
+&lt;h4 id="21-在线工具">&lt;strong>2.1 在线工具&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>白板工具&lt;/strong>：&lt;a href="https://www.tldraw.com">tldraw&lt;/a>&lt;br>
+用于在线协作绘图，适合团队讨论和设计。&lt;/li>
+&lt;li>&lt;strong>在线画图工具&lt;/strong>：&lt;a href="https://excalidraw.com">excalidraw&lt;/a> 和 &lt;a href="https://draw.io">draw.io&lt;/a>&lt;br>
+简单易用的在线绘图工具，适合流程图、架构图等。&lt;/li>
+&lt;li>&lt;strong>文档工具&lt;/strong>：
+&lt;ul>
+&lt;li>钉钉文档：&lt;a href="https://alidocs.dingtalk.com">alidocs&lt;/a>&lt;/li>
+&lt;li>语雀文档：&lt;a href="https://www.yuque.com">yuque&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>IT工具集合&lt;/strong>：&lt;a href="https://it-tools.tech">it-tools&lt;/a>&lt;br>
+提供多种开发相关的在线工具，如正则表达式测试、JSON格式化等。&lt;/li>
+&lt;/ul>
+&lt;h4 id="22-输入法">&lt;strong>2.2 输入法&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>RIME输入法&lt;/strong>：&lt;a href="https://rime.im/">rime.im&lt;/a>&lt;br>
+程序员可定制的输入法，通过YAML文件配置，适合有个性化需求的开发者。&lt;/li>
+&lt;/ul>
+&lt;h4 id="23-截图软件">&lt;strong>2.3 截图软件&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>Xnip&lt;/strong>：&lt;a href="https://www.xnipapp.com">xnipapp.com&lt;/a>&lt;br>
+Mac平台截图工具，支持添加箭头、文本、编号等功能，免费版功能强大。&lt;/li>
+&lt;/ul>
+&lt;h4 id="24-鼠标控制软件">&lt;strong>2.4 鼠标控制软件&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>MOS&lt;/strong>：&lt;a href="https://github.com/Caldis/Mos">github.com/Caldis/Mos&lt;/a>&lt;br>
+用于平滑鼠标滚动效果，让普通鼠标在Mac上也能像触控板一样使用。&lt;/li>
+&lt;/ul>
+&lt;h4 id="25-ai工具">&lt;strong>2.5 AI工具&lt;/strong>&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>ollama&lt;/strong>：本地运行大模型，&lt;a href="https://ollama.com">ollama.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Bolt.New&lt;/strong>：通过描述需求创建并部署Web应用，&lt;a href="https://github.com/stackblitz/bolt.new">bolt.new&lt;/a>&lt;/li>
+&lt;li>&lt;strong>DeepL翻译&lt;/strong>：&lt;a href="https://www.deepl.com">deepl.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>OpenAI ChatGPT&lt;/strong>：&lt;a href="https://chat.openai.com/chat">chat.openai.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Google Gemini&lt;/strong>：&lt;a href="https://gemini.google.com/app">gemini.google.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>通义千问&lt;/strong>：阿里云的AI服务，&lt;a href="https://tongyi.aliyun.com">tongyi.aliyun.com&lt;/a>&lt;/li>
+&lt;li>&lt;strong>纳米搜索&lt;/strong>：&lt;a href="https://n.cn">n.cn&lt;/a>&lt;/li>
+&lt;li>&lt;strong>字节豆包&lt;/strong>：&lt;a href="https://www.doubao.com">doubao.com&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>注意&lt;/strong>：部分工具可能需要科学上网，使用时需遵守法律法规。&lt;/p></description></item><item><title>如何打造个人技术品牌？</title><link>https://blog.chenguixian.com/post/misc/how-to-build-personal-tech-brand/</link><pubDate>Wed, 22 Jan 2025 10:12:24 +0800</pubDate><guid>https://blog.chenguixian.com/post/misc/how-to-build-personal-tech-brand/</guid><description>&lt;p>这是一篇关于《如何打造个人技术品牌？》的阅读笔记。&lt;/p>
+&lt;h3 id="个人技术品牌的价值">个人技术品牌的价值&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>降低求职难度&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>个人技术品牌可以替代简历，通过技术成果展示个人能力，吸引潜在雇主或招聘机会。&lt;/li>
+&lt;li>即使没有熟人推荐，技术品牌也能让雇主认为你是靠谱的候选人。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>拓展交往范围&lt;/strong>&lt;/p></description></item><item><title>小贤周刊第 9 期</title><link>https://blog.chenguixian.com/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Fri, 19 Jan 2024 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/9-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="kubernetes的limits和requests">Kubernetes的Limits和Requests&lt;/h3>
+&lt;p>Kubernetes的Limits和Requests介绍&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests">https://www.jokerbai.com/archives/yi-wen-gao-dong-kubernetes-de-limits-he-requests&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/">https://kubesphere.io/zh/blogs/deep-dive-into-the-k8s-request-and-limit/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="postman压测和jmeter压测的区别">Postman压测和JMeter压测的区别&lt;/h3>
+&lt;p>&lt;strong>JMeter&lt;/strong>/Postman/Apifox 的压测简单对比&lt;/p>
+&lt;p>&lt;a href="https://apifox.com/apiskills/postman-jmeter-stresstest/?utm_source=google_dsa&amp;utm_medium=g&amp;utm_campaign=20543997484&amp;utm_content=156047449829&amp;utm_term=&amp;gad_source=1&amp;gclid=CjwKCAiAhJWsBhAaEiwAmrNyq6sPJs019sQDd3yNcR_sMq7B9VVnoXPWDvEJJgVKsZHAVaCDRjtjlxoCZ6MQAvD_BwE">Postman压测和JMeter压测的区别&lt;/a>&lt;/p>
+&lt;h3 id="kubernetes-tutorial-for-beginners">Kubernetes Tutorial for Beginners&lt;/h3>
+&lt;p>&lt;a href="https://www.youtube.com/watch?v=X48VuDVv0do&amp;ab_channel=TechWorldwithNana">Kubernetes Tutorial for Beginners&lt;/a>&lt;/p>
+&lt;h3 id="hello-算法">Hello 算法&lt;/h3>
+&lt;p>一本开源、免费、对新手友好的数据结构与算法入门教程&lt;/p></description></item><item><title>小贤周刊第 8 期</title><link>https://blog.chenguixian.com/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Fri, 12 Jan 2024 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/8-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="kubernetes-学习路径">Kubernetes 学习路径&lt;/h3>
+&lt;p>&lt;a href="https://github.com/caicloud/kube-ladder">https://github.com/caicloud/kube-ladder&lt;/a>&lt;/p>
+&lt;h3 id="云原生java架构师的第一课k8sdockerkubespheredevops">云原生Java架构师的第一课K8s+Docker+KubeSphere+DevOps&lt;/h3>
+&lt;p>&lt;a href="https://www.bilibili.com/video/BV13Q4y1C7hS">https://www.bilibili.com/video/BV13Q4y1C7hS&lt;/a>&lt;/p>
+&lt;h3 id="rest-api-的关键概念有哪些">REST API 的关键概念有哪些？&lt;/h3>
+&lt;p>REST，全称 Representational State Transfer (表现层状态转移)。它是一种软件架构风格，而不是标准，所以只提供了一组设计原则和约束条件。&lt;/p></description></item><item><title>小贤周刊第 7 期</title><link>https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Fri, 05 Jan 2024 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/7-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="为什么这么设计系列文章">为什么这么设计系列文章&lt;/h3>
+&lt;p>分析各个领域中为何如此设计的文章&lt;/p>
+&lt;p>&lt;a href="https://draveness.me/whys-the-design/">https://draveness.me/whys-the-design/&lt;/a>&lt;/p>
+&lt;h3 id="如何快速理解复杂业务系统思考问题">如何快速理解复杂业务，系统思考问题？&lt;/h3>
+&lt;p>对于复杂问题的思考其实是有层次的，从最表面的事件，到事件背后的规律，再到这个问题的结构模式，再到价值观，层层递进。在画完自己的业务系统因果回路图之后，再结合这个心智模型，思考自己的思考在哪个层次，是否可以有机会再下钻到更深的层次。&lt;/p></description></item><item><title>小贤周刊第 6 期</title><link>https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Fri, 29 Dec 2023 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/6-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="python-之路">Python 之路&lt;/h3>
+&lt;p>一位培训讲师关于 Python 的讲义。值得一看。
+&lt;a href="https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941">https://www.cnblogs.com/Eva-J/articles/8306047.html#5140941&lt;/a>
+&lt;a href="https://www.cnblogs.com/Eva-J/p/7277026.html">https://www.cnblogs.com/Eva-J/p/7277026.html&lt;/a>&lt;/p>
+&lt;h3 id="epoll">epoll&lt;/h3>
+&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/63179839">https://zhuanlan.zhihu.com/p/63179839&lt;/a>&lt;/p>
+&lt;h3 id="redis-也支持全文搜索这也太强了">Redis 也支持全文搜索？这也太强了&lt;/h3>
+&lt;p>简单场景下，用来平替 Elasticsearch 的使用场景已经足够。像是 Elasticsearch 中常用中文分词插件可以用 RediSearch 替代，但是拼音转中文插件在 RediSearch 中还没有功能替代，只能通过个人手段处理。
+&lt;a href="https://mp.weixin.qq.com/s/FgcvoRGkVMw62aelMH7x1g">https://mp.weixin.qq.com/s/FgcvoRGkVMw62aelMH7x1g&lt;/a>&lt;/p></description></item><item><title>好文分享：我的前端职业进阶之路</title><link>https://blog.chenguixian.com/post/misc/share-article1/</link><pubDate>Wed, 30 Aug 2023 10:12:24 +0800</pubDate><guid>https://blog.chenguixian.com/post/misc/share-article1/</guid><description>&lt;blockquote>
+&lt;p>原文地址 &lt;a href="https://juejin.cn/post/6872136699405664263">juejin.cn&lt;/a>。一篇比较好的文章分享。关注如何在工作中思考和成长。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="分享大纲">分享大纲&lt;/h2>
+&lt;p>本次分享的内容主要分为两个部分：&lt;/p>
+&lt;p>第一部分，关于&lt;strong>个人成长&lt;/strong>，整体概览下我的个人职业发展过程，以及在这个过程中，我在每个阶段所遇到的问题、瓶颈和破局的方法。&lt;/p></description></item><item><title>如何从 0 开始配置 Mac</title><link>https://blog.chenguixian.com/post/tools/mac-cofig/</link><pubDate>Fri, 21 Jul 2023 19:14:49 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/mac-cofig/</guid><description>&lt;h2 id="安装-app">安装 App&lt;/h2>
+&lt;p>安装应用可以有如下途径&lt;/p>
+&lt;h3 id="homebrew">HomeBrew&lt;/h3>
+&lt;p>安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 &lt;a href="https://formulae.brew.sh/cask/">homebrew-cask — Homebrew Formulae&lt;/a> 里找有没有，Cli 工具可以在 &lt;a href="https://formulae.brew.sh/formula/">homebrew-core — Homebrew Formulae&lt;/a> 找有没有。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>安装 homebrew&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">/bin/bash -c &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>安装软件包：在终端中输入 &lt;code>brew install &amp;lt;package&amp;gt;&lt;/code> 命令安装需要的软件包。例如，要安装 wget，可以输入 &lt;code>brew install wget&lt;/code>，如果要安装的软件包已经安装过了，则会提示已经安装。&lt;/p></description></item><item><title>Debian 的发行版</title><link>https://blog.chenguixian.com/post/op/debian-version/</link><pubDate>Wed, 12 Jul 2023 21:31:26 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/debian-version/</guid><description>&lt;h2 id="debian-的版本">Debian 的版本&lt;/h2>
+&lt;p>Debian各个发行版及其代号：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Debian 1.1 - Buzz
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 1.2 - Rex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 1.3 - Bo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 2.0 - Hamm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 2.1 - Slink
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 2.2 - Potato
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 3.0 - Woody
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 3.1 - Sarge
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 4.0 - Etch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 5.0 - Lenny
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 6.0 - Squeeze
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 7.0 - Wheezy
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 8.0 - Jessie
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 9.0 - Stretch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 10 - Buster
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 11 - Bullseye
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Debian 12 - Bookworm (尚未发布)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>每个版本都有一个代号，代号通常是以一个卡通人物的名字命名，例如Squeeze是以Toy Story中的角色命名的。这些代号通常是从Debian开发团队中选出来的，旨在使每个版本都有一个独特的标识符。&lt;/p></description></item><item><title>MacOS 使用 ssh-agent 实现跳板登录</title><link>https://blog.chenguixian.com/post/op/ssh-agent-forwarding/</link><pubDate>Thu, 06 Jul 2023 20:30:12 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/ssh-agent-forwarding/</guid><description>&lt;p>在实际工作中，我们经常需要通过跳板主机来访问目标主机。这时候，如果我们使用 SSH 进行远程连接，就需要在本地计算机上使用 ssh-agent 来实现跳板登录。下面，本文将介绍如何使用 ssh-agent 实现跳板登录。&lt;/p></description></item><item><title>MySQL 频频出现慢日志，你该怎么办？</title><link>https://blog.chenguixian.com/post/op/mysql-slowlog/</link><pubDate>Thu, 15 Jun 2023 21:31:26 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/mysql-slowlog/</guid><description>&lt;blockquote>
+&lt;p>在日常工作中，不少研发人员会因为 “慢日志” 头疼不已，“慢日志”造成的数据库性能问题（比如锁等待、并发访问资源消耗等）绝对占据数据库性能问题的 TOP 1，如果你用不合理的优化方法，比如添加不合理的索引、被动进行优化等，效率很低，所以除了要重视慢日志之外，更要有一个合理的优化方法，不让问题积少成多。&lt;/p></description></item><item><title>小贤周刊第 5 期</title><link>https://blog.chenguixian.com/post/weekly/5-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Sun, 21 May 2023 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/5-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="mysql-权限">MySQL 权限&lt;/h3>
+&lt;p>MySQL 中存在4个控制权限的表，&lt;code>分别为user表，db表，tables_priv表，columns_priv表&lt;/code>。MySQL的权限级别分为如下：&lt;/p></description></item><item><title>小贤周刊第 4 期</title><link>https://blog.chenguixian.com/post/weekly/4-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Sun, 14 May 2023 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/4-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="cool-new-features-in-python-311">Cool New Features in Python 3.11&lt;/h3>
+&lt;p>Python 3.11于2022年10月24日发布，新版本的Python更快、更用户友好。新特性包括更好的错误信息和更详细的 tracebak 信息、在执行效率上的改进（Faster CPython project）、更好的异步任务语法（在Python 3.11中，可以使用任务组来运行和监视异步任务）、类型注解上的改进（如 Self）、TOML 的解析、异常组。&lt;/p></description></item><item><title>小贤周刊第 3 期</title><link>https://blog.chenguixian.com/post/weekly/3-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Sun, 07 May 2023 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/3-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="nginx-反向代理中的-proxy_redirect">Nginx 反向代理中的 proxy_redirect&lt;/h3>
+&lt;p>&lt;a href="https://cloud.tencent.com/developer/beta/article/1027558">https://cloud.tencent.com/developer/beta/article/1027558&lt;/a>&lt;/p>
+&lt;h3 id="python-threading-the-complete-guide">Python Threading: The Complete Guide&lt;/h3>
+&lt;p>&lt;a href="https://superfastpython.com/threading-in-python/">https://superfastpython.com/threading-in-python/&lt;/a>&lt;/p>
+&lt;h3 id="深入浅出现代web编程">深入浅出现代Web编程&lt;/h3>
+&lt;p>&lt;a href="https://fullstackopen.com/">https://fullstackopen.com/&lt;/a>&lt;/p>
+&lt;h3 id="gtid">GTID&lt;/h3>
+&lt;p>&lt;a href="https://cloud.tencent.com/developer/article/1674635">https://cloud.tencent.com/developer/article/1674635&lt;/a>&lt;/p>
+&lt;h2 id="工具">工具&lt;/h2>
+&lt;h3 id="programming-idioms">programming-idioms&lt;/h3>
+&lt;p>&lt;a href="https://programming-idioms.org/all-idioms">https://programming-idioms.org/all-idioms&lt;/a>&lt;/p>
+&lt;h3 id="ohmyzsh">ohmyz.sh&lt;/h3>
+&lt;p>&lt;a href="https://ohmyz.sh/">https://ohmyz.sh/&lt;/a>&lt;/p>
+&lt;h2 id="随便看看">随便看看&lt;/h2>
+&lt;h3 id="how-i-setup-my-development-environment-on-macos-2022-edition">How I setup my Development Environment on macOS 2022 Edition&lt;/h3>
+&lt;p>&lt;a href="https://dev.to/andrewbaisden/how-i-setup-my-development-environment-on-macos-2022-edition-5elf">https://dev.to/andrewbaisden/how-i-setup-my-development-environment-on-macos-2022-edition-5elf&lt;/a>&lt;/p>
+&lt;h3 id="极客时间-aigc-知识库">极客时间 AIGC 知识库&lt;/h3>
+&lt;p>&lt;a href="https://longalong.feishu.cn/wiki/wikcngNXeTD1ZnOly0X19lPLfoh">https://longalong.feishu.cn/wiki/wikcngNXeTD1ZnOly0X19lPLfoh&lt;/a>&lt;/p>
+&lt;h2 id="随便记记">随便记记&lt;/h2>
+&lt;ul>
+&lt;li>发现错误要尽快改，不管多大的代价都可能是最小的代价&lt;/li>
+&lt;/ul></description></item><item><title>小贤周刊第 2 期</title><link>https://blog.chenguixian.com/post/weekly/2-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Sun, 30 Apr 2023 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/2-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="设计模式">设计模式&lt;/h3>
+&lt;p>&lt;a href="https://refactoringguru.cn/design-patterns">https://refactoringguru.cn/design-patterns&lt;/a>&lt;/p>
+&lt;h3 id="sadservers">sadservers&lt;/h3>
+&lt;p>Troubleshoot and make a sad server happy! &lt;a href="https://sadservers.com/">https://sadservers.com/&lt;/a>&lt;/p>
+&lt;h3 id="django-中的事务">Django 中的事务&lt;/h3>
+&lt;p>&lt;a href="https://docs.djangoproject.com/zh-hans/4.2/topics/db/transactions/">https://docs.djangoproject.com/zh-hans/4.2/topics/db/transactions/&lt;/a>&lt;/p>
+&lt;h2 id="工具">工具&lt;/h2>
+&lt;h3 id="devdocsio">devdocs.io&lt;/h3>
+&lt;p>各类语言、框架的官方文档整合，还有轻应用，媲美要花钱的 dash。&lt;/p>
+&lt;h2 id="图书">图书&lt;/h2>
+&lt;h3 id="流畅的-python第二版">流畅的 Python(第二版)&lt;/h3>
+&lt;p>从公众号的推文中发现第二版中文翻译版出版了&lt;/p></description></item><item><title>Python设计模式</title><link>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Mon, 24 Apr 2023 19:10:47 +0800</pubDate><guid>https://blog.chenguixian.com/post/python/python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>&lt;p>设计模式从大的分类上可以分为 &lt;strong>创建型设计模式、结构型设计模式、行为模式&lt;/strong>。&lt;/p>
+&lt;p>Python是一门动态到骨子里的编程语言，它有着一等函数对象、“鸭子类型”、可自定义的数据模型等各种灵活特性。因此，我们极少会用Python来一比一还原经典设计模式，而几乎总是会为每种设计模式找到更适合Python的表现形式。&lt;/p></description></item><item><title>小贤周刊第 1 期</title><link>https://blog.chenguixian.com/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</link><pubDate>Sun, 23 Apr 2023 11:57:58 +0800</pubDate><guid>https://blog.chenguixian.com/post/weekly/1-%E5%B0%8F%E8%B4%A4%E5%91%A8%E5%88%8A/</guid><description>&lt;h2 id="技术相关">技术相关&lt;/h2>
+&lt;h3 id="python-concurrency">Python Concurrency&lt;/h3>
+&lt;p>先留个坑，后续记录输出一个笔记文档。&lt;/p>
+&lt;h3 id="the-hitchhikers-guide-to-python">The Hitchhiker’s Guide to Python!&lt;/h3>
+&lt;p>&lt;a href="https://docs.python-guide.org/">https://docs.python-guide.org/&lt;/a>
+&lt;a href="https://pythonguidecn.readthedocs.io/zh/latest/">https://pythonguidecn.readthedocs.io/zh/latest/&lt;/a>&lt;/p>
+&lt;p>一个 Python 语言入门的文档，接受 Python 的一些基本知识以及相关的框架和应用。&lt;/p>
+&lt;h3 id="hellogithub">HelloGithub&lt;/h3>
+&lt;p>&lt;a href="https://hellogithub.com/">https://hellogithub.com/&lt;/a>&lt;br>
+分享 GitHub 上有趣入门级的开源项目&lt;/p></description></item><item><title>个人目标管理六阶段</title><link>https://blog.chenguixian.com/post/six-stages-of-objective-management/</link><pubDate>Mon, 20 Mar 2023 20:29:40 +0800</pubDate><guid>https://blog.chenguixian.com/post/six-stages-of-objective-management/</guid><description>&lt;p>个人目标管理根据流程可以分为六个阶段：&lt;strong>目标制定、目标拆解、计划制定、计划执行、定期盘点、目标周期结束复盘&lt;/strong>。下面我们逐一来解释这六个阶段的具体意义，以及在目标管理全流程中的作用和应该注意的问题。&lt;/p></description></item><item><title>【目标管理】如何寻找目标</title><link>https://blog.chenguixian.com/post/how-to-find-goals/</link><pubDate>Mon, 20 Mar 2023 20:24:40 +0800</pubDate><guid>https://blog.chenguixian.com/post/how-to-find-goals/</guid><description>&lt;p>在文章的开头，先来看几个目标领域彼此联系的概念：梦想、理想、愿景、目标。这几个概念越来越细化、越来越具体、越来越务实。在寻找目标的过程中，区分这些近义词至关重要。&lt;/p></description></item><item><title>KK 的人生建议</title><link>https://blog.chenguixian.com/post/kk-life-tips/</link><pubDate>Fri, 03 Feb 2023 17:24:38 +0800</pubDate><guid>https://blog.chenguixian.com/post/kk-life-tips/</guid><description>&lt;p>个人部分觉得比较有意思或者带来一些启发的摘抄一下。&lt;/p>
+&lt;h2 id="2022">2022&lt;/h2>
+&lt;ol start="5">
+&lt;li>回答“我现在应该做什么？”的唯一富有成效的方法是首先解决 “我应该成为谁？”的问题。&lt;/li>
+&lt;li>你的时间和空间是有限的。移除、放弃、扔掉你生活中那些不再能激发快乐的东西，以便为那些能激发快乐的东西腾出空间。&lt;/li>
+&lt;li>永远不要为你不欣赏的人工作。&lt;/li>
+&lt;li>你最好的工作将是一个你不合格的工作，因为它使你得到了锻炼。事实上，只申请你不合格的工作。&lt;/li>
+&lt;li>当你领导时，你真正的工作是创造更多的领导者，而不是更多的追随者。&lt;/li>
+&lt;li>私下批评，公开表扬。&lt;/li>
+&lt;li>通过提升好的行为而不是惩罚坏的行为，你会得到10倍的效果，特别是在儿童和动物身上。&lt;/li>
+&lt;li>当你被困住时，向别人解释你的问题。通常情况下，简单地摆出问题就能提出解决方案。让 “解释问题 ”成为你排除故障过程的一部分。&lt;/li>
+&lt;li>一个不太聪明的人，如果能很好地沟通，有可能比一个不能很好沟通的超级聪明人做得更好。这是一个好消息，因为提高你的沟通能力比提高你的智力要容易得多。&lt;/li>
+&lt;li>公开演讲时，要经常停顿。在你以新的方式说某件事情之前暂停，在你说了你认为重要的事情之后暂停，并将暂停作为一种解脱，让听众吸收细节。&lt;/li>
+&lt;li>没有所谓的“准时”之说。你要么迟到，要么提前。这是你的选择。&lt;/li>
+&lt;li>如果你把今天所做的事情再重复365次，你明年会达到你想要的程度吗？&lt;/li>
+&lt;li>我们倾向于高估我们一天能做的事情，而低估我们在十年内能取得的成就。如果你给它十年的时间，就可以完成奇迹般的事情。一个长期的游戏将使小的收益复合化，以克服甚至大的错误。&lt;/li>
+&lt;li>大约99%的情况下，正确的时间就是现在。&lt;/li>
+&lt;li>效率被高估了，而玩物丧志被低估了。定期安排的安息日、公休日、假期、休息日、漫无目的的散步和休息时间对于任何类型的顶级表现都是必不可少的。最好的工作道德需要有良好的休息道德。&lt;/li>
+&lt;li>不要老是犯同样的错误，要尝试犯新的错误。&lt;/li>
+&lt;/ol>
+&lt;h2 id="2021">2021&lt;/h2>
+&lt;ol start="4">
+&lt;li>成功的秘诀：谨慎承诺，然后努力超出预期。&lt;/li>
+&lt;li>成熟的基础：不是你的错并不意味着不是你的责任。&lt;/li>
+&lt;li>要变得富有，就要积累所有那些金钱买不到的东西。&lt;/li>
+&lt;li>思量别人的弱点很容易；思量自己的弱点很难，但回报要高得多。&lt;/li>
+&lt;li>别总想着别人会怎么看你，因为他们并不会。&lt;/li>
+&lt;li>如果你的目标没有计划表，那只是一个梦。&lt;/li>
+&lt;li>生命中所有最大的收获ーー财富、人际关系或知识，都来自复利的魔力ーー微小而稳定的收获如涓涓细流，终成汤汤大河。你所需要的就是保持盈余 1% 。&lt;/li>
+&lt;li>一场演讲中，人们能记住的不会超过三点。&lt;/li>
+&lt;li>现在是创造的最佳时机。今后 20 年里最伟大、最酷的作品都还没诞生。你还来得及。&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>以上建议不是铁律，倒更像帽子，如果这顶不合适，那就试试另一顶。&lt;/li>
+&lt;/ul>
+&lt;h2 id="2020">2020&lt;/h2>
+&lt;ol start="3">
+&lt;li>永远要有一个Deadline。Deadline能够排除不相关的东西。避免追求完美，你必须追求与众不同，与众不同比完美更好。&lt;/li>
+&lt;li>不要害怕问愚蠢的问题，因为99%的情况下其他人也想问同样的问题，只是因为怕尴尬而羞于提问。&lt;/li>
+&lt;li>一个值得追求的年度目标：充分学习一个领域，以至于你无法相信一年前有多么无知。&lt;/li>
+&lt;li>如果你在家里找东西，最后找到了，用完之后，不要把它放回你最终找到它的地方。把它放回你最先去找的地方。&lt;/li>
+&lt;li>存钱和投资都是好习惯。几十年来不加思索地定期投资少量资金是通往财富的一条道路。&lt;/li>
+&lt;li>把创作和改进的过程分开。你不能同时进行写作和编辑，不能同时雕刻和抛光，不能同时制作和分析。如果你这样做，编辑会阻止创造。当你发明时，不要选择。当你画草图时，不要检查。当你写第一稿时，不要反思。在开始的时候，创造者的头脑必须从评判中解放出来。&lt;/li>
+&lt;li>度假时先去行程中最偏远的地方，绕开城市。在偏远地区，你会最大限度地感受到另类的冲击，然后在回来的路上，你会回到城市中熟悉的舒适。&lt;/li>
+&lt;/ol>
+&lt;h2 id="参考文档">参考文档&lt;/h2>
+&lt;p>&lt;a href="https://mactalk.feishu.cn/docs/doccnE4DChQYMA5KrNaTFdnOFqg#haPjbb">https://mactalk.feishu.cn/docs/doccnE4DChQYMA5KrNaTFdnOFqg#haPjbb&lt;/a>&lt;/p></description></item><item><title>41 个新年开工工作建议</title><link>https://blog.chenguixian.com/post/working-tips-in-new-year/</link><pubDate>Wed, 01 Feb 2023 16:19:59 +0800</pubDate><guid>https://blog.chenguixian.com/post/working-tips-in-new-year/</guid><description>&lt;p>1、有时候人们焦虑是因为我们想同时做太多事情，以至于一件事都没做成，这时候，你可以试着先做成一件事。书读不完，先读完一本试试。手头的工作全是烂尾工程，那就先把其中的一件完成。总之，先做成一件事，是打开新世界大门的钥匙。&lt;/p></description></item><item><title>Python EAFP LBYL 编程风格</title><link>https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/</link><pubDate>Wed, 18 Jan 2023 16:03:25 +0800</pubDate><guid>https://blog.chenguixian.com/post/python/python-eafp-lbyl-code-styles/</guid><description>&lt;p>本文介绍两种编程风格 EAFP and LBYL。&lt;/p>
+&lt;p>EAFP：Easier to Ask for Forgiveness than Permission，请求宽恕比获得许可更容易。首先尝试执行你想做的任何操作，然后使用一个尝试块来捕获你的操作可能抛出的最终异常，以防它不成功。&lt;/p></description></item><item><title>Python 工匠读书笔记 5：异常和错误处理</title><link>https://blog.chenguixian.com/post/python/python-craftman-exception/</link><pubDate>Fri, 18 Nov 2022 18:08:22 +0800</pubDate><guid>https://blog.chenguixian.com/post/python/python-craftman-exception/</guid><description>&lt;p>[toc]&lt;/p>
+&lt;h2 id="基础知识">基础知识&lt;/h2>
+&lt;h3 id="优先使用异常捕获">优先使用异常捕获&lt;/h3>
+&lt;h4 id="一个简单函数">一个简单函数&lt;/h4>
+&lt;p>写一个简单的函数，它接收一个整数参数，返回对它加1后的结果。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">incr_by_one&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;对输入整数加1，返回新的值
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> :param value: 整型，或者可以转成整型的字符串
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> :return: 整型结果
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nb">isinstance&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">value&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">elif&lt;/span> &lt;span class="nb">isinstance&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">str&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">value&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isdigit&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;Unable to perform incr for value: &amp;#34;&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">incr_by_one&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;对输入整数加1，返回新的值
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> :param value: 整型，或者可以转成整型的字符串
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> :return: 整型结果
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="ne">TypeError&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ne">ValueError&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;Unable to perform incr for value: &amp;#34;&lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#34;, error: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="两种编程风格">两种编程风格&lt;/h4>
+&lt;ul>
+&lt;li>LBLY（look befor you leap） 三思而后行&lt;/li>
+&lt;li>EAFP（easier to ask for forgiveness than permission） 获取原谅比许可简单&lt;/li>
+&lt;/ul>
+&lt;h4 id="小结">小结&lt;/h4>
+&lt;ol>
+&lt;li>Python 社区偏于使用基于异常捕获的 EAFP 风格&lt;/li>
+&lt;li>代码更为精简，不需要开发者用分支完全覆盖各种可能出错的情况，只需要捕获可能发生的异常即可&lt;/li>
+&lt;li>EAFP 的代码通常性能更好 如果是 &amp;lsquo;73&amp;rsquo; LBLY 每次调用都需要进行额外的 isinstance 和 isdigit 的判断。EAFP 每次调用直接进行转换，返回结果&lt;/li>
+&lt;li>Python 的抛出和捕获异常比较轻量&lt;/li>
+&lt;/ol>
+&lt;h3 id="try-语句常用知识">try 语句常用知识&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">safe_int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;尝试把输入转换为整数&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">TypeError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 当某类异常被抛出时，将会执行对应 except 下的语句&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;type error: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="nb">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1"> is invalid&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">ValueError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 你可以在一个 try 语句块下写多个 except&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;value error: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">value&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1"> is invalid&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">finally&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># finally 里的语句，无论如何都会被执行，哪怕已经执行了return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;function completed&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="把更精确的-except-放在前面">把更精确的 except 放在前面&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">incr_by_key&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">d&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">d&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">Exception&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="err">➊&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;Unknown error: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">KeyError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;key &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1"> does not exists&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">incr_by_key&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">d&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">key&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">d&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">KeyError&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;key &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1"> does not exists&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">Exception&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;Unknown error: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">e&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="使用-else-分支">使用 else 分支&lt;/h4>
+&lt;p>在使用 try 捕获异常的时候，有时需要再仅一切正常的时候做某件事&lt;/p></description></item><item><title>Mac 工具记录</title><link>https://blog.chenguixian.com/post/tools/mac-tools/</link><pubDate>Thu, 21 Jul 2022 21:53:34 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/mac-tools/</guid><description>&lt;h2 id="mac-工具记录">Mac 工具记录&lt;/h2>
+&lt;h3 id="mac-使用技巧">Mac 使用技巧&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">图标&lt;/th>
+ &lt;th style="text-align: left">mac&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘&lt;/td>
+ &lt;td style="text-align: left">command()&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥&lt;/td>
+ &lt;td style="text-align: left">option/alt&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃&lt;/td>
+ &lt;td style="text-align: left">control/ctrl&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧&lt;/td>
+ &lt;td style="text-align: left">Shift&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇪&lt;/td>
+ &lt;td style="text-align: left">Caps Lock&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">fn&lt;/td>
+ &lt;td style="text-align: left">fn&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌫&lt;/td>
+ &lt;td style="text-align: left">Backspace&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↵&lt;/td>
+ &lt;td style="text-align: left">Enter&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↹&lt;/td>
+ &lt;td style="text-align: left">Tab&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="快捷键">快捷键&lt;/h4>
+&lt;h5 id="command">command（⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘空格键&lt;/td>
+ &lt;td style="text-align: left">显示“聚焦”搜索&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘C&lt;/td>
+ &lt;td style="text-align: left">拷贝&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘V&lt;/td>
+ &lt;td style="text-align: left">粘贴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘A&lt;/td>
+ &lt;td style="text-align: left">全选&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘X&lt;/td>
+ &lt;td style="text-align: left">剪切文本&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘Z&lt;/td>
+ &lt;td style="text-align: left">撤销&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘W&lt;/td>
+ &lt;td style="text-align: left">关闭窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘Q&lt;/td>
+ &lt;td style="text-align: left">退出程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘↹&lt;/td>
+ &lt;td style="text-align: left">程序切换器&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘F&lt;/td>
+ &lt;td style="text-align: left">查找&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘D&lt;/td>
+ &lt;td style="text-align: left">复制(生成一个副本)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘N&lt;/td>
+ &lt;td style="text-align: left">新建访达窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘H&lt;/td>
+ &lt;td style="text-align: left">隐藏当前程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌘⌫&lt;/td>
+ &lt;td style="text-align: left">删除到废纸篓&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="optioncommand">option+command（⌥⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘空格键&lt;/td>
+ &lt;td style="text-align: left">显示“访达”搜索窗口&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘D&lt;/td>
+ &lt;td style="text-align: left">打开或关闭程序坞&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘⌫&lt;/td>
+ &lt;td style="text-align: left">彻底删除选中文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘V&lt;/td>
+ &lt;td style="text-align: left">剪切(先按拷贝快捷键)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘ ESC&lt;/td>
+ &lt;td style="text-align: left">强制退出程序&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘8&lt;/td>
+ &lt;td style="text-align: left">打开或关闭缩放&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘/&lt;/td>
+ &lt;td style="text-align: left">打开或关闭平滑图像&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘-&lt;/td>
+ &lt;td style="text-align: left">缩小&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⌘=&lt;/td>
+ &lt;td style="text-align: left">放大&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="shiftcommand">shift+command（⇧⌘）&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘Z&lt;/td>
+ &lt;td style="text-align: left">反撤销&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘3&lt;/td>
+ &lt;td style="text-align: left">将屏幕图片存储为文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘4&lt;/td>
+ &lt;td style="text-align: left">将所选区域的图片存储为文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⇧⌘5&lt;/td>
+ &lt;td style="text-align: left">显示截图工具条&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⇧⌘3&lt;/td>
+ &lt;td style="text-align: left">将屏幕图片拷贝到剪贴板&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⇧⌘4&lt;/td>
+ &lt;td style="text-align: left">将所选区域的图片拷贝到剪贴板&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h5 id="其他">其他&lt;/h5>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">空格键&lt;/td>
+ &lt;td style="text-align: left">预览&lt;br />在访达中对文件按下后，可以预览文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">↵&lt;/td>
+ &lt;td style="text-align: left">重命名文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">F11&lt;/td>
+ &lt;td style="text-align: left">显示桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃←&lt;/td>
+ &lt;td style="text-align: left">向左移动桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃→&lt;/td>
+ &lt;td style="text-align: left">向右移动桌面&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">fnQ&lt;/td>
+ &lt;td style="text-align: left">快速备忘录(没看到效果)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌥⇧⌘V&lt;/td>
+ &lt;td style="text-align: left">清除格式化粘贴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃⌘F&lt;/td>
+ &lt;td style="text-align: left">全屏幕/小屏幕切换&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">⌃空格键&lt;/td>
+ &lt;td style="text-align: left">输入法切换&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h4 id="技巧">技巧&lt;/h4>
+&lt;h5 id="常用">常用&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>按住 &lt;code>⌥&lt;/code> 点击上右菜单栏的控制中心图标可以快速进入或退出勿扰模式&lt;/p></description></item><item><title>使用 TODO List 结合轻笔记进行知识积累</title><link>https://blog.chenguixian.com/post/tools/todo-flomo/</link><pubDate>Thu, 09 Jun 2022 10:40:23 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/todo-flomo/</guid><description>&lt;h2 id="todo-list-与笔记">TODO List 与笔记&lt;/h2>
+&lt;p>使用 TODO List 类的工具可以较好的管理我们的计划事项，但是也会存在一个问题。当欧美原先做过类似的某一项工作，记不起来当时做了什么，有什么积累。在工具上也只有标题和完成状态，对于其他实践经验，有可能都记不起来了。&lt;/p></description></item><item><title>Go 简明教程</title><link>https://blog.chenguixian.com/post/go/go-basic/</link><pubDate>Wed, 06 Oct 2021 23:25:24 +0800</pubDate><guid>https://blog.chenguixian.com/post/go/go-basic/</guid><description>&lt;p>简单的 Go 入门教程&lt;/p>
+&lt;p>&lt;img src="https://i.loli.net/2021/10/08/baIWtqV4RCoKw8k.png">&lt;/p>
+&lt;h2 id="参考文档">参考文档&lt;/h2>
+&lt;p>&lt;a href="https://jiajunhuang.com/tutorial/golang/index.md">https://jiajunhuang.com/tutorial/golang/index.md&lt;/a>&lt;/p></description></item><item><title>GitHub 2021 年 9 月热门 Javascript 项目</title><link>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</link><pubDate>Sat, 18 Sep 2021 16:48:09 +0800</pubDate><guid>https://blog.chenguixian.com/post/js/hotest-js-repos-ins-september-2021/</guid><description>&lt;h2 id="thealgorithmsjavascript">/TheAlgorithms/Javascript&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/TheAlgorithms/Javascript">https://github.com/TheAlgorithms/Javascript&lt;/a>&lt;/li>
+&lt;li>简介
+A repository for All algorithms implemented in Javascript (for educational purposes only)&lt;/li>
+&lt;li>star 数量
+14152&lt;/li>
+&lt;/ul>
+&lt;h2 id="pedroslopezwhatsapp-webjs">/pedroslopez/whatsapp-web.js&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/pedroslopez/whatsapp-web.js">https://github.com/pedroslopez/whatsapp-web.js&lt;/a>&lt;/li>
+&lt;li>简介
+A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app&lt;/li>
+&lt;li>star 数量
+3379&lt;/li>
+&lt;/ul>
+&lt;h2 id="chrisleekrbinance-trading-bot">/chrisleekr/binance-trading-bot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/chrisleekr/binance-trading-bot">https://github.com/chrisleekr/binance-trading-bot&lt;/a>&lt;/li>
+&lt;li>简介
+Automated Binance trading bot - Buy low/Sell high with stop loss limit/Trade multiple cryptocurrencies with Grid Trading&lt;/li>
+&lt;li>star 数量
+2961&lt;/li>
+&lt;/ul>
+&lt;h2 id="googlezx">/google/zx&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/google/zx">https://github.com/google/zx&lt;/a>&lt;/li>
+&lt;li>简介
+A tool for writing better scripts&lt;/li>
+&lt;li>star 数量
+22855&lt;/li>
+&lt;/ul>
+&lt;h2 id="anuraghazragithub-readme-stats">/anuraghazra/github-readme-stats&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/anuraghazra/github-readme-stats">https://github.com/anuraghazra/github-readme-stats&lt;/a>&lt;/li>
+&lt;li>简介
+⚡ Dynamically generated stats for your github readmes&lt;/li>
+&lt;li>star 数量
+30661&lt;/li>
+&lt;/ul>
+&lt;h2 id="openzeppelinopenzeppelin-contracts">/OpenZeppelin/openzeppelin-contracts&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/OpenZeppelin/openzeppelin-contracts">https://github.com/OpenZeppelin/openzeppelin-contracts&lt;/a>&lt;/li>
+&lt;li>简介
+OpenZeppelin Contracts is a library for secure smart contract development.&lt;/li>
+&lt;li>star 数量
+12315&lt;/li>
+&lt;/ul>
+&lt;h2 id="jgraphdrawio-desktop">/jgraph/drawio-desktop&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/jgraph/drawio-desktop">https://github.com/jgraph/drawio-desktop&lt;/a>&lt;/li>
+&lt;li>简介
+Official electron build of diagrams.net&lt;/li>
+&lt;li>star 数量
+21703&lt;/li>
+&lt;/ul>
+&lt;h2 id="lingdong-fishdraw">/LingDong-/fishdraw&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/LingDong-/fishdraw">https://github.com/LingDong-/fishdraw&lt;/a>&lt;/li>
+&lt;li>简介
+procedurally generated fish drawings&lt;/li>
+&lt;li>star 数量
+1694&lt;/li>
+&lt;/ul>
+&lt;h2 id="louislamuptime-kuma">/louislam/uptime-kuma&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/louislam/uptime-kuma">https://github.com/louislam/uptime-kuma&lt;/a>&lt;/li>
+&lt;li>简介
+A fancy self-hosted monitoring tool&lt;/li>
+&lt;li>star 数量
+3343&lt;/li>
+&lt;/ul>
+&lt;h2 id="yangshuntech-interview-handbook">/yangshun/tech-interview-handbook&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/yangshun/tech-interview-handbook">https://github.com/yangshun/tech-interview-handbook&lt;/a>&lt;/li>
+&lt;li>简介
+💯 Curated interview preparation materials for busy engineers&lt;/li>
+&lt;li>star 数量
+58591&lt;/li>
+&lt;/ul>
+&lt;h2 id="projectopenseaopensea-creatures">/ProjectOpenSea/opensea-creatures&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ProjectOpenSea/opensea-creatures">https://github.com/ProjectOpenSea/opensea-creatures&lt;/a>&lt;/li>
+&lt;li>简介
+Example non-fungible collectible, to demonstrate OpenSea integration&lt;/li>
+&lt;li>star 数量
+490&lt;/li>
+&lt;/ul>
+&lt;h2 id="haehnchencrypto-trading-bot">/Haehnchen/crypto-trading-bot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Haehnchen/crypto-trading-bot">https://github.com/Haehnchen/crypto-trading-bot&lt;/a>&lt;/li>
+&lt;li>简介
+Cryptocurrency trading bot in javascript for Bitfinex, Bitmex, Binance, FTX, Bybit &amp;hellip; (public edition)&lt;/li>
+&lt;li>star 数量
+1794&lt;/li>
+&lt;/ul>
+&lt;h2 id="ffmpegwasmffmpegwasm">/ffmpegwasm/ffmpeg.wasm&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ffmpegwasm/ffmpeg.wasm">https://github.com/ffmpegwasm/ffmpeg.wasm&lt;/a>&lt;/li>
+&lt;li>简介
+FFmpeg for browser and node, powered by WebAssembly&lt;/li>
+&lt;li>star 数量
+6056&lt;/li>
+&lt;/ul>
+&lt;h2 id="narkozhacker-scripts">/NARKOZ/hacker-scripts&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/NARKOZ/hacker-scripts">https://github.com/NARKOZ/hacker-scripts&lt;/a>&lt;/li>
+&lt;li>简介
+Based on a true story&lt;/li>
+&lt;li>star 数量
+42059&lt;/li>
+&lt;/ul>
+&lt;h2 id="sudhanplayzdiscord-musicbot">/SudhanPlayz/Discord-MusicBot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/SudhanPlayz/Discord-MusicBot">https://github.com/SudhanPlayz/Discord-MusicBot&lt;/a>&lt;/li>
+&lt;li>简介
+An advanced discord music bot, supports Spotify, Soundcloud, YouTube with Shuffling, Volume Control and Web Dashboard with Slash Commands support!&lt;/li>
+&lt;li>star 数量
+829&lt;/li>
+&lt;/ul>
+&lt;h2 id="ascodersweekly">/ascoders/weekly&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ascoders/weekly">https://github.com/ascoders/weekly&lt;/a>&lt;/li>
+&lt;li>简介
+前端精读周刊。帮你理解最前沿、实用的技术。&lt;/li>
+&lt;li>star 数量
+14483&lt;/li>
+&lt;/ul>
+&lt;h2 id="asabeneh30-days-of-react">/Asabeneh/30-Days-Of-React&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Asabeneh/30-Days-Of-React">https://github.com/Asabeneh/30-Days-Of-React&lt;/a>&lt;/li>
+&lt;li>简介
+30 Days of React challenge is a step by step guide to learn React in 30 days. It requires HTML, CSS, and JavaScript knowledge. You should be comfortable with JavaScript before you start to React. If you are not comfortable with JavaScript check out 30DaysOfJavaScript. This is a continuation of 30 Days Of JS. This challenge may take more than 100…&lt;/li>
+&lt;li>star 数量
+8236&lt;/li>
+&lt;/ul>
+&lt;h2 id="jely2002youtube-dl-gui">/jely2002/youtube-dl-gui&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/jely2002/youtube-dl-gui">https://github.com/jely2002/youtube-dl-gui&lt;/a>&lt;/li>
+&lt;li>简介
+A cross-platform GUI for youtube-dl made in Electron and node.js&lt;/li>
+&lt;li>star 数量
+2245&lt;/li>
+&lt;/ul>
+&lt;h2 id="khanhasspicetify-cli">/khanhas/spicetify-cli&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/khanhas/spicetify-cli">https://github.com/khanhas/spicetify-cli&lt;/a>&lt;/li>
+&lt;li>简介
+Commandline tool to customize Spotify client. Supports Windows, MacOS and Linux.&lt;/li>
+&lt;li>star 数量
+8269&lt;/li>
+&lt;/ul>
+&lt;h2 id="lecoupaawesome-cheatsheets">/LeCoupa/awesome-cheatsheets&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/LeCoupa/awesome-cheatsheets">https://github.com/LeCoupa/awesome-cheatsheets&lt;/a>&lt;/li>
+&lt;li>简介
+👩‍💻👨‍💻 Awesome cheatsheets for popular programming languages, frameworks and development tools. They include everything you should know in one single file.&lt;/li>
+&lt;li>star 数量
+22520&lt;/li>
+&lt;/ul>
+&lt;h2 id="asabeneh30-days-of-javascript">/Asabeneh/30-Days-Of-JavaScript&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Asabeneh/30-Days-Of-JavaScript">https://github.com/Asabeneh/30-Days-Of-JavaScript&lt;/a>&lt;/li>
+&lt;li>简介
+30 days of JavaScript programming challenge is a step-by-step guide to learn JavaScript programming language in 30 days. This challenge may take more than 100 days, please just follow your own pace.&lt;/li>
+&lt;li>star 数量
+9736&lt;/li>
+&lt;/ul>
+&lt;h2 id="mgechevgoogle-interview-preparation-problems">/mgechev/google-interview-preparation-problems&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/mgechev/google-interview-preparation-problems">https://github.com/mgechev/google-interview-preparation-problems&lt;/a>&lt;/li>
+&lt;li>简介
+leetcode problems I solved to prepare for my Google interview.&lt;/li>
+&lt;li>star 数量
+1711&lt;/li>
+&lt;/ul>
+&lt;h2 id="larvalabscryptopunks">/larvalabs/cryptopunks&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/larvalabs/cryptopunks">https://github.com/larvalabs/cryptopunks&lt;/a>&lt;/li>
+&lt;li>简介
+Collectible 8-bit characters on the Ethereum blockchain.&lt;/li>
+&lt;li>star 数量
+862&lt;/li>
+&lt;/ul>
+&lt;h2 id="shufflewzcfaker2">/shufflewzc/faker2&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/shufflewzc/faker2">https://github.com/shufflewzc/faker2&lt;/a>&lt;/li>
+&lt;li>简介
+不知名大佬备份&lt;/li>
+&lt;li>star 数量
+1621&lt;/li>
+&lt;/ul>
+&lt;h2 id="atralicecursoprephenry">/atralice/Curso.Prep.Henry&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/atralice/Curso.Prep.Henry">https://github.com/atralice/Curso.Prep.Henry&lt;/a>&lt;/li>
+&lt;li>简介
+Curso de Preparación para Ingresar a Henry.&lt;/li>
+&lt;li>star 数量
+467&lt;/li>
+&lt;/ul></description></item><item><title>GitHub 2021 年 9 月热门 Python 项目</title><link>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</link><pubDate>Sat, 18 Sep 2021 16:43:38 +0800</pubDate><guid>https://blog.chenguixian.com/post/python/hotest-python-repos-in-september-2021/</guid><description>&lt;h2 id="yt-dlp">yt-dlp&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp&lt;/a>&lt;/li>
+&lt;li>简介
+A youtube-dl fork with additional features and fixes&lt;/li>
+&lt;li>star 数量
+6359&lt;/li>
+&lt;/ul>
+&lt;h2 id="mockingbird">MockingBird&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/babysor/MockingBird">https://github.com/babysor/MockingBird&lt;/a>&lt;/li>
+&lt;li>简介
+🚀AI拟声: 5秒内克隆您的声音并生成任意语音内容 Clone a voice in 5 seconds to generate arbitrary speech in real-time&lt;/li>
+&lt;li>star 数量
+4285&lt;/li>
+&lt;/ul>
+&lt;h2 id="real-esrgan">Real-ESRGAN&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/xinntao/Real-ESRGAN">https://github.com/xinntao/Real-ESRGAN&lt;/a>&lt;/li>
+&lt;li>简介
+Real-ESRGAN aims at developing Practical Algorithms for General Image Restoration.&lt;/li>
+&lt;li>star 数量
+2634&lt;/li>
+&lt;/ul>
+&lt;h2 id="onlyfans">OnlyFans&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/DIGITALCRIMINAL/OnlyFans">https://github.com/DIGITALCRIMINAL/OnlyFans&lt;/a>&lt;/li>
+&lt;li>简介
+Scrape all the media from an OnlyFans account - Updated regularly&lt;/li>
+&lt;li>star 数量
+2595&lt;/li>
+&lt;/ul>
+&lt;h2 id="ddia">ddia&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Vonng/ddia">https://github.com/Vonng/ddia&lt;/a>&lt;/li>
+&lt;li>简介
+《Designing Data-Intensive Application》DDIA中文翻译&lt;/li>
+&lt;li>star 数量
+8944&lt;/li>
+&lt;/ul>
+&lt;h2 id="binance-trade-bot">binance-trade-bot&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/edeng23/binance-trade-bot">https://github.com/edeng23/binance-trade-bot&lt;/a>&lt;/li>
+&lt;li>简介
+Automated cryptocurrency trading bot&lt;/li>
+&lt;li>star 数量
+5048&lt;/li>
+&lt;/ul>
+&lt;h2 id="paddleocr">PaddleOCR&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/PaddlePaddle/PaddleOCR">https://github.com/PaddlePaddle/PaddleOCR&lt;/a>&lt;/li>
+&lt;li>简介
+Awesome multilingual OCR toolkits based on PaddlePaddle （practical ultra lightweight OCR system, support 80+ languages recognition, provide data annotation and synthesis tools, support training and deployment among server, mobile, embedded and IoT devices）&lt;/li>
+&lt;li>star 数量
+16325&lt;/li>
+&lt;/ul>
+&lt;h2 id="netbox">netbox&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/netbox-community/netbox">https://github.com/netbox-community/netbox&lt;/a>&lt;/li>
+&lt;li>简介
+Infrastructure resource modeling for network automation. Open source under Apache 2. Public demo: &lt;a href="https://demo.netbox.dev">https://demo.netbox.dev&lt;/a>&lt;/li>
+&lt;li>star 数量
+8897&lt;/li>
+&lt;/ul>
+&lt;h2 id="pytorch_geometric">pytorch_geometric&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/pyg-team/pytorch_geometric">https://github.com/pyg-team/pytorch_geometric&lt;/a>&lt;/li>
+&lt;li>简介
+Graph Neural Network Library for PyTorch&lt;/li>
+&lt;li>star 数量
+12399&lt;/li>
+&lt;/ul>
+&lt;h2 id="python">Python&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python&lt;/a>&lt;/li>
+&lt;li>简介
+All Algorithms implemented in Python&lt;/li>
+&lt;li>star 数量
+118215&lt;/li>
+&lt;/ul>
+&lt;h2 id="depix">Depix&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/beurtschipper/Depix">https://github.com/beurtschipper/Depix&lt;/a>&lt;/li>
+&lt;li>简介
+Recovers passwords from pixelized screenshots&lt;/li>
+&lt;li>star 数量
+19943&lt;/li>
+&lt;/ul>
+&lt;h2 id="manim">manim&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/ManimCommunity/manim">https://github.com/ManimCommunity/manim&lt;/a>&lt;/li>
+&lt;li>简介
+A community-maintained Python framework for creating mathematical animations.&lt;/li>
+&lt;li>star 数量
+6872&lt;/li>
+&lt;/ul>
+&lt;h2 id="freqtrade-strategies">freqtrade-strategies&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/freqtrade/freqtrade-strategies">https://github.com/freqtrade/freqtrade-strategies&lt;/a>&lt;/li>
+&lt;li>简介
+Free trading strategies for Freqtrade bot&lt;/li>
+&lt;li>star 数量
+1415&lt;/li>
+&lt;/ul>
+&lt;h2 id="gfpgan">GFPGAN&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/TencentARC/GFPGAN">https://github.com/TencentARC/GFPGAN&lt;/a>&lt;/li>
+&lt;li>简介
+GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration.&lt;/li>
+&lt;li>star 数量
+3431&lt;/li>
+&lt;/ul>
+&lt;h2 id="deepfacelab">DeepFaceLab&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/iperov/DeepFaceLab">https://github.com/iperov/DeepFaceLab&lt;/a>&lt;/li>
+&lt;li>简介
+DeepFaceLab is the leading software for creating deepfakes.&lt;/li>
+&lt;li>star 数量
+28873&lt;/li>
+&lt;/ul>
+&lt;h2 id="30-days-of-python">30-Days-Of-Python&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/Asabeneh/30-Days-Of-Python">https://github.com/Asabeneh/30-Days-Of-Python&lt;/a>&lt;/li>
+&lt;li>简介
+30 days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than100 days, follow your own pace.&lt;/li>
+&lt;li>star 数量
+7516&lt;/li>
+&lt;/ul>
+&lt;h2 id="compose">compose&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/docker/compose">https://github.com/docker/compose&lt;/a>&lt;/li>
+&lt;li>简介
+Define and run multi-container applications with Docker&lt;/li>
+&lt;li>star 数量
+23402&lt;/li>
+&lt;/ul>
+&lt;h2 id="black">black&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/psf/black">https://github.com/psf/black&lt;/a>&lt;/li>
+&lt;li>简介
+The uncompromising Python code formatter&lt;/li>
+&lt;li>star 数量
+22410&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops-exercises">devops-exercises&lt;/h2>
+&lt;ul>
+&lt;li>url&lt;br>
+&lt;a href="https://github.com/bregman-arie/devops-exercises">https://github.com/bregman-arie/devops-exercises&lt;/a>&lt;/li>
+&lt;li>简介
+Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions&lt;/li>
+&lt;li>star 数量
+15681&lt;/li>
+&lt;/ul>
+&lt;h2 id="nft-mix">nft-mix&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>url&lt;br>
+&lt;a href="https://github.com/PatrickAlphaC/nft-mix">https://github.com/PatrickAlphaC/nft-mix&lt;/a>&lt;/p></description></item><item><title>GitHub 2021 年 9 月热门 Golang 项目</title><link>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</link><pubDate>Sat, 18 Sep 2021 16:28:04 +0800</pubDate><guid>https://blog.chenguixian.com/post/go/hotest-golang-repos-in-september-2021/</guid><description>&lt;h2 id="gokart">gokart&lt;/h2>
+&lt;h3 id="url">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/praetorian-inc/gokart">https://github.com/praetorian-inc/gokart&lt;/a>&lt;/p>
+&lt;h3 id="简介">简介&lt;/h3>
+&lt;p>A static analysis tool for securing Go code&lt;/p>
+&lt;h3 id="star-数量">star 数量&lt;/h3>
+&lt;p>1720&lt;/p>
+&lt;h2 id="filebrowser">filebrowser&lt;/h2>
+&lt;h3 id="url-1">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/filebrowser/filebrowser">https://github.com/filebrowser/filebrowser&lt;/a>&lt;/p>
+&lt;h3 id="简介-1">简介&lt;/h3>
+&lt;p>📂 Web File Browser&lt;/p>
+&lt;h3 id="star-数量-1">star 数量&lt;/h3>
+&lt;p>12833&lt;/p>
+&lt;h2 id="podman">podman&lt;/h2>
+&lt;h3 id="url-2">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/containers/podman">https://github.com/containers/podman&lt;/a>&lt;/p>
+&lt;h3 id="简介-2">简介&lt;/h3>
+&lt;p>Podman: A tool for managing OCI containers and pods.&lt;/p>
+&lt;h3 id="star-数量-2">star 数量&lt;/h3>
+&lt;p>10260&lt;/p>
+&lt;h2 id="cli">cli&lt;/h2>
+&lt;h3 id="url-3">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/cli/cli">https://github.com/cli/cli&lt;/a>&lt;/p>
+&lt;h3 id="简介-3">简介&lt;/h3>
+&lt;p>GitHub’s official command line tool&lt;/p>
+&lt;h3 id="star-数量-3">star 数量&lt;/h3>
+&lt;p>25405&lt;/p>
+&lt;h2 id="netpoll">netpoll&lt;/h2>
+&lt;h3 id="url-4">url&lt;/h3>
+&lt;p>&lt;a href="https://github.com/cloudwego/netpoll">https://github.com/cloudwego/netpoll&lt;/a>&lt;/p>
+&lt;h3 id="简介-4">简介&lt;/h3>
+&lt;p>A high-performance non-blocking I/O networking framework, which focused on RPC scenarios, developed by ByteDance.&lt;/p></description></item><item><title>Clean Code Js</title><link>https://blog.chenguixian.com/post/js/clean-code-js/</link><pubDate>Sat, 18 Sep 2021 10:36:06 +0800</pubDate><guid>https://blog.chenguixian.com/post/js/clean-code-js/</guid><description>&lt;p>来自 GitHub 的 clear code js，本文做收藏使用。&lt;/p>
+&lt;h2 id="目录">目录&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#简介">简介&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#变量">变量&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#函数">函数&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#对象和数据结构">对象和数据结构&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#类">类&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#solid">SOLID&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#测试">测试&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#并发">并发&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#错误处理">错误处理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#格式化">格式化&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#注释">注释&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.chenguixian.com/post/js/clean-code-js/#translation">Translation&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>&lt;img alt="一张用你阅读代码时吐槽的数量来评估软件质量的搞笑图片" src="http://www.osnews.com/images/comics/wtfm.jpg">&lt;/p>
+&lt;p>将源自 Robert C. Martin 的 &lt;a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">&lt;em>Clean Code&lt;/em>&lt;/a>
+的软件工程原则适配到 JavaScript 。 这不是一个代码风格指南， 它是一个使用 JavaScript 来生产
+可读的， 可重用的， 以及可重构的软件的指南。&lt;/p></description></item><item><title>SSH 配置文件简单指南</title><link>https://blog.chenguixian.com/post/op/ssh-config/</link><pubDate>Wed, 15 Sep 2021 15:54:09 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/ssh-config/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>如果我们有许多服务器需要连接，并且这些机器存在不同的用户名、端口或者其他的选项，如果在去连接的时候记住这些内容是很麻烦和影响效率的事情。当然我们也可以采用 alias 来简化某些场景下的使用。
+本文主要是介绍在 ssh 配置文件中对不同服务器单独设置一些参数（比如端口、用户名）。&lt;/p></description></item><item><title>【# 01】Just Javascript 笔记</title><link>https://blog.chenguixian.com/post/js/just-javascript/</link><pubDate>Tue, 14 Sep 2021 20:16:33 +0800</pubDate><guid>https://blog.chenguixian.com/post/js/just-javascript/</guid><description>&lt;h2 id="前言--心智模型-mental-model">前言 &amp;amp;&amp;amp; 心智模型 Mental Model&lt;/h2>
+&lt;h3 id="心智模型">心智模型&lt;/h3>
+&lt;blockquote>
+&lt;p>心智模型/心智模式的理论是基于一个试图对某事做出合理解释的个人会发展可行的方法的假设，在有限的领域知识和有限的信息处理能力上，产生合理的解释。心智模型是对思维的高级建构，心智模型表征了主观的知识。通过不同的理解解释了心智模型的概念、特性、功用。心智模型是个体为了要了解和解释他们的经验，所建构的知识结构，该模型受限于个体关于他们经验的内隐理论(Implicit Theories)，这可能有很多或很少的正确性。&lt;/p></description></item><item><title>Nginx location 和 proxy_pass</title><link>https://blog.chenguixian.com/post/op/nginx-location-proxy_pass/</link><pubDate>Fri, 03 Sep 2021 19:39:31 +0800</pubDate><guid>https://blog.chenguixian.com/post/op/nginx-location-proxy_pass/</guid><description>&lt;h2 id="location">Location&lt;/h2>
+&lt;p>Nginx location 用于匹配请求 URI，匹配上之后按照其定义的方式对该请求进行处理。&lt;a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#location">loacation 官方说明&lt;/a>&lt;/p>
+&lt;h3 id="语法">语法&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Syntax:	location [ = | ~ | ~* | ^~ ] uri { ... }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">location @name { ... }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Default:	—
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Context:	server, location
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="匹配命令">匹配命令&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">参数/修饰符&lt;/th>
+ &lt;th style="text-align: left">说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">空&lt;/td>
+ &lt;td style="text-align: left">location 后没有参数直接跟着 &lt;strong>标准 URI&lt;/strong>，表示前缀匹配，代表跟请求中的 URI 从头开始匹配。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">=&lt;/td>
+ &lt;td style="text-align: left">精确匹配，用于&lt;strong>标准 URI&lt;/strong> 前，要求请求字符串与其精准匹配，成功则立即处理，Nginx 停止搜索其他匹配。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">~&lt;/td>
+ &lt;td style="text-align: left">用于&lt;strong>正则 URI&lt;/strong> 前，表示 URI 包含正则表达式， &lt;strong>区分&lt;/strong>大小写&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">~*&lt;/td>
+ &lt;td style="text-align: left">用于&lt;strong>正则 URI&lt;/strong> 前， 表示 URI 包含正则表达式， &lt;strong>不区分&lt;/strong>大小写&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">^~&lt;/td>
+ &lt;td style="text-align: left">用于&lt;strong>标准 URI&lt;/strong> 前，最长非正则匹配，并要求一旦匹配到就会立即处理，不再去匹配其他的。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">@&lt;/td>
+ &lt;td style="text-align: left">@ 定义一个命名的 location，@ 定义的locaiton名字一般用在内部定向，例如error_page, try_files命令中。它的功能类似于编程中的goto。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">/&lt;/td>
+ &lt;td style="text-align: left">通用匹配, 如果没有其它匹配,任何请求都会匹配到&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="匹配顺序">匹配顺序&lt;/h3>
+&lt;blockquote>
+&lt;p>To find location matching a given request, nginx first checks locations defined using the prefix strings (prefix locations). Among them, the location with the longest matching prefix is selected and remembered. Then regular expressions are checked, in the order of their appearance in the configuration file. The search of regular expressions terminates on the first match, and the corresponding configuration is used. If no match with a regular expression is found then the configuration of the prefix location remembered earlier is used.&lt;/p></description></item><item><title>使用 hugo 搭建 blog</title><link>https://blog.chenguixian.com/post/hugo-blog/</link><pubDate>Thu, 02 Sep 2021 22:43:32 +0800</pubDate><guid>https://blog.chenguixian.com/post/hugo-blog/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在极客时间中看到&lt;a href="https://time.geekbang.org/column/article/338103">第454期｜没有输出的学习与消遣无异&lt;/a>一文觉得挺不错。里面提到&lt;/p>
+&lt;blockquote>
+&lt;p>首先，不管是做事还是学习，都要做生产者。在他看来，技术人大都很忙碌，忙于工作，甚至忙于学习，但人们在做事情的时候其实有两种角色：生产者和消费者。以学习为例，学习本身其实是一种消费，每天忙着去读书，看起来是在学习，但是学完以后你的生活和工作因此改变了吗？或者说有产出和输出吗？如果没有，每天的日子还是老样子，工作和生活也没有改变，那这样的学习其实和玩一会手机、看一会抖音，在本质上并没有太大的区别。&lt;/p></description></item><item><title>PicGo-Core (Command line) macOS 配置七牛云图床</title><link>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</link><pubDate>Fri, 27 Aug 2021 00:06:22 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/picgo-cmd-line/</guid><description>&lt;p>PicGo-Core 是一个开源图片上传 node 模块.&lt;/p>
+&lt;h2 id="安装-picgo-core-command-line">安装 PicGo-Core (Command line)&lt;/h2>
+&lt;p>如果有安装 node 或者 yarn 可以直接使用以下命令安装：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">npm install picgo -g
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># or&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">yarn global add picgo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置">配置&lt;/h2>
+&lt;p>在配置七牛云上传之前，如果还没申请过 qiniu 的对象存储，先去 qiniu 注册创建，并且获取到个人账号的 key。&lt;/p></description></item><item><title>iTerm2 中使用 ClashX proxy</title><link>https://blog.chenguixian.com/post/tools/iterm2-clashx/</link><pubDate>Wed, 25 Aug 2021 21:53:34 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/iterm2-clashx/</guid><description>&lt;h2 id="iterm2-配置-http-代理">iTerm2 配置 http 代理&lt;/h2>
+&lt;p>终端下的很多应用会通过 &lt;code>http_proxy&lt;/code>、&lt;code>https_proxy&lt;/code> 环境变量的影响，比如 curl/brew/wget。如果设置了这些变量，应用会直接通过该变量设置的代理访问目的地址。
+因此我们可以使用如下的命令配置代理。&lt;/p></description></item><item><title>iTerm2快捷键小记</title><link>https://blog.chenguixian.com/post/tools/iterm2-cheatsheet/</link><pubDate>Wed, 25 Aug 2021 00:13:53 +0800</pubDate><guid>https://blog.chenguixian.com/post/tools/iterm2-cheatsheet/</guid><description>&lt;h2 id="iterm2-快捷键导图">iTerm2 快捷键导图&lt;/h2>
+&lt;p>&lt;img src="https://static.chenguixian.com/image/2024/11/20180803-iTerm2-Shortcut-20190330-20210827140602498-507c06.png">&lt;/p>
+&lt;h2 id="快捷键">快捷键&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">快捷键&lt;/th>
+ &lt;th style="text-align: left">作用说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">command + f&lt;/td>
+ &lt;td style="text-align: left">&lt;strong>搜索&amp;amp;查找&lt;/strong>，如果输入搜索内容后，按下 tab 键，就会 iTerm 自动帮选中搜索关键词，并且自动的帮我们复制到了剪贴板中。如果输入的是 shift+tab，则自动将查找内容的左边选中并复制。按 esc 退出搜索。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + r 或 ctrl + l&lt;/td>
+ &lt;td style="text-align: left">清空屏幕，而且只是换到新一屏，不会像 clear 一样创建一个空屏&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + k&lt;/td>
+ &lt;td style="text-align: left">clear，清空屏幕&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + d&lt;/td>
+ &lt;td style="text-align: left">垂直分屏&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + shift + d&lt;/td>
+ &lt;td style="text-align: left">水平分屏&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + ;&lt;/td>
+ &lt;td style="text-align: left">查看历史命令&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + shift + h&lt;/td>
+ &lt;td style="text-align: left">查看剪贴板历史，会自动列出输入过的命令&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + number&lt;/td>
+ &lt;td style="text-align: left">tab 标签窗口来回切换&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">command + option + ←/→ 或 command + [ / ]&lt;/td>
+ &lt;td style="text-align: left">切换屏幕&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + x&lt;/td>
+ &lt;td style="text-align: left">第一次按时，移动光标至行首；再次按时，回到原有位置&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + a&lt;/td>
+ &lt;td style="text-align: left">到行首（Ahead of line）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + e&lt;/td>
+ &lt;td style="text-align: left">到行尾（End of line）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + f/b&lt;/td>
+ &lt;td style="text-align: left">前进后退(相当于左右方向键)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + u&lt;/td>
+ &lt;td style="text-align: left">清除当前行（无论光标在什么位置）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + d&lt;/td>
+ &lt;td style="text-align: left">删除光标当前位置的&lt;strong>字符&lt;/strong>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + h&lt;/td>
+ &lt;td style="text-align: left">删除光标之前的&lt;strong>字符&lt;/strong>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + w&lt;/td>
+ &lt;td style="text-align: left">删除光标之前的&lt;strong>单词&lt;/strong>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + k&lt;/td>
+ &lt;td style="text-align: left">删除光标当前位置到文本末尾的&lt;strong>所有字符&lt;/strong>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + t&lt;/td>
+ &lt;td style="text-align: left">交换光标当前位置的字符与前一个字符的位置&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + c 或 ctrl + j 或 ctrl + o&lt;/td>
+ &lt;td style="text-align: left">取消当前行输入的命令（中断操作）。重新起一行。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + y&lt;/td>
+ &lt;td style="text-align: left">粘贴之前（ctrl +u/k/w）删除的内容&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + p 或 !!&lt;/td>
+ &lt;td style="text-align: left">上一条命令。调出命令历史中的前一条（Previous）命令，相当于通常的上箭头&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + n&lt;/td>
+ &lt;td style="text-align: left">下一条命令。调出命令历史中的下一条（Next）命令，相当于通常的上箭头&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + s&lt;/td>
+ &lt;td style="text-align: left">冻结终端操作（暂停脚本）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + q&lt;/td>
+ &lt;td style="text-align: left">恢复冻结（继续执行脚本）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + r&lt;/td>
+ &lt;td style="text-align: left">搜索命令历史。根据用户输入查找相关历史命令（reverse-i-search）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + l 或 command + r&lt;/td>
+ &lt;td style="text-align: left">换到新一屏，创建一个空屏&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">ctrl + i 或 tab&lt;/td>
+ &lt;td style="text-align: left">横行制表符，在命令行中补齐指令&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">双击&lt;/td>
+ &lt;td style="text-align: left">选中单词&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">三击&lt;/td>
+ &lt;td style="text-align: left">选中整行&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">四击&lt;/td>
+ &lt;td style="text-align: left">智能选择&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">!word&lt;/td>
+ &lt;td style="text-align: left">重复运行最近一条以“word”开头的指令，如!ls 或 !l&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">!$&lt;/td>
+ &lt;td style="text-align: left">调用上一条指令的最后一个参数作为当前指令对象,如，假设上一条指令为： ls abc.txt bbc.txt 那么， vi !$ 相当于： vi bbc.txt&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">!number&lt;/td>
+ &lt;td style="text-align: left">调用执行指定编号的历史记录指令,如!2, !11&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>原文档：&lt;/p></description></item><item><title>什么是 ARTS 打卡计划？</title><link>https://blog.chenguixian.com/post/arts/</link><pubDate>Wed, 25 Aug 2021 00:07:51 +0800</pubDate><guid>https://blog.chenguixian.com/post/arts/</guid><description>&lt;h2 id="arts">ARTS&lt;/h2>
+&lt;h3 id="algorithm">Algorithm&lt;/h3>
+&lt;p>每周至少做一个 Leetcode 的算法题。主要是为了编程训练和学习。如果不训练你看再多的算法书，你依然不会做算法题。&lt;/p>
+&lt;h3 id="review">Review&lt;/h3>
+&lt;p>阅读并点评至少一篇英文技术文章。主要是为了学习英文，如果你的英文不行，你基本上无缘技术高手。&lt;/p></description></item></channel></rss>
